@@ -1,0 +1,27 @@
+\newcommand{\sheet}{2}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    Let $I = (f_1, \dots, f_r) \subseteq k[x_1, \dots, x_n]$ be an ideal and $X
+    = V(I) \subseteq \mathbb{A}^n(k)$ be its vanishing locus.
+    \begin{enumerate}
+        \item{} We have to show
+            \[
+                \overline{X} = \bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\} =
+                V(\{ \tilde{g} \mid g \in I \}).
+            \]
+            Pick any homogenous $h$ that vanishes on $X$. By letting $x_{n+1} =
+            1$ we see that $h(x_1, \dots, x_n, 1) \in \sqrt{I}$, since it vanishes on
+            $X$. Therefore we have $l \in \N$ such that $h(x_1, \dots, x_n, 1)^l
+            = \sum_{i = 1}^{r} \alpha_i f_i$ for some $\alpha_i \in k[x_1,
+            \dots, x_n]$. There also exists $m \in \N$ such that $x^m_{n+1}
+            \widetilde{h(x_1, \dots, x_n, 1)} = h$. Adding these two together we
+            get $x^{ml}_{n+1} \widetilde{\sum_{i = 1}^{r} \alpha_i f_i} = h^l$.
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

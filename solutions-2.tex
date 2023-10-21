@@ -14,13 +14,63 @@
                 \overline{X} = \bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\} =
                 V(\{ \tilde{g} \mid g \in I \}).
             \]
-            Pick any homogenous $h$ that vanishes on $X$. By letting $x_{n+1} =
+            Pick any homogenous $h$ that vanishes on $X \subseteq \mathbb{A}^n \subseteq \mathbb{P}^n$. By letting $x_{n+1} =
             1$ we see that $h(x_1, \dots, x_n, 1) \in \sqrt{I}$, since it vanishes on
             $X$. Therefore we have $l \in \N$ such that $h(x_1, \dots, x_n, 1)^l
             = \sum_{i = 1}^{r} \alpha_i f_i$ for some $\alpha_i \in k[x_1,
-            \dots, x_n]$. There also exists $m \in \N$ such that $x^m_{n+1}
-            \widetilde{h(x_1, \dots, x_n, 1)} = h$. Adding these two together we
-            get $x^{ml}_{n+1} \widetilde{\sum_{i = 1}^{r} \alpha_i f_i} = h^l$.
+            \dots, x_n]$.
+
+            { \color{gray} Homogenization is almost a bijection between
+            homogenous polynomials in $n+1$ variables and all polynomials in $n$
+            variables. It is bijective between homogenous polynomials in $n+1$
+            variables 
+            that are not divisible by $x_{n+1}$ and polynomials in $n$
+            variables. The ``inverse'' to homogenization would be the letting
+            $x_{n+1} = 1$. }
+
+            Adding these two together we get $x^{ml}_{n+1} \widetilde{\sum_{i =
+            1}^{r} \alpha_i f_i} = h^l$. Therefore
+            \[
+                h = \sum^r_{i = 1} \beta_i \widetilde{f_i}
+            \]
+            and thus 
+            $\bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\} \supseteq
+            V(\{ \tilde{g} \mid g \in I \})$.
+
+        \item{} 
+
+        \item{} 
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{} We define a closed subset $V(f - g) \subseteq X$, which contains
+            the open set $\mathcal{U} \subseteq V(f - g)$. By definition the
+            completent $\mathcal{U}^C$ is closed and $V(f - g) \cup
+            \mathcal{U}^C = X$. Since $X$ is irreducible and $\mathcal{U}$ is
+            non-empty, we have $f = g$.
+
+        \item{} Lets show first that $\chi \colon A \mapsto \chi_A(A)$ vanishes
+            on diagonalizable matrices with pairwise different eigenvalues: For
+            $A = T D T^{-1}$ we have
+            \begin{equation*}
+                \chi_A(A) = \sum^n_{i = 0} \alpha_i A^i = \sum^n_{i = 0}
+                \alpha_i (T D T^{-1})^i = T \left( \sum^n_{i = 0} \alpha_i  D^i
+                \right) T^{-1}.
+            \end{equation*}
+            Denote $D = \diag(d_1, \dots, d_n)$ and notice that
+            \begin{equation*}
+                \sum^n_{i = 0} \alpha_i  D^i = 
+                \sum^n_{i = 0} \diag(\alpha_i d^i_1, \dots, \alpha_i d^i_n) = 
+                \diag(\chi_A(d_1), \dots, \chi_A(d_n)) = 0
+            \end{equation*}
+            because characteristic polynomial vanishes on eigenvalues $d_i$.
+
+            Since $\mathbb{A}^{n \times n}(L)$ is irreducible
+            and $\chi$ vanishes on open subset of it, namely on diagonalizable
+            matrices with pairwise different eigenvalues, $\chi$ must be $0$ on
+            whole $\mathbb{A}^{n \times n}(L)$.
     \end{enumerate}
 \end{exercise}
 

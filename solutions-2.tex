@@ -37,10 +37,26 @@
             and thus $\bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\}
             \supseteq V(\{ \tilde{g} \mid g \in I \})$.
 
-        \item{} 
+        \item{} We calculate $\overline{X}$ using the first part of the exercise and take the numbering of the
+        varieties from the first exercise sheet:\\
+        \begin{align*}
+            \overline{X_1}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(x^2-xz)\cap V(z)=(0:1:0),\\
+            \overline{X_2}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(z^2-xy)\cap V(z)=(1:0:0)\cup (0:1:0),\\
+            \overline{X_3}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(xy)\cap V(z)=(1:0:0)\cup (0:1:0),\\
+            \overline{X_4}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(x^2-xy)\cap V(z)=(0:1:0),\\
+            \overline{X_5}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(x)\cap V(z)=(0:1:0).
+        \end{align*}
 
         \item{} 
-    \end{enumerate}
+    \end{enumerate}Define $f(x,y):=xy-1$ and $g(x,y):=xy$. Then we have 
+    $$X=V(f,g)=\emptyset,$$
+    and since $\emptyset$ is closed in projective space as the vanishing 
+    set of a non-zero constant, we have $\overline{X}=\emptyset$.
+    However, 
+    $$
+    (0:1:0)\in V^+(xy-z,xy)=V^+(\tilde{f}, \tilde{g}),
+    $$
+    proving that in this case $\overline{X}\neq V(\tilde{f},\tilde{g})$.
 \end{exercise}
 
 \begin{exercise}{2}
@@ -185,4 +201,15 @@
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}{4}
+    \begin{enumerate}
+        \item First, we note that points in projective space are closed.
+        To see this, take some point $a=(a_0:...:a_n)\in \mathbb{P}^n_k$.
+        Then $a=V(\lbrace f\in k[x_0,...,x_n]: f=x_ia_j-x_ja_i \rbrace).$
+        Now, we let $X\subset \mathbb{P}^n_k$ be some quasi-projective variety and
+        $x,y\in X$ with $x\neq y$. Define $U:=\lbrace x \rbrace^c$, which is open as
+        the complement of a closed set and by definition fulfills the properties
+        $x\not \in U$ and $y \in U$.
+     \end{enumerate}
+\end{exercise}
 \end{document}

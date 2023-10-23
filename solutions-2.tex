@@ -14,11 +14,12 @@
                 \overline{X} = \bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\} =
                 V(\{ \tilde{g} \mid g \in I \}).
             \]
-            Pick any homogenous $h$ that vanishes on $X \subseteq \mathbb{A}^n \subseteq \mathbb{P}^n$. By letting $x_{n+1} =
-            1$ we see that $h(x_1, \dots, x_n, 1) \in \sqrt{I}$, since it vanishes on
-            $X$. Therefore we have $l \in \N$ such that $h(x_1, \dots, x_n, 1)^l
-            = \sum_{i = 1}^{r} \alpha_i f_i$ for some $\alpha_i \in k[x_1,
-            \dots, x_n]$.
+            Pick any homogenous $h$ that vanishes on $X \subseteq \mathbb{A}^n
+            \subseteq \mathbb{P}^n$. By letting $x_{n+1} = 1$ we see that
+            $h(x_1, \dots, x_n, 1) \in \sqrt{I}$, since it vanishes on $X$.
+            Therefore we have $l \in \N$ such that $h(x_1, \dots, x_n, 1)^l =
+            \sum_{i = 1}^{r} \alpha_i f_i$ for some $\alpha_i \in k[x_1, \dots,
+            x_n]$.
 
             { \color{gray} Homogenization is almost a bijection between
             homogenous polynomials in $n+1$ variables and all polynomials in $n$
@@ -33,13 +34,123 @@
             \[
                 h = \sum^r_{i = 1} \beta_i \widetilde{f_i}
             \]
-            and thus 
-            $\bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\} \supseteq
-            V(\{ \tilde{g} \mid g \in I \})$.
+            and thus $\bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\}
+            \supseteq V(\{ \tilde{g} \mid g \in I \})$.
 
         \item{} 
 
         \item{} 
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    Let $F \in k[x, y, z]$ be a non-zero homogenous polynomial of degree 2.
+    \begin{enumerate}
+        \item{} Let us first prove the statement in the hint. So let
+            \begin{equation*}
+                T (x, y) = (a x + b y + u, c x + d y + v)
+                % T \begin{bmatrix}
+                %     x \\ y
+                % \end{bmatrix} =
+                % \begin{bmatrix}
+                %     a & b \\
+                %     c & d
+                % \end{bmatrix}
+                % \begin{bmatrix}
+                %     x \\ y
+                % \end{bmatrix} +
+                % \begin{bmatrix}
+                %     u \\ v
+                % \end{bmatrix},
+            \end{equation*}
+            with $ad - cb \not= 0$, be an affine linear transformation of
+            $\mathbb{A}^2(k)$.
+            We can extend it to an automorphism of $\mathbb{P}^2(k)$ by defining
+            \begin{equation*}
+                \widetilde{T} (x : y : z) = (a x + b y + u z : c x + d y + v z : z)
+                % \widetilde{T} \colon{} \mathbb{P}^2(k) \rightarrow
+                % \mathbb{P}^2(k),
+                % \begin{bmatrix}
+                %     x \\ y \\ z
+                % \end{bmatrix}
+                % \mapsto
+                % \begin{bmatrix}
+                %     a & b & 0 \\
+                %     c & d & 0 \\
+                %     0 & 0 & 1
+                % \end{bmatrix}
+                % \begin{bmatrix}
+                %     x \\ y \\ z
+                % \end{bmatrix}
+                % + z \begin{bmatrix}
+                %     u \\ v \\ 0
+                % \end{bmatrix}
+            \end{equation*}
+            It is an extension of $T$, because we have $\widetilde{T} \circ i =
+            i \circ T$ where $i \colon \mathbb{A}^2(k) \rightarrow
+            \mathbb{P}^2(k)$ is given by $(x, y) \mapsto (x : y : 1)$.
+            Mapping $\widetilde{T}$ is bijective with inverse
+            \[
+                \widetilde{T}^{-1}(x : y : z) = ( dx - by - (du - bv) z : - cx +
+                ay + (cu - av)z : (ad - bc)z).
+            \]
+            This proves that $\widetilde{T}$ is an automorphism of
+            $\mathbb{P}^2(k)$.
+
+            Lets consider the polynomial $F$ now. We looks at its zero-set on
+            $\mathbb{A}^2(k)$, which is exactly $V(F) \cap V(z - 1) = V(F, z - 1) = V(F(x, y, 1))$.
+
+            This set could be empty, in which case $F(x, y, 1)$ must be a
+            non-zero constant (because $k$ is algebraically closed). A general
+            form of $F$ would be $F(x, y, z) = a_1 x^2 + a_2 y^2 + a_3 z^2 + a_4
+            xy + a_5 xz + a_6 yz$. If we set $z = 1$ and $F$ becomes a non-zero
+            constant, we get that $a_3$ is a non-zero constant and other $a_i$
+            are $0$. So $F(x, y, z) = a z^2$, which means $V(F)$ is isomorphic
+            to the projective line $V(x) = V(x^2)$.
+
+            Suppose now $V := V(F(x, y, 1)) \subseteq \mathbb{A}^2(k)$ is not
+            empty. Note that $F(x, y, 1)$ is of the form we treated in exercise
+            $3$ of sheet $1$. Then we can use an affine linear transformation
+            $T$ on $\mathbb{A}^2(k)$ so that $V \subseteq \mathbb{A}^2(k)$
+            assumes the forms of one of the $5$ curves we treated in exercise
+            $3$ sheet $1$, namely $V(x), V(y - x^2), V(xy), V(xy - 1), V(x(x -
+            1))$. We showed earlier that his transformation can be extended to
+            an isomorphism $\widetilde{T}$ of $\mathbb{P}^2(k)$.
+
+            Loosely speaking, we might have ``lost some information'' when we
+            focused on $\mathbb{A}^2(k) \cap V(F)$, but it turns out that we
+            didnt, if we take into account that the curve we started with was
+            non-zero homogenous polynomial of degree $2$. We are able to
+            ``retrieve all of it back'' by taking the closure and remembering
+            that original curve was of degree $2$.
+
+            Since the curve $V(F)$ is by definition of topology closed, the
+            curve $\widetilde{T}(V(F)) \subseteq \mathbb{P}^2(k)$ will also be
+            closed. By construction we have on of the following cases
+            \begin{itemize}
+                \item{} $V(x) \cap \mathbb{A}^2(k) = V(x^2) \cap \mathbb{A}^2(k)
+                    \subseteq \widetilde{T}(V(F))$
+                \item{} $V(xy) \cap \mathbb{A}^2(k) \subseteq
+                    \widetilde{T}(V(F))$
+                \item{} $V(xy - 1) \cap \mathbb{A}^2(k) \subseteq
+                    \widetilde{T}(V(F))$
+                \item{} $V(y - x^2) \cap \mathbb{A}^2(k) \subseteq
+                    \widetilde{T}(V(F))$
+                \item{} $V(x(x - 1)) \cap \mathbb{A}^2(k) \subseteq
+                    \widetilde{T}(V(F))$
+            \end{itemize}
+            In each case we can take the closure of the left side and, since
+            right side is closed, the inclusion will still hold. We use $1$st
+            exercise of this sheet to calculate the closure by homogenizing the
+            polynomial. Namely we get one of the following cases
+            \begin{itemize}
+                \item{} $V(x) = V(x^2) \subseteq \widetilde{T}(V(F))$
+                \item{} $V(xy) \subseteq \widetilde{T}(V(F))$
+                \item{} $V(xy - z^2) \subseteq \widetilde{T}(V(F))$
+                \item{} $V(yz - x^2) \subseteq \widetilde{T}(V(F))$
+                \item{} $V(x^2 - xz) \subseteq \widetilde{T}(V(F))$
+            \end{itemize}
+            These inclusions are in fact equalities,
     \end{enumerate}
 \end{exercise}
 

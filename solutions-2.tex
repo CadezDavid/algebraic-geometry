@@ -9,54 +9,108 @@
     Let $I = (f_1, \dots, f_r) \subseteq k[x_1, \dots, x_n]$ be an ideal and $X
     = V(I) \subseteq \mathbb{A}^n(k)$ be its vanishing locus.
     \begin{enumerate}
-        \item{} We have to show
+        \item{} Closure of a subset $X$ in a topological space is an
+            intersection of all closed subsets that contain the set $X$. In this
+            case
             \[
-                \overline{X} = \bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\} =
-                V(\{ \tilde{g} \mid g \in I \}).
+                \overline{X} = V(\{h \mid h\ \text{homogenous}, \forall x \in X
+                \colon h(x) = 0\}).
             \]
-            Pick any homogenous $h$ that vanishes on $X \subseteq \mathbb{A}^n
-            \subseteq \mathbb{P}^n$. By letting $x_{n+1} = 1$ we see that
-            $h(x_1, \dots, x_n, 1) \in \sqrt{I}$, since it vanishes on $X$.
-            Therefore we have $l \in \N$ such that $h(x_1, \dots, x_n, 1)^l =
-            \sum_{i = 1}^{r} \alpha_i f_i$ for some $\alpha_i \in k[x_1, \dots,
-            x_n]$.
+            Since $V(\{ \widetilde{g} \mid g \in I \})$ is closed by
+            definition and contains $X$, we only have to prove the inclusion
+            \begin{equation}\label{inclusion}
+                \overline{X} \supseteq V(\{ \tilde{g} \mid g \in I \}).
+            \end{equation}
 
-            { \color{gray} Homogenization is almost a bijection between
-            homogenous polynomials in $n+1$ variables and all polynomials in $n$
-            variables. It is bijective between homogenous polynomials in $n+1$
-            variables 
-            that are not divisible by $x_{n+1}$ and polynomials in $n$
-            variables. The ``inverse'' to homogenization would be the letting
-            $x_{n+1} = 1$. }
-
-            Adding these two together we get $x^{ml}_{n+1} \widetilde{\sum_{i =
-            1}^{r} \alpha_i f_i} = h^l$. Therefore
+            Pick any homogenous polynomial $h$ that vanishes on $X \subseteq \mathbb{A}^n
+            \subseteq \mathbb{P}^n$. Write
             \[
-                h = \sum^r_{i = 1} \beta_i \widetilde{f_i}
+                h = x^m_{n+1} h'
             \]
-            and thus $\bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\}
-            \supseteq V(\{ \tilde{g} \mid g \in I \})$.
+            where $x_{n+1}$ does not divide $h'$ and write
+            \[
+                f = h(x_1, \dots, x_n, 1).
+            \]
+            Observe that homogenizing $f$ yields $h'$.
+
+            By Hilberts Nullstellensatz we have $f \in \sqrt{I}$, i.e. $f^l \in
+            I$.
+
+            \begin{claim}
+                Homogenizing commutes with product.
+            \end{claim}
+            \begin{proof_claim}
+                %TODO
+            \end{proof_claim}
+
+            Homogenize $f^l$ and get
+            \[
+                h^l = x^{ml}_{n+1} (h')^l = x^m_{n+1} (\widetilde{f})^l = 
+                x^{ml}_{n+1} \widetilde{(f^l)}
+            \]
+            which means $V(h) \supseteq V\left(\widetilde{(f^l)}\right)$ and thus
+            inclusion~\ref{inclusion} follows.
+
+
+
+            % Therefore we have $f \in \sqrt{I}$, i.e. there exists $l \in \N$
+            % such that $f^l = \sum_{i = 1}^{r} \alpha_i f_i$
+            % for some $\alpha_i \in k[x_1, \dots, x_n]$.
+
+            % { \color{gray} Homogenization is almost a bijection between
+            % homogenous polynomials in $n+1$ variables and all polynomials in $n$
+            % variables. It is bijective between homogenous polynomials in $n+1$
+            % variables 
+            % that are not divisible by $x_{n+1}$ and polynomials in $n$
+            % variables. The ``inverse'' to homogenization would be the letting
+            % $x_{n+1} = 1$. }
+
+            % Homogenizing $f$ might not recover $h$ exactly, we could be missing
+            % come factor of $x_{n+1}$ if $h$ was divisible by $x_{n+1}$. That
+            % means there exists $m \in \N$ such that $x^m_{n+1} \widetilde{f} =
+            % h$.
+            % 
+            % Adding equations together, and using that homogenizing commutes with
+            % the product, we get $x^{ml}_{n+1} \widetilde{f}^l = h^l$.
+            % Therefore
+            % \[
+            %     h^l = \sum^r_{i = 1} \beta_i \widetilde{f_i},
+            % \]
+            % where
+            % \[
+            %     \beta_i = \widetilde{\alpha} x^{\max_j(\deg{b_j f_j}) - \deg{b_i
+            %     f_i} + ml}_{n+1}.
+            % \]
+            % Thus $h$ vanishes wherever all  $\bigcap \{V^+(h) \mid h\ \text{homogenous}, h(X) = 0\}
+            % \supseteq V(\{ \tilde{g} \mid g \in I \})$.
 
         \item{} We calculate $\overline{X}$ using the first part of the exercise and take the numbering of the
         varieties from the first exercise sheet:\\
         \begin{align*}
-            \overline{X_1}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(x^2-xz)\cap V(z)=(0:1:0),\\
-            \overline{X_2}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(z^2-xy)\cap V(z)=(1:0:0)\cup (0:1:0),\\
-            \overline{X_3}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(xy)\cap V(z)=(1:0:0)\cup (0:1:0),\\
-            \overline{X_4}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(x^2-xy)\cap V(z)=(0:1:0),\\
-            \overline{X_5}\cap \mathbb{P}^2_k \backslash \mathbb{A}^2_k&=V(x)\cap V(z)=(0:1:0).
+            \overline{X_1}\cap \mathbb{P}^2_k \backslash
+            \mathbb{A}^2_k&=V(x^2-xz)\cap V(z)=\{(0:1:0)\},\\
+            \overline{X_2}\cap \mathbb{P}^2_k \backslash
+            \mathbb{A}^2_k&=V(z^2-xy)\cap V(z)=\{(1:0:0), (0:1:0)\},\\
+            \overline{X_3}\cap \mathbb{P}^2_k \backslash
+            \mathbb{A}^2_k&=V(xy)\cap V(z)=\{(1:0:0), (0:1:0)\},\\
+            \overline{X_4}\cap \mathbb{P}^2_k \backslash
+            \mathbb{A}^2_k&=V(x^2-xz)\cap V(z)=\{(0:1:0)\},\\
+            \overline{X_5}\cap \mathbb{P}^2_k \backslash
+            \mathbb{A}^2_k&=V(x)\cap V(z)= \{(0:1:0)\}.
         \end{align*}
 
-        \item{} 
-    \end{enumerate}Define $f(x,y):=xy-1$ and $g(x,y):=xy$. Then we have 
-    $$X=V(f,g)=\emptyset,$$
-    and since $\emptyset$ is closed in projective space as the vanishing 
-    set of a non-zero constant, we have $\overline{X}=\emptyset$.
-    However, 
-    $$
-    (0:1:0)\in V^+(xy-z,xy)=V^+(\tilde{f}, \tilde{g}),
-    $$
-    proving that in this case $\overline{X}\neq V(\tilde{f},\tilde{g})$.
+        \item{} Define $f(x,y):=xy-1$ and $g(x,y):=xy$. Then we have 
+            \begin{equation*}
+                X=V(f,g)=\emptyset,
+            \end{equation*}
+            and since $\emptyset$ is closed in projective space as the vanishing
+            set of a non-zero constant, we have $\overline{X}=\emptyset$.
+            However, 
+            \begin{equation*}
+                (0:1:0)\in V^+(xy-z,xy)=V^+(\tilde{f}, \tilde{g}),
+            \end{equation*}
+            proving that in this case $\overline{X}\neq V(\tilde{f},\tilde{g})$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{2}

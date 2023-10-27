@@ -1,0 +1,32 @@
+\newcommand{\sheet}{3}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item Define 
+        \begin{align*}
+            \pi^{-1}:U &\longrightarrow \pi^{-1}(U) \\
+            (x_1,...,x_n)  &\mapsto (x_1,...,x_n)[x_1:...:x_n].
+        \end{align*}
+        This is well-defined, because by definition of $U$, not all
+        $x_i$ can be zero at the same time, so $[x_1:...:x_n]$ is actually a
+        point in projective space. We also have 
+            $(x_1,...,x_n)[x_1:...:x_n]\in Z$ for $(x_1,...,x_n)\in U$,
+            because $x_ix_j=x_jx_i$ for all $1\leq i,j \leq n.$
+            To see injectivity of $\pi^{-1}$, let
+            $(x_1,...,x_n)\in U$ with $x_j\not = 0$. Then we have $y_j\not = 0$, because
+            if we assume $x_j\not =0$ and $y_j=0$, then for some $y_i\not =0$ 
+            (which exists since $[y_1:...:y_n]$ is a point in projective space) 
+            we have $0\not = x_jy_i= x_iy_j=0.$
+            Therefore, we can just set $y_j=1$. Then 
+            \begin{align*}
+                x_iy_j=x_jy_i \implies y_1=\frac{x_1y_j}{x_j}=\frac{x_1}{x_j},
+            \end{align*}
+            showing that all the $y_i$ are fixed up to a scalar after fixing all the $x_i$.
+    \end{enumerate}
+\end{exercise}{1}
+\end{document}

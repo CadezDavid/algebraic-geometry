@@ -2,6 +2,7 @@
 \usepackage[english, german]{babel}
 \usepackage{amsthm,amssymb,amsmath,mathrsfs,mathtools}
 \usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{tikz-cd}
 
@@ -36,12 +37,12 @@
   \vspace{0.5cm}
 }
 \newenvironment{claim} {
-  \noindent \textbf{Claim.}
+  \newline\noindent \textbf{Claim.}
 } {
 }
 
 \newenvironment{proof_claim} {
-  \noindent \textbf{Proof of claim.}
+  \newline\noindent \textbf{Proof of claim.}
 } {
     \qed
 }

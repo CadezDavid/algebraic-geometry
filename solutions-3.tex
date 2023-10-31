@@ -77,27 +77,86 @@
                 and practically same argument applies to infinite unions.
 
                 Therefore every open subset of $X^{\text{sob}}$ can be written
-                as $V_U$ for some open $U \subseteq X$.
+                as $V_U$ for some open $U \subseteq X$ (in general it could've
+                been just a base of topology, but it is the whole topology).
 
                 \begin{claim}
                     Closed irreducible subsets of $X^{\text{sob}}$ are exactly
-                    $V^c_U$ for open $U \subseteq X$ such
-                    that (closed) subset $U^c \subseteq X$ is
-                    irreducible.
+                    $V^c_U$ for open $U \subseteq X$ such that (closed) subset
+                    $U^c \subseteq X$ is irreducible.
                 \end{claim}
                 \begin{proof_claim}
                     Take $V^c_U$ such that $U^c$ is not irreducible. Then there
                     exist closed subsets $U^c_1, U^c_2 \subseteq X$ with $U^c =
                     U^c_1 \cup U^c_2$ meanwhile $U^c \not= U^c_1$ and $U^c \not=
                     U^c_2$. Then $V_U = V_{U_1 \cup U_2} = V_{U_1} \cup V_{U_2}$
-                    and we can thus cover $V_U$ with $V_{U_1}$ and $V_{U_2}$ but
-                    $V_U \not= V_{U_1}$ and $V_U \not= V_{U_2}$.
+                    and we can thus cover $V_U$ with $V_{U_1}$ and $V_{U_2}$. We
+                    just have to show $V_U \not= V_{U_1}$ and $V_U \not= V_{U_2}$.
+                    Take $x \in U^c \setminus U^c_1$. Then $\overline{\{x\}} \in
+                    V^c_U \setminus V^c_{U_1}$, so $V_U \not= V_{U_1}$, which
+                    proves the claim.
                 \end{proof_claim}
 
                 Let us show $X^{\text{sob}}$ is sober. Let $V_U^c$ be closed
                 irreducible. Then by last claim $U^c$ is closed and irreducible.
-                This $U^c$ will be the generic point with $\overline{\{U^c\}} =
-                V_U^c$.
+                The set $U^c$ is the generic point with $\overline{\{U^c\}} =
+                V_U^c$. The inclusion $\overline{\{U^c\}} \subseteq V_U^c$ is
+                obvious, because $V^c_U$ contains the point $U^c$ and is a
+                closed set. For the other inclusion take a closed set that
+                $V^c_W$ that contains $U^c$. That means $U^c \cap W = \emptyset$
+                and thus $W \subseteq U$. Then we have $V_W \subseteq V_U$ and
+                $V^c_U \subseteq V^c_W$. This proves that $V^c_U$ is the closure
+                of the point $U^c$.
+            }
+        \item{
+                Define
+                \begin{align*}
+                    h \colon X^{\text{sob}} &\rightarrow Z \\
+                    W &\mapsto \text{unique generic point of}\ \overline{g(W)}.
+                \end{align*}
+                Note that: a continuous image of an irreducible set is
+                irreducible and the closure of an irreducible set is
+                irreducible.  
+                So $\overline{g(W)} \subseteq Z$ is a closed irreducible subset and thus
+                has a unique generic point in $Z$.
+
+                Let's now prove $g = h \circ f$. Take $x \in X$. We have to
+                prove $g(x)$ is the unique generic point of
+                $\overline{g\left(\overline{\{x\}}\right)}$. Clearly $g(x) \in
+                \overline{g\left(\overline{\{x\}}\right)}$. Take any closed $W
+                \subseteq Z$ with $g(x) \in W$. Then, by definition, $x \in
+                g^{-1}(W)$. Because $g^{-1}(W)$ is closed, also
+                $\overline{\{x\}} \subseteq g^{-1}(W)$. So
+                $g\left(\overline{\{x\}}\right) \subseteq W$. But since $W$ is
+                closed we have $\overline{g\left(\overline{\{x\}}\right)}
+                \subseteq W$. This proves that $g(x)$ is indeed a generic point
+                of $\overline{g\left(\overline{\{x\}}\right)}$. So we have $g =
+                h \circ f$.
+
+                To prove $h$ is continuous we take an open set $U \subseteq Z$.
+                we want to see that $h^{-1}(U)$ is open. Since $g^{-1}(U) =
+                f^{-1}(h^{-1}(U))$ is open and $f^{-1}$ induces a bijection of
+                open sets, the set $h^{-1}(U)$ is open as well. So $h$ is
+                continuous.
+
+                We should also argue why $h$ is unique. Take $h, h' \colon
+                X^{\text{sob}} \rightarrow Z$ both continuous and satisfying $g
+                = h \circ f = h' \circ f$. Pick any closed irreducible $W
+                \subseteq X$. Suppose $h(W) \not= h'(W)$. WLOG there exists open
+                $U \subseteq Z$ such that $h(W) \in U$ and $h'(W) \notin U$
+                (because requiring \emph{unique} generic point implies $T_0$
+                property). Open sets $h^{-1}(U)$ and $h'^{-1}(U)$ therefore
+                differ. Using one of the claims above, they are of the form
+                $V_{U_1} = h^{-1}(U)$ and $V_{U_2} = h'^{-1}(U)$. So we have $W
+                \in V_{U_1}$ and $W \notin V_{U_2}$. Then there exists $w \in W
+                \cap U_1$, for which $\overline{\{w\}} \in V_{U_1}$ and
+                $\overline{\{w\}} \notin V_{U_2}$. By definition
+                $\overline{\{w\}} \in h^{-1}(U)$ and $\overline{\{w\}} \notin
+                h'^{-1}(U)$ which means that $h(\overline{\{w\}}) \in U$ and
+                $h'(\overline{\{w\}}) \notin U$. But that is a contradiction
+                with assumption $g = h \circ f = h' \circ f$.
+            }
+        \item{
             }
     \end{enumerate}
 \end{exercise}

@@ -3,7 +3,7 @@
 
 \begin{document}
 
-\maketitle
+\maketitle{}
 
 \begin{exercise}{1}
     \begin{enumerate}
@@ -28,5 +28,67 @@
             \end{align*}
             showing that all the $y_i$ are fixed up to a scalar after fixing all the $x_i$.
     \end{enumerate}
-\end{exercise}{1}
+\end{exercise}
+
+\begin{exercise}{4}
+    \begin{enumerate}
+        \item{
+                Lets first prove that $V_{U}$ are stable under
+                intersections:
+                \begin{claim}
+                    Take $U, W \subseteq X$ open subsets. Then $V_{U \cap W} =
+                    V_U \cap V_W$.
+                \end{claim}
+                \begin{proof_claim}
+                    Inclusion $V_{U \cap W} \subseteq V_U \cap
+                    V_W$ is clear.
+
+                    For the other inclusion take $Z \in V_U \cap V_W$. By
+                    definition $Z \cap U \not= \emptyset$ and $Z \cap V \not=
+                    \emptyset$. Suppose $Z \cap (U \cap V) = \emptyset$. Then
+                    $(Z \cap U)^c \cup (Z \cap V)^c = X$. But since $Z$ is
+                    irreducible, and is covered by $U^c \cup V^c$, we must have
+                    (WLOG) $Z \subseteq U^c$. That is in contradiction with
+                    $Z \cap U \not= \emptyset$. 
+                \end{proof_claim}
+
+                It also behaves well under unions:
+                \begin{align*}
+                    V_{U \cup W} &= \{ Z\ \text{cl. irred.} \mid Z \cap (U \cup
+                    W) \not= \emptyset \} \\
+                    &= \{ Z\ \text{cl. irred.} \mid (Z \cap U) \not= \emptyset
+                    \ \text{or}\ (Z \cap W) \not= \emptyset \} \\
+                    &= \{ Z\ \text{cl. irred.} \mid (Z \cap U) \not= \emptyset
+                    \} \cup \{ Z\ \text{cl. irred.} \mid (Z \cap W) \not=
+                    \emptyset \} \\
+                    &= V_U \cup V_W
+                \end{align*}
+                and practically same argument applies to infinite unions.
+
+                Therefore every open subset of $X^{\text{sob}}$ can be written
+                as $V_U$ for some open $U \subseteq X$.
+
+                \begin{claim}
+                    Closed irreducible subsets of $X^{\text{sob}}$ are exactly
+                    $V^c_U$ for open $U \subseteq X$ such
+                    that (closed) subset $U^c \subseteq X$ is
+                    irreducible.
+                \end{claim}
+                \begin{proof_claim}
+                    Take $V^c_U$ such that $U^c$ is not irreducible. Then there
+                    exist closed subsets $U^c_1, U^c_2 \subseteq X$ with $U^c =
+                    U^c_1 \cup U^c_2$ meanwhile $U^c \not= U^c_1$ and $U^c \not=
+                    U^c_2$. Then $V_U = V_{U_1 \cup U_2} = V_{U_1} \cup V_{U_2}$
+                    and we can thus cover $V_U$ with $V_{U_1}$ and $V_{U_2}$ but
+                    $V_U \not= V_{U_1}$ and $V_U \not= V_{U_2}$.
+                \end{proof_claim}
+
+                Let us show $X^{\text{sob}}$ is sober. Let $V_U^c$ be closed
+                irreducible. Then by last claim $U^c$ is closed and irreducible.
+                This $U^c$ will be the generic point with $\overline{\{U^c\}} =
+                V_U^c$.
+            }
+    \end{enumerate}
+\end{exercise}
+
 \end{document}

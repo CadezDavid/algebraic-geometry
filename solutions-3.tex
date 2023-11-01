@@ -41,6 +41,68 @@
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}{2}
+    The part which to me seemed the hardest was to calculate the closure of
+    $\pi^{-1}(Y \setminus \{t\})$ in $Z$. So to for that we look at
+    $\pi^{-1}(Y)$ and decompose it into irreducible components. Or actually we
+    first cover it $V_i$ and then look at them inside each $V_i$. In these two
+    cases it decomposed into nice irreducible components, one of which is the
+    blow-up and the other whole $\pi^{-1}(t)$.
+    \begin{enumerate}
+        \item{Let $Y = V(x^2_1 - x^3_2) \subseteq \mathbb{A}^2(k)$. We look at
+            \begin{equation}
+                \pi^{-1}(Y) = \{ ((x_1, x_2), [y_1 : y_2]) \mid x_1 y_2 = x_2
+                y_1, x^2_1 - x^3_2 = 0 \}.
+            \end{equation}
+            We can cover it with $V_i$ ($i=1,2$). Lets first look inside $V_1
+            \cong \mathbb{A}^2(k) \times \mathbb{A}^1(k)$, where $y_1 = 1$.
+            Equations then become $x_1 y_2 = x_2$ and $x^2_1 (1 - x_1
+            y^3_2) = 0$. The latter equation can be decomposed, so we get two
+            closed subsets:
+            \begin{itemize}
+                \item{
+                        $\{ x_1 = x_2 = 0 \} \subseteq
+                        V_1 \subseteq \mathbb{A}^2(k) \times \mathbb{P}^1(k)$
+                    }
+                \item{
+                        $\{ x_1 y^3_2 - 1 = 0, x_2 y^2_2 - 1 = 0 \} \subseteq
+                        V_1 \subseteq \mathbb{A}^2(k) \times \mathbb{P}^1(k)$
+                    }
+            \end{itemize}
+            First one lies in $\pi^{-1}(t)$, so $\{ x_1 = x_2 = 0 \} \cap
+            \pi^{-1}(Y \setminus \{t\}) = \emptyset$. Therefore
+            \begin{equation}
+                \pi^{-1}(Y \setminus \{t\}) \cap V_1 = \{ x_1 y^3_2 - 1 = 0, x_2
+                y^2_2 - 1 = 0, x_1 \not= 0, x_2 \not= 0 \} \cap V_1
+            \end{equation}
+            Therefore taking the closure inside $V_1$:
+            \begin{equation}
+                \BL_t(Y) \cap V_1 = \{ x_1 y^3_2 - 1 = 0, x_2 y^2_2 - 1 = 0 \}
+                \cap V_1.
+            \end{equation}
+            Before definition a morphism $\BL_t(Y) \rightarrow \mathbb{A}^1(k)$,
+            lets look at $\BL_t(Y) \cap V_2$. Similar as before we set $y_2 = 1$
+            and get that $\pi^{-1}(Y) \cap V_2$ is made up of two closed subsets
+            \begin{itemize}
+                \item{
+                        $\{ x_1 = x_2 = 0 \} \subseteq
+                        V_2 \subseteq \mathbb{A}^2(k) \times \mathbb{P}^1(k)$
+                    }
+                \item{
+                        $\{ x_1 = y^3_1, x_2 = y^2_1 \} \subseteq
+                        V_2 \subseteq \mathbb{A}^2(k) \times \mathbb{P}^1(k)$
+                    }
+            \end{itemize}
+            This intersection contains more information, since it also contains
+            $\BL_t(Y) \cap \pi^{-1}(t)$.
+
+            Define a morphism $\phi \colon \BL_t(Y) \rightarrow \mathbb{A}^2(k)$
+
+            }
+        \item{}
+    \end{enumerate}
+\end{exercise}
+
 \begin{exercise}{4}
     \begin{enumerate}
         \item{
@@ -78,23 +140,33 @@
 
                 Therefore every open subset of $X^{\text{sob}}$ can be written
                 as $V_U$ for some open $U \subseteq X$ (in general it could've
-                been just a base of topology, but it is the whole topology).
+                been just a base of topology, but this shows it is the whole
+                topology).
 
+                \begin{claim}
+                    If $V_{U_1} = V_{U_2}$ then $U_1 = U_2$.
+                \end{claim}
+                \begin{proof_claim}
+                    Suppose $x \in U_1 \setminus U_2$, then $\overline{\{x\}}
+                    \in V_{U_1} \setminus V_{U_2}$. This proves the claim.
+                \end{proof_claim}
+                Next claim is a direct consequence of one above.
                 \begin{claim}
                     Closed irreducible subsets of $X^{\text{sob}}$ are exactly
                     $V^c_U$ for open $U \subseteq X$ such that (closed) subset
                     $U^c \subseteq X$ is irreducible.
                 \end{claim}
                 \begin{proof_claim}
-                    Take $V^c_U$ such that $U^c$ is not irreducible. Then there
-                    exist closed subsets $U^c_1, U^c_2 \subseteq X$ with $U^c =
-                    U^c_1 \cup U^c_2$ meanwhile $U^c \not= U^c_1$ and $U^c \not=
-                    U^c_2$. Then $V_U = V_{U_1 \cup U_2} = V_{U_1} \cup V_{U_2}$
-                    and we can thus cover $V_U$ with $V_{U_1}$ and $V_{U_2}$. We
-                    just have to show $V_U \not= V_{U_1}$ and $V_U \not= V_{U_2}$.
-                    Take $x \in U^c \setminus U^c_1$. Then $\overline{\{x\}} \in
-                    V^c_U \setminus V^c_{U_1}$, so $V_U \not= V_{U_1}$, which
-                    proves the claim.
+                    Let $V^c_U$ be irreducible and $U^c = U^c_1 \cup U^c_2
+                    \subseteq X$. Then $V_U = V_{U_1 \cap U_2} = V_{U_1} \cap
+                    V_{U_2}$ and thus $V^c_U = V^c_{U_1} \cup V_{U_2}$. Since
+                    $V^c_U$ is irreducible, we must have $V^c_U = V^c_{U_1}$ and
+                    thus $U = U_1$, which proves irreducibility of $U^c$.
+
+                    For the other implication, let $U^c$ be irreducible and
+                    $V^c_U = V^c_{U_1} \cup V^c_{U_2}$. Then $U_1 \cap U_2 = U$.
+                    Since $U^c$ is irreducible, we must have (WLOG) $U_1 = U$
+                    and therefore $V_U = V_{U_1}$.
                 \end{proof_claim}
 
                 Let us show $X^{\text{sob}}$ is sober. Let $V_U^c$ be closed
@@ -156,7 +228,56 @@
                 $h'(\overline{\{w\}}) \notin U$. But that is a contradiction
                 with assumption $g = h \circ f = h' \circ f$.
             }
-        \item{
+        \item{We can define $h \colon V \rightarrow \MaxSpec(A)$ with $h(x_1,
+            \dots, x_n) = (X_1 - x_1, \dots, X_n - x_n)$. Due to Hilberts
+            Nullstellensatz this is a bijection (because $k$ alg.\ closed). Take
+            a closed subset $C \subseteq V$. Again by Hilberts Nullstellensatz
+            we get a radical ideal $I$ such that $V = V(I)$. So $h(C) = \{ m \in
+            \MaxSpec \mid I \subseteq m \}$, which is a closed set. And if we
+            take a closed set $V(I) \subseteq \MaxSpec(A)$ for some $I \subseteq
+            A$ we have $h^{-1}(V(I)) = \{ x \in V \mid \forall f \in I \colon
+            f(x) = 0 \}$. So $h$ is a homeomorphism.
+
+            Observe that if we take $X = \MaxSpec(A)$, then $X^{\text{sob}} =
+            \Spec(A)$. As sets that is clear, because all irreducible closed
+            sets of $V$ are exactly vanishing sets of prime ideals in $A$. And
+            topology on $V \cong \MaxSpec(A)$ is defined by the basis of closed
+            sets being the vanishing sets of prime ideals, so $X^{\text{sob}} =
+            \Spec(A)$.
+
+            Then we have a diagram
+
+            \begin{tikzcd}
+                &V \arrow{d}{i} \arrow{r}{h} &\MaxSpec(A) \arrow{d}{j} \\
+                &V^{\text{sob}} \arrow{r} &\Spec(A)
+            \end{tikzcd}
+
+            where $i \colon x \mapsto \overline{\{x\}}$ and $j \colon m \mapsto
+            \{m\}$ (since maximal ideals are already closed points).
+
+            By 2. part we know there exists $g \colon V^{\text{sob}} \rightarrow
+            \Spec(A)$ with $j \circ h = g \circ i$. And similar there exists $f
+            \colon \Spec(A) \rightarrow V^{\text{sob}}$ with $i \circ h^{-1} = f
+            \circ j$. Combining these two equations gives us $j = g \circ f
+            \circ j$ and $i = f \circ g \circ i$.
+
+            Observe that the map $g \circ f$ satisfies the ``universal
+            condition'' from 2. part for the map $i \colon V \rightarrow
+            V^{\text{sob}}$. So it is the unique map $\pi \colon V \rightarrow
+            V^{\text{sob}}$ that makes
+
+            \begin{tikzcd}
+                &V \arrow{d}{i} \arrow{r}{i} &V^{\text{sob}} \\
+                &V^{\text{sob}} \arrow{ru}
+            \end{tikzcd}
+
+            And identity would also satisfy that condition, so
+            $g \circ f$ must be the identity on $V^{\text{sob}}$.
+
+            We argue exactly the same that $f \circ g$ is the identity on
+            $\Spec(A)$.
+
+            This proves that $V^{\text{sob}} \cong \Spec(A)$.
             }
     \end{enumerate}
 \end{exercise}

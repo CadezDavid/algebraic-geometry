@@ -27,6 +27,108 @@
         that generic points in $T_0$ spaces are unique if they exist, which follows directly
         from the definition of $T_0$. 
     \end{enumerate}
-\end{exercise}{1}
+    
+    \begin{enumerate}
+        \item{Let $X$ be a finite irreducible topological space. Since
+            \begin{equation*}
+                X = \bigcup_{x \in X} \overline{\{x\}}
+            \end{equation*}
+            is a finite decomposition in closed sets, we must have
+            $\overline{\{x\}} = X$ for some $x \in X$. This $x$ is a generic
+            point of $X$.
+
+            If we additionally assumed $X$ is $T_0$, then this point $x$ would
+            be unique, since in a $T_0$ space we have $\overline{\{x\}} \not=
+            \overline{\{y\}}$ for $x \not= y$. Also in a finite space the
+            conditions of quasicompactness and the basis being stable under
+            finite intersections are clearly fulfilled. So finite $T_0$ spaces
+            are spectral.
+            }
+        \item{
+                Let us first describe what $\Spec(\Z)$ looks like. It is a PID
+                with prime ideals being those $(a)$ for which $a \in \Z$ is a
+                prime number or $a = 0$. So
+                \begin{equation*}
+                    \Spec(\Z) = \{ (p) \mid p\ \text{prime} \} \cup \{ (0) \}.
+                \end{equation*}
+                In this space $(0)$ is a unique generic point.
+
+                Closed sets in $\Spec(\Z)$ are by definiton
+                \begin{equation*}
+                    V((a)) = \{ (p) \in \Spec(\Z) \mid (a) \subseteq (p) \} = 
+                    \{ (p) \in \Spec(\Z) \mid p\ \text{divides}\ a \}.
+                \end{equation*}
+                So if $a = \Pi_{i} p^{k_i}_i$, then $V((a)) = {\{ (p_i) \}}_i
+                \subseteq \Spec(\Z)$. Since any $a \in \Z$ is only divisible by
+                finitely many prime numbers, we get the finite completement
+                topology on $\Spec(\Z) \setminus \{(0)\}$.
+
+                Adding generic point $(0)$ to $\Spec(\Z) \setminus \{(0)\}$ is
+                actually the construction $X \rightarrow X^{\text{sob}}$ which
+                we did last week.
+
+
+                % Let $\mathbb{P} = \{ p_1, p_2, \dots \} \subseteq \N$ be an
+                % ``ordered set'' of prime numbers.
+
+                % Construct an inverse limit
+                % \begin{equation*}
+                %     F_i := \{ (p_1), \dots, (p_i) \} \cup \{ (0) \}
+                % \end{equation*}
+                % for $i \in \N$ and
+                % \begin{equation*}
+                %     f_i \colon F_i \xhookrightarrow{} F_{i+1}
+                % \end{equation*}
+                % being subset inclusions. We still have to say what topologies
+                % $F_i$ have and then show that $f_i$ are continuous. Define
+                % closed sets on $F_i$ to be $A \subseteq F_i$ with $(0) \notin
+                % A$, and the whole $F_i$. This basis for closed sets is clearly
+                % stable under finite unions.
+
+                % Now show that $f_i$ are continuous. Take $A \subseteq F_{i+1}$
+                % closed. Then $f^{-1}_i(A) = A \cap F_i$. If $(0) \in A$, then
+                % $(0) \in A \cap F_i$ and therefore $A = F_{i+1}$. Thus
+                % $f^{-1}_i(A) = F_i$ is closed. If $(0) \notin A$, then $(0)
+                % \notin A \cap F_i$ and thus $f^{-1}_i((0)) = A \cap F_i
+                % \subseteq F_i$ also closed.
+
+                % \begin{tikzcd}
+                %     &F_1 \arrow{drr}{g_1} \arrow{r}{f_1} &F_2 \arrow{dr}{g_2}
+                %     \arrow{r}{f_2} &F_3 \arrow{d}{g_3} \arrow{r}{f_3} &F_4
+                %     \arrow{dl}{g_4} \arrow{r}{f_4} &\dots \arrow{dll}{g_i}\\
+                %     && &F
+                % \end{tikzcd}
+
+                % Now we claim that $\Spec(\Z)$ is the inverse limit of this
+                % diagram $(F_i, f_i)$.
+
+                % Define $g_i \colon F_i \rightarrow \Spec(\Z)$ to be the
+                % inclusions. Commutativity of the diagram ($g_i = g_{i+1} \circ
+                % f_i$) is clear, since all maps are inclusions.
+
+                % Take some other topological space $Y$ with $h_i \colon F_i
+                % \rightarrow Y$. Define the map $h \colon \Spec(\Z) \rightarrow
+                % Y$ by mapping $(p_i) \mapsto h_i((p_i))$, i.e. we identify
+                % $(p_i)$ with $(p_i) \in F_i \subseteq F_{i+1} \subseteq \dots$
+                % and then map it by $h_i \colon F_i \rightarrow Y$.
+
+                % To check continuity take a closed set $A \subseteq Y$. By
+                % definition $h^{-1}(A) = \cap $
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    Denote $A = \lim A_i$, $B = \lim B_i$ and $C = \lim C_i$. Also denote maps
+    $A_i \rightarrow A$ with $f_i$, $B_i \rightarrow B$ with $g_i$ and $C_i
+    \rightarrow C$ with $h_i$.
+
+    By composing $\alpha_i$ and $g_i$ we get $A_i \rightarrow B$ defined as $g_i
+    \circ \alpha_i$. Then by the definition of a colimit we have a unique map $A
+    \rightarrow B$, denoted by $\alpha$, such that $g_i \circ \alpha_i = \alpha
+    \circ f_i$. In the same way we obtain $\beta \colon B \rightarrow C$. With
+    these definitions the whole diagram commutes.
+
+\end{exercise}
 
 \end{document}

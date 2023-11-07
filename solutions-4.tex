@@ -124,11 +124,39 @@
     \rightarrow C$ with $h_i$.
 
     By composing $\alpha_i$ and $g_i$ we get $A_i \rightarrow B$ defined as $g_i
-    \circ \alpha_i$. Then by the definition of a colimit we have a unique map $A
-    \rightarrow B$, denoted by $\alpha$, such that $g_i \circ \alpha_i = \alpha
+    \circ \alpha_i$. Then by the definition of a colimit we have a unique map $\alpha:A
+    \rightarrow B$, such that $g_i \circ \alpha_i = \alpha
     \circ f_i$. In the same way we obtain $\beta \colon B \rightarrow C$. With
     these definitions the whole diagram commutes.
-
 \end{exercise}
 
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and $(\phi_U)_{U\in Ouv(X)}, 
+        (\psi_U)_{U\in Ouv(X)}$ morphism of presheaves from $\mathcal{F}$ to $\mathcal{G}$.\\
+        We define for $U\in Ouv(X)$
+        \begin{align*}
+            (\phi+\psi)(U):=\phi(U)+\psi(U).
+        \end{align*}
+        This is indeed a map of presheaves again, because we can
+        restrict $\phi$ and $\psi$ independently.\\
+        The zero object in this category is the presheaf that sends 
+        every open set $U\in Ouv(X)$ to the trivial group $(0,+)$. 
+        It is inital and terminal, because group maps send $0$ to $0$.
+        For this reason the category of presheaves is an additive category
+        and since morphism of sheaves are defined using their underlying
+        presheaves, also the category of sheaves form an additive category.\\
+        We still need to check that kernels and cokernels exist in the 
+        category of Sheaves, so from now on $\mathcal{F},\mathcal{G}$
+        and maps between them we be of sheaves.\\
+        Define 
+        \begin{align*}
+            (ker\phi)(U):=ker\phi(U).
+        \end{align*}
+        We check that this is indeed a presheaf. To do that one has 
+        to check that restrictions behave well.\\
+        Next, one checks that this is indeed a sheaf.
+
+    \end{enumerate}
+\end{exercise}
 \end{document}

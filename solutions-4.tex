@@ -28,25 +28,24 @@
     \end{enumerate}
     
     \begin{enumerate}
-        \item{Let $X$ be a finite irreducible topological space. Since
-            \begin{equation*}
-                X = \bigcup_{x \in X} \overline{\{x\}}
-            \end{equation*}
-            is a finite decomposition in closed sets, we must have
-            $\overline{\{x\}} = X$ for some $x \in X$. This $x$ is a generic
-            point of $X$.
+        \item{
+                Let $X$ be a finite irreducible topological space. Since
+                \begin{equation*} X = \bigcup_{x \in X} \overline{\{x\}}
+                \end{equation*} is a finite decomposition into closed sets, we
+                must have $\overline{\{x\}} = X$ for some $x \in X$. This $x$ is
+                a generic point of $X$.
 
-            If we additionally assumed $X$ is $T_0$, then this point $x$ would
-            be unique, since in a $T_0$ space we have $\overline{\{x\}} \not=
-            \overline{\{y\}}$ for $x \not= y$. Also in a finite space the
-            conditions of quasicompactness and the basis being stable under
-            finite intersections are clearly fulfilled. So finite $T_0$ spaces
-            are spectral.
+                If we additionally assumed $X$ is $T_0$, then this point $x$
+                would be unique, since in a $T_0$ space we have
+                $\overline{\{x\}} \not= \overline{\{y\}}$ for $x \not= y$. Also
+                in a finite space the conditions of quasicompactness and the
+                basis being stable under finite intersections are clearly
+                fulfilled. So finite $T_0$ spaces are spectral.
             }
         \item{
-                Let us first describe what $\Spec(\Z)$ looks like. It is a PID
-                with prime ideals being those $(a)$ for which $a \in \Z$ is a
-                prime number or $a = 0$. So
+                Let us first describe what $\Spec(\Z)$ looks like. The ring $\Z$ a PID
+                with prime ideals being those $(a)$, for which $a \in \Z$ is
+                either a prime number or $a = 0$. So
                 \begin{equation*}
                     \Spec(\Z) = \{ (p) \mid p\ \text{prime} \} \cup \{ (0) \}.
                 \end{equation*}
@@ -59,60 +58,73 @@
                 \end{equation*}
                 So if $a = \Pi_{i} p^{k_i}_i$, then $V((a)) = {\{ (p_i) \}}_i
                 \subseteq \Spec(\Z)$. Since any $a \in \Z$ is only divisible by
-                finitely many prime numbers, we get the finite completement
-                topology on $\Spec(\Z) \setminus \{(0)\}$.
+                finitely many prime numbers, we get the cofinite topology on
+                $\Spec(\Z) \setminus \{(0)\}$.
 
                 Adding generic point $(0)$ to $\Spec(\Z) \setminus \{(0)\}$ is
-                actually the construction $X \rightarrow X^{\text{sob}}$ which
-                we did last week.
+                the construction $X \rightarrow X^{\text{sob}}$ which we did
+                last week.
 
+                So closed sets in $\Spec(\Z)$ are exactly all finite subsets of
+                $\Spec(\Z) \setminus \{(0)\}$, the whole space and the empty
+                set.
 
-                % Let $\mathbb{P} = \{ p_1, p_2, \dots \} \subseteq \N$ be an
-                % ``ordered set'' of prime numbers.
+                Define the diagram with objects
+                \begin{equation*}
+                    F_i := \{ (p_1), \dots, (p_i) \} \cup \{ (0) \}
+                \end{equation*}
+                with subspace topology, as $F_i \subseteq \Spec(\Z)$,
+                and morphisms
+                \begin{equation*}
+                    f_i \colon F_{i+1} \rightarrow F_i
+                \end{equation*}
+                mapping $f_i((p_j)) = (p_j)$ for $j \leq i$ and $f_i((p_{i+1}))
+                = f_i((0)) = (0)$.
 
-                % Construct an inverse limit
-                % \begin{equation*}
-                %     F_i := \{ (p_1), \dots, (p_i) \} \cup \{ (0) \}
-                % \end{equation*}
-                % for $i \in \N$ and
-                % \begin{equation*}
-                %     f_i \colon F_i \xhookrightarrow{} F_{i+1}
-                % \end{equation*}
-                % being subset inclusions. We still have to say what topologies
-                % $F_i$ have and then show that $f_i$ are continuous. Define
-                % closed sets on $F_i$ to be $A \subseteq F_i$ with $(0) \notin
-                % A$, and the whole $F_i$. This basis for closed sets is clearly
-                % stable under finite unions.
+                We view $F_i$ as a subspace of $F_j$ for $i < j$.
 
-                % Now show that $f_i$ are continuous. Take $A \subseteq F_{i+1}$
-                % closed. Then $f^{-1}_i(A) = A \cap F_i$. If $(0) \in A$, then
-                % $(0) \in A \cap F_i$ and therefore $A = F_{i+1}$. Thus
-                % $f^{-1}_i(A) = F_i$ is closed. If $(0) \notin A$, then $(0)
-                % \notin A \cap F_i$ and thus $f^{-1}_i((0)) = A \cap F_i
-                % \subseteq F_i$ also closed.
+                First we have to check that $f_i$ are continuous. Take a closed
+                subset $U \subseteq F_i$. If $(0) \in U$, then $U = F_i$ and
+                $f^{-1}_i(U) = F_{i+1}$. And if $U \subseteq \{ (p_1), \dots,
+                (p_i) \}$, then $f^{-1}_i(U) = \{ (p_1), \dots, (p_i) \}
+                \subseteq F_{i+1}$.
 
-                % \begin{tikzcd}
-                %     &F_1 \arrow{drr}{g_1} \arrow{r}{f_1} &F_2 \arrow{dr}{g_2}
-                %     \arrow{r}{f_2} &F_3 \arrow{d}{g_3} \arrow{r}{f_3} &F_4
-                %     \arrow{dl}{g_4} \arrow{r}{f_4} &\dots \arrow{dll}{g_i}\\
-                %     && &F
-                % \end{tikzcd}
+                We claim $\Spec(\Z)$ is the limit of this diagram. For that we
+                define $\alpha_i \colon \Spec(\Z) \rightarrow F_i$ by
+                $\alpha_i((p_j)) = (p_j)$ for $j \leq i$ and $\alpha_i((p_j)) =
+                \alpha_i((0)) = (0)$ for $j > i$.
+                Clearly we have $\alpha_i = f_i \circ \alpha_{i+1}$.
 
-                % Now we claim that $\Spec(\Z)$ is the inverse limit of this
-                % diagram $(F_i, f_i)$.
+                Suppose now there exists an object $B$ with $\beta_i \colon B
+                \rightarrow F_i$. Define $\alpha \colon B \rightarrow \Spec(\Z)$
+                in the following way. Take $b \in B$ and look at $\beta_i(b)$
+                for different $i = 1, 2, \dots$. If $\beta_i(b) = (0)$ for all
+                $i$, then define $\alpha(b) = (0) \in \Spec(\Z)$. If
+                $\beta_{i_0}(b) \not= (0)$ for some $i_0$, then $\beta_j(b) =
+                \beta_{i_0}(b)$ for all $j > i_0$ using commutativity of the
+                diagram.
 
-                % Define $g_i \colon F_i \rightarrow \Spec(\Z)$ to be the
-                % inclusions. Commutativity of the diagram ($g_i = g_{i+1} \circ
-                % f_i$) is clear, since all maps are inclusions.
+                Lets show that $\alpha$ is continuous. Take a closed subset $A
+                \subseteq \Spec(\Z)$. If $(0) \in A$, then $\alpha^{-1}(A) = B$.
+                Else $A$ is finite subset of $\Spec(\Z) \setminus \{(0)\}$. Then
+                $A$ is contained in some $F_i$ (pick $i$ to be largest such that
+                $(p_i) \in A$) and $(\alpha_i^{-1} \circ \alpha_i)(A) = A$
+                holds. Therefore
+                \begin{equation*}
+                    \alpha^{-1}(A) = (\alpha^{-1} \circ \alpha^{-1}_i \circ
+                    \alpha_i)(A) = (\beta^{-1}_i \circ \alpha_i)(A) =
+                    \beta^{-1}_i(\alpha_i(A)).
+                \end{equation*}
+                The set $\alpha_i(A)$ is a finite subset of $F_i$ that does not
+                contain $(0)$, so it is closed. Since $\beta_i$ is continuous,
+                the set $\alpha^{-1}(A)$ is then closed, which proves continuity
+                of $\alpha$.
 
-                % Take some other topological space $Y$ with $h_i \colon F_i
-                % \rightarrow Y$. Define the map $h \colon \Spec(\Z) \rightarrow
-                % Y$ by mapping $(p_i) \mapsto h_i((p_i))$, i.e. we identify
-                % $(p_i)$ with $(p_i) \in F_i \subseteq F_{i+1} \subseteq \dots$
-                % and then map it by $h_i \colon F_i \rightarrow Y$.
-
-                % To check continuity take a closed set $A \subseteq Y$. By
-                % definition $h^{-1}(A) = \cap $
+                The map $\alpha$ was defined using condition that the diagram
+                must commute. It is clear that any other definition of $\alpha$
+                would not satisfy commutativity conditions $\beta_i = \alpha_i
+                \circ \alpha$ for all $i$. So $\alpha$ was unique and thus
+                $\Spec(\Z)$ is the limit of the constructed diagram.
             }
     \end{enumerate}
 \end{exercise}

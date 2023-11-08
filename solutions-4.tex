@@ -136,7 +136,7 @@
         (\psi_U)_{U\in Ouv(X)}$ morphism of presheaves from $\mathcal{F}$ to $\mathcal{G}$.\\
         We define for $U\in Ouv(X)$
         \begin{align*}
-            (\phi+\psi)(U):=\phi(U)+\psi(U).
+            (\phi+\psi)(U):=\phi(U)\oplus \psi(U).
         \end{align*}
         This is indeed a map of presheaves again, because we can
         restrict $\phi$ and $\psi$ independently.\\
@@ -156,6 +156,36 @@
         We check that this is indeed a presheaf. To do that one has 
         to check that restrictions behave well.\\
         Next, one checks that this is indeed a sheaf.
-    \end{enumerate}
+        \iterate Steht irgendwo in der Vorlesung
+    \item We were inspired by \href{https://math.stackexchange.com/questions/205658/an-easy-way-to-prove-that-epimorphism-of-sheaves-implies-surjectivity-on-stalk?rq=1}{some stack exchange site} 
+        and only worked out some of the details.\\
+    Let $\mathcal{F}, \mathcal{G}$ be sheaves on $X$ and $\phi:\mathcal{F}\to \mathcal{G}$ an 
+    epimorphism on sheaves. We want to show that $\phi_x$ is surjective on each stalk.\\
+    Let $\mathcal{F}$ be the skyscraper sheaf at $x$ with value $\mathcal{G}_x/Im(\phi)$, i.e. for 
+    $U\subset X$ open, we have
+    \begin{equation*}
+        \mathcal{H}(U)=
+        \begin{cases*}
+            \mathcal{G}_x/Im(\phi_x) & \text{if} $x\in U$\\
+            (0,+) & else.
+        \end{cases*}
+    \end{equation*}
+    Also, define
+    \begin{align*}
+        \psi&:\mathcal{G}\to \mathcal{H}\\
+            &f\mapsto \bar{f}_x
+    \end{align*}
+    if f is a section over a set containig x. \\
+    Now assume, that $\phi_x$ is not surjective for all $x\in X$.
+    Then there exists $x\in X$ such that $\phi_x$ is not surjective,
+    meaning $\mathcal{G}_x/Im(\phi_x)$ is not the trivial group. 
+    In this case, the two maps 
+    \begin{align*}
+        (\psi,0),(0,\psi):\mathcal{G}\to \mathcal{H} \oplus \mathcal{H}
+    \end{align*}
+    are not the same since $\mathcal{H}$ is not trivial. However,
+     by construction they are the same if precomposed with $\phi$
+     showing that $\phi$ is not an epimorphism of sheaves.
+\end{enumerate}
 \end{exercise}
 \end{document}

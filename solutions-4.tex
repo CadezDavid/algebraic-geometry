@@ -158,7 +158,41 @@
             that restrictions behave well.
 
             Next, one checks that this is indeed a sheaf.
+
+            Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and $(\phi_U)_{U\in
+            Ouv(X)}, (\psi_U)_{U\in Ouv(X)}$ morphism of presheaves from
+            $\mathcal{F}$ to $\mathcal{G}$.\\ We define for $U\in Ouv(X)$
+            \begin{align*}
+                (\phi+\psi)(U):=\phi(U)\oplus \psi(U),
+            \end{align*}
+            where $\oplus$ is the usual direct sum of groups.
+            This is indeed a map of presheaves again, because we can
+            restrict $\phi$ and $\psi$ independently.\\
+            The zero object in this category is the presheaf that sends 
+            every open set $U\in Ouv(X)$ to the trivial group $(0,+)$. 
+            It is inital and terminal, because group maps send $0$ to $0$.
+            For this reason the category of presheaves is an additive category
+            and since morphism of sheaves are defined using their underlying
+            presheaves, also the category of sheaves form an additive category.\\
+            We still need to check that kernels and cokernels exist in the 
+            category of Sheaves, so from now on $\mathcal{F},\mathcal{G}$
+            and maps between them we be of sheaves.\\
+            Define 
+            \begin{align*}
+                (ker\phi)(U):=ker\phi(U).
+            \end{align*}
+            We check that this is indeed a presheaf. To do that one has 
+            to check that restrictions behave well.\\
+            Next, one checks that this is indeed a sheaf.\\
+            The construction of limits and colimits just works using
+            limits and colimits of the abused groups, but these are a
+            priori just presheaves. To see that the colimit 
+            of sheaves is indeed a sheaf, just
+            remember that by part 4 of proposition 5.7 sheaffification
+            commutes with all colimits, because it is left-ajoint functor.\\
+            Why are the limits already sheaves??
             }
+
         \item{Assume $f \colon \mathcal{F} \rightarrow \mathcal{G}$ is
             surjective on each stalk. Then we can show that $f(U) \colon
             \mathcal{F}(U) \rightarrow \mathcal{G}(U)$ is surjective for each $U
@@ -171,7 +205,36 @@
             subset with $x \in V_x$ for which $f(U)(t_x) \mid_{V_x} = s
             \mid_{V_x}$.
 
-            
+            We were inspired by
+            \href{https://math.stackexchange.com/questions/205658/an-easy-way-to-prove-that-epimorphism-of-sheaves-implies-surjectivity-on-stalk?rq=1}{some
+            stack exchange site} and only worked out some of the details.
+            Let $\mathcal{F}, \mathcal{G}$ be sheaves on $X$ and $\phi:\mathcal{F}\to \mathcal{G}$ an 
+            epimorphism on sheaves. We want to show that $\phi_x$ is surjective on each stalk.\\
+            Let $\mathcal{F}$ be the skyscraper sheaf at $x$ with value $\mathcal{G}_x/Im(\phi)$, i.e. for 
+            $U\subset X$ open, we have
+            \begin{equation*}
+                \mathcal{H}(U)=
+                \begin{cases*}
+                    \mathcal{G}_x/Im(\phi_x) & \text{if} $x\in U$\\
+                    (0,+) & else.
+                \end{cases*}
+            \end{equation*}
+            Also, define
+            \begin{align*}
+                \psi&:\mathcal{G}\to \mathcal{H}\\
+                    &f\mapsto \bar{f}_x
+            \end{align*}
+            if f is a section over a set containig x. \\
+            Now assume, that $\phi_x$ is not surjective for all $x\in X$.
+            Then there exists $x\in X$ such that $\phi_x$ is not surjective,
+            meaning $\mathcal{G}_x/Im(\phi_x)$ is not the trivial group. 
+            In this case, the two maps 
+            \begin{align*}
+                (\psi,0),(0,\psi):\mathcal{G}\to \mathcal{H} \oplus \mathcal{H}
+            \end{align*}
+            are not the same since $\mathcal{H}$ is not trivial. However, by
+            construction they are the same if precomposed with $\phi$ showing that
+            $\phi$ is not an epimorphism of sheaves.
             }\label{ex3.2}
         \item{First prove that $\mathcal{F}$ and $\mathcal{G}$ are sheaves.
 

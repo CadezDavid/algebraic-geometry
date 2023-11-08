@@ -132,30 +132,88 @@
 
 \begin{exercise}{3}
     \begin{enumerate}
-        \item Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and $(\phi_U)_{U\in Ouv(X)}, 
-        (\psi_U)_{U\in Ouv(X)}$ morphism of presheaves from $\mathcal{F}$ to $\mathcal{G}$.\\
-        We define for $U\in Ouv(X)$
-        \begin{align*}
-            (\phi+\psi)(U):=\phi(U)+\psi(U).
-        \end{align*}
-        This is indeed a map of presheaves again, because we can
-        restrict $\phi$ and $\psi$ independently.\\
-        The zero object in this category is the presheaf that sends 
-        every open set $U\in Ouv(X)$ to the trivial group $(0,+)$. 
-        It is inital and terminal, because group maps send $0$ to $0$.
-        For this reason the category of presheaves is an additive category
-        and since morphism of sheaves are defined using their underlying
-        presheaves, also the category of sheaves form an additive category.\\
-        We still need to check that kernels and cokernels exist in the 
-        category of Sheaves, so from now on $\mathcal{F},\mathcal{G}$
-        and maps between them we be of sheaves.\\
-        Define 
-        \begin{align*}
-            (ker\phi)(U):=ker\phi(U).
-        \end{align*}
-        We check that this is indeed a presheaf. To do that one has 
-        to check that restrictions behave well.\\
-        Next, one checks that this is indeed a sheaf.
+        \item{Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and
+            $(\phi_U)_{U\in Ouv(X)}, (\psi_U)_{U\in Ouv(X)}$ morphism of
+            presheaves from $\mathcal{F}$ to $\mathcal{G}$.\\ We define for
+            $U\in Ouv(X)$
+            \begin{align*}
+                (\phi+\psi)(U):=\phi(U)+\psi(U).
+            \end{align*}
+            This is indeed a map of presheaves again, because we can restrict
+            $\phi$ and $\psi$ independently.\\ The zero object in this category
+            is the presheaf that sends every open set $U\in Ouv(X)$ to the
+            trivial group $(0,+)$. It is inital and terminal, because group maps
+            send $0$ to $0$. For this reason the category of presheaves is an
+            additive category and since morphism of sheaves are defined using
+            their underlying presheaves, also the category of sheaves form an
+            additive category.\\ We still need to check that kernels and
+            cokernels exist in the category of Sheaves, so from now on
+            $\mathcal{F},\mathcal{G}$ and maps between them we be of sheaves.
+
+            Define 
+            \begin{align*}
+                (ker\phi)(U):=ker\phi(U).
+            \end{align*}
+            We check that this is indeed a presheaf. To do that one has to check
+            that restrictions behave well.
+
+            Next, one checks that this is indeed a sheaf.
+            }
+        \item{Assume $f \colon \mathcal{F} \rightarrow \mathcal{G}$ is
+            surjective on each stalk. Then we can show that $f(U) \colon
+            \mathcal{F}(U) \rightarrow \mathcal{G}(U)$ is surjective for each $U
+            \in \Ouv^{\text{op}}_X$. Pick $s \in \mathcal{G}(U)$. Then $s_x \in
+            \mathcal{G}_x$ the germ of $s$ at $x$. Since $f_x \colon
+            \mathcal{F}_x \rightarrow \mathcal{G}_x$ is surjective we have a
+            function $t_x \in \mathcal{F}(U)$ such that $f(U)(t_x)$ has the same
+            germ at $x$ as $s$. So $t_x \in \mathcal{F}(U)$ is mapped to a
+            function that is locally at $x$ same as $s$. Denote $V_x$ the open
+            subset with $x \in V_x$ for which $f(U)(t_x) \mid_{V_x} = s
+            \mid_{V_x}$.
+
+            
+            }\label{ex3.2}
+        \item{First prove that $\mathcal{F}$ and $\mathcal{G}$ are sheaves.
+
+            Define a morphism $f \colon \mathcal{F} \rightarrow \mathcal{G}$
+            with $f(U) \colon \mathcal{F}(U) \rightarrow \mathcal{G}(U)$ being
+            the map $s \oplus t \mapsto s \mid_{D_- \cap D_+}$. Note that if $U
+            \cap D_-$ is connected, the map $s \mid_{D_- \cap D_+}$ must assume
+            same value on whole $U \cap D_- \cap D_+$.
+
+            Using part~\ref{ex3.2} it suffices to check that $f_x$ is surjective
+            at every $x \in X$. For $x \notin D_- \cap D_+$, then
+            $\mathcal{G}_x$ is a null group in $AbGrp$, so $f_x$ is surjective.
+            Let now $x = (-1, 0)$.
+
+            Define $U_\epsilon = B_\epsilon(-1, 0) \cap X$. Every neighborhood
+            contains some $U_\epsilon$ for small enough $\epsilon$. So every
+            $\mathcal{F}(U) \rightarrow F_x$ factors through
+            $\mathcal{F}(U_\epsilon)$ for small enough $\epsilon$. We have
+            $\mathcal{F}(U_\epsilon) = \Z \oplus \{0\}$ for small $\epsilon >
+            0$, so $\mathcal{F}_x = \Z$ with morphisms
+            \begin{equation*}
+                \mathcal{F}(U_\epsilon) \rightarrow \mathcal{F}_x
+            \end{equation*}
+            being $a \oplus 0 \mapsto a$. We do exactly the same for
+            $\mathcal{G}$ and we get $\mathcal{G}_x = \Z$. The identity $\id$ is
+            the unique map that makes
+
+            \begin{tikzcd}
+                & \mathcal{F}(U_\epsilon) \arrow{r}{f(U_\epsilon)} \arrow{d} &
+                \mathcal{G}(U_\epsilon) \arrow{d} \\
+                & \mathcal{F}_x \arrow{r}{\id} & \mathcal{G}_x
+            \end{tikzcd}
+
+            commute, so $f_x$ is surjective for $x = (-1, 0)$. We do exactly the
+            same for $x = (1, 0)$. So $f_x$ is surjective for every $x \in X$. By
+            part~\ref{ex3.2}, $\mathcal{F}$ is an epimorphism.
+
+            We have $\mathcal{F}(X) \cong \Z \oplus \Z$ and $\mathcal{G}(X)
+            \cong \Z \oplus \Z$ and the map $f(X)$ as defined above. The image
+            $\im f(X)$ is the diagonal $\triangle \Z \oplus \Z$, so $f(X)$ is
+            not surjective.
+            }
     \end{enumerate}
 \end{exercise}
 \end{document}

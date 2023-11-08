@@ -147,7 +147,7 @@
             additive category and since morphism of sheaves are defined using
             their underlying presheaves, also the category of sheaves form an
             additive category.\\ We still need to check that kernels and
-            cokernels exist in the category of Sheaves, so from now on
+            cokernels exist in the category of sheaves, so from now on
             $\mathcal{F},\mathcal{G}$ and maps between them we be of sheaves.
 
             Define 
@@ -157,7 +157,8 @@
             We check that this is indeed a presheaf. To do that one has to check
             that restrictions behave well.
 
-            Next, one checks that this is indeed a sheaf.
+            Next, one checks that this is indeed a sheaf. For cokernels the construction
+            works very similarly.
 
             Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and $(\phi_U)_{U\in
             Ouv(X)}, (\psi_U)_{U\in Ouv(X)}$ morphism of presheaves from
@@ -185,13 +186,12 @@
             to check that restrictions behave well.\\
             Next, one checks that this is indeed a sheaf.\\
             The construction of limits and colimits just works using
-            limits and colimits of the abused groups, but these are a
+            limits and colimits of the induced groups, but these are a
             priori just presheaves. To see that the colimit 
             of sheaves is indeed a sheaf, just
             remember that by part 4 of proposition 5.7 sheaffification
-            commutes with all colimits, because it is left-ajoint functor.\\
-            Why are the limits already sheaves??
-            }
+            commutes with all colimits, because it is a left-ajoint functor.\\
+            Why are the limits already sheaves?
 
         \item{Assume $f \colon \mathcal{F} \rightarrow \mathcal{G}$ is
             surjective on each stalk. Then we can show that $f(U) \colon
@@ -232,11 +232,11 @@
             \begin{align*}
                 (\psi,0),(0,\psi):\mathcal{G}\to \mathcal{H} \oplus \mathcal{H}
             \end{align*}
-            are not the same since $\mathcal{H}$ is not trivial. However, by
+            are not the same. However, by
             construction they are the same if precomposed with $\phi$ showing that
             $\phi$ is not an epimorphism of sheaves.
             }\label{ex3.2}
-        \item{First prove that $\mathcal{F}$ and $\mathcal{G}$ are sheaves.
+        \item First prove that $\mathcal{F}$ and $\mathcal{G}$ are sheaves.
 
             Define a morphism $f \colon \mathcal{F} \rightarrow \mathcal{G}$
             with $f(U) \colon \mathcal{F}(U) \rightarrow \mathcal{G}(U)$ being
@@ -276,7 +276,7 @@
             \cong \Z \oplus \Z$ and the map $f(X)$ as defined above. The image
             $\im f(X)$ is the diagonal $\triangle \Z \oplus \Z$, so $f(X)$ is
             not surjective.
-            }
+        
     \end{enumerate}
 \end{exercise}
 \end{document}

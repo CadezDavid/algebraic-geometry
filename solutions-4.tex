@@ -279,4 +279,34 @@
             }
     \end{enumerate}
 \end{exercise}
+
+\begin{exercise}{4}
+    Denote the maps
+    \begin{equation*}
+        \varphi \colon \Sh(X) \rightarrow \Sh_B(X)
+    \end{equation*}
+    and
+    \begin{equation*}
+        \mu \colon \Sh_B(X) \rightarrow \Sh(X).
+    \end{equation*}
+    The composite $\varphi \circ \mu$ is the identity on $\Sh_B(X)$.
+
+    We have to prove that $\mu \circ \varphi \colon \Sh(X) \rightarrow \Sh(X)$
+    mapping a functor $F$ to a functor $(U \mapsto \lim_{B \subseteq U} F(B))$
+    is equivalent to the identity.
+
+    Define a natural transformation
+    \begin{equation*}
+        \zeta \colon \id \rightarrow \mu \circ \varphi
+    \end{equation*}
+    which for every $F \in \Sh(X)$ defines a map
+    \begin{equation*}
+        \id(F) = F \longrightarrow (U \mapsto \lim_{B \subseteq U} F(B))
+    \end{equation*}
+    being the unique natural transformation $F(U) \rightarrow \lim_{B \subseteq
+    U} F(B)$ (which exists $F(U) \rightarrow F(B)$ exist for every $B \subseteq
+    U$)
+
+\end{exercise}
+
 \end{document}

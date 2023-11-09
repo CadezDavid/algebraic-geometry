@@ -6,27 +6,27 @@
 \maketitle{}
 
 \begin{exercise}{1}
-    \begin{enumerate}
-        \item Let $X$ be a finite set that is irreducible with 
-        respect to some topology $\mathcal{F}$ on $X$. Then we get
-        $\mid \mathcal{F} \mid<\infty$ and since finite unions of
-        closed sets are closed again, we get that
-        \begin{align*}
-            X^{\prime}:=\bigcup_{U \subsetneq X \text{closed}}{U}
-        \end{align*}
-        is closed in X. Since $X$ is by assumption irreducible,
-        $X\neq X^{\prime}$, so we can pick $x_0\in X \backslash X^{\prime}$,
-        which is by construction generic. For the second part of the exercise we use 
-        part 2 of Hochster's Theorem. As a finite set, $X$ is 
-        quasicompact and as a basis $\mathcal{B}$ consisting of quasicompact 
-        open sets stable under finite intersections take all of the open sets. \\
-        It remains to show that $X$ is sober. We need to check that every irreducible
-        subset of $X$ has a unique generic point. The existence of a generic point comes
-        from part of of this exercise. \\
-        Uniqueness of this point is due to the fact
-        that generic points in $T_0$ spaces are unique if they exist, which follows directly
-        from the definition of $T_0$. 
-    \end{enumerate}
+    % \begin{enumerate}
+    %     \item Let $X$ be a finite set that is irreducible with 
+    %     respect to some topology $\mathcal{F}$ on $X$. Then we get
+    %     $\mid \mathcal{F} \mid<\infty$ and since finite unions of
+    %     closed sets are closed again, we get that
+    %     \begin{align*}
+    %         X^{\prime}:=\bigcup_{U \subsetneq X \text{closed}}{U}
+    %     \end{align*}
+    %     is closed in X. Since $X$ is by assumption irreducible,
+    %     $X\neq X^{\prime}$, so we can pick $x_0\in X \backslash X^{\prime}$,
+    %     which is by construction generic. For the second part of the exercise we use 
+    %     part 2 of Hochster's Theorem. As a finite set, $X$ is 
+    %     quasicompact and as a basis $\mathcal{B}$ consisting of quasicompact 
+    %     open sets stable under finite intersections take all of the open sets. \\
+    %     It remains to show that $X$ is sober. We need to check that every irreducible
+    %     subset of $X$ has a unique generic point. The existence of a generic point comes
+    %     from part of of this exercise. \\
+    %     Uniqueness of this point is due to the fact
+    %     that generic points in $T_0$ spaces are unique if they exist, which follows directly
+    %     from the definition of $T_0$. 
+    % \end{enumerate}
     
     \begin{enumerate}
         \item{Let $X$ be a finite irreducible topological space. Since
@@ -39,10 +39,11 @@
 
             If we additionally assumed $X$ is $T_0$, then this point $x$ would
             be unique, since in a $T_0$ space we have $\overline{\{x\}} \not=
-            \overline{\{y\}}$ for $x \not= y$. Also in a finite space the
-            conditions of quasicompactness and the basis being stable under
-            finite intersections are clearly fulfilled. So finite $T_0$ spaces
-            are spectral.
+            \overline{\{y\}}$ for $x \not= y$. Other conditions are also
+            fulfilled, namely a finite space is always quasicompact. For the
+            basis we can take $B$ to contain all open sets, it is clearly closed
+            under finite intersections and every element is quasicompact. So
+            finite $T_0$ spaces are spectral.
             }
         \item{
                 Let us first describe what $\Spec(\Z)$ looks like. It is a PID
@@ -66,7 +67,6 @@
                 Adding generic point $(0)$ to $\Spec(\Z) \setminus \{(0)\}$ is
                 actually the construction $X \rightarrow X^{\text{sob}}$ which
                 we did last week.
-
 
                 % Let $\mathbb{P} = \{ p_1, p_2, \dots \} \subseteq \N$ be an
                 % ``ordered set'' of prime numbers.
@@ -128,69 +128,95 @@
     \rightarrow B$, such that $g_i \circ \alpha_i = \alpha
     \circ f_i$. In the same way we obtain $\beta \colon B \rightarrow C$. With
     these definitions the whole diagram commutes.
+
+    First look at maps $A_i \rightarrow B_i \rightarrow C_i \rightarrow C$.
+    Since bottom rows are all exact, they are $0$ for all $i$. Since $\beta
+    \circ \alpha$ makes this commute and $0$ does well, by uniqueness of the map
+    $A \rightarrow C$, we get $\beta \circ \alpha = 0$. In this argument we did
+    not use that the colimit is filtered in our case, because it is true in
+    general that colimits are right-exact.
+
+    For left exactness we need to use that we have a filtered colimit.
+    For this part we used Proposition 2 from page 212 of Mac Lane's ``Categories For
+    the Working Mathematician,'' stating ``The forgetful functor $Grp \rightarrow
+    Set$ creates filtered colimits.''
+    Now take $b \in B$ with $\beta(b) = 0$. Using the proposition we know there
+    exists an $i$ and $\overline{b} \in B_i$ for which $g_i(\overline{b}) = b$.
+    Since diagram commutes we have $(h_i \circ \beta_i)(b) = 0$. But since $h_i$
+    maps an element to $0$ if and only if there exists a $C_j$ and $C_i
+    \rightarrow C_j$ (in a diagram) that maps it to $0$, we must have $C_j$ and
+    $\gamma \colon C_i \rightarrow C_j$ (in a diagram) with $\gamma(\beta_i(b))
+    = 0$. Take $B_j$ and the map $\delta \colon B_i \rightarrow B_j$ with
+    $(\beta_j \circ \delta)(\overline{b}) = 0$. Since bottom rows are exact, we
+    have $\overline{a} \in A_j$ with $\alpha_j(\overline{a}) =
+    \delta(\overline{b})$. Then we have $(g_j \circ \alpha_j)(\overline{a}) =
+    b$ and using commutativity of the diagram we get $\alpha(f_j(\overline{a}))
+    = b$, so $b \in \im(\alpha)$.
+
+    This completes the proof of exactness. In it we a little implicitly used the
+    facts that follow from the construction of a colimit in abelian category by
+    first computing the colimit in sets and then defining a structure on that
+    set. But we could not find a way to do this more elegantly without chasing
+    an explicit element around the diagram.
 \end{exercise}
 
 \begin{exercise}{3}
     \begin{enumerate}
-        \item{Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and
-            $(\phi_U)_{U\in Ouv(X)}, (\psi_U)_{U\in Ouv(X)}$ morphism of
-            presheaves from $\mathcal{F}$ to $\mathcal{G}$.\\ We define for
-            $U\in Ouv(X)$
-            \begin{align*}
-                (\phi+\psi)(U):=\phi(U)+\psi(U).
-            \end{align*}
-            This is indeed a map of presheaves again, because we can restrict
-            $\phi$ and $\psi$ independently.\\ The zero object in this category
-            is the presheaf that sends every open set $U\in Ouv(X)$ to the
-            trivial group $(0,+)$. It is inital and terminal, because group maps
-            send $0$ to $0$. For this reason the category of presheaves is an
-            additive category and since morphism of sheaves are defined using
-            their underlying presheaves, also the category of sheaves form an
-            additive category.\\ We still need to check that kernels and
-            cokernels exist in the category of Sheaves, so from now on
-            $\mathcal{F},\mathcal{G}$ and maps between them we be of sheaves.
+        \item{Let $\mathcal{F}, \mathcal{G} \in \Sh_{\text{Ab}}(X)$ and $\phi,
+            \psi \colon \mathcal{F} \rightarrow \mathcal{G}$ morphisms of
+            sheaves.
 
-            Define 
-            \begin{align*}
-                (ker\phi)(U):=ker\phi(U).
-            \end{align*}
-            We check that this is indeed a presheaf. To do that one has to check
-            that restrictions behave well.
+            We define $\phi + \psi$ to be a morphism of sheaves defined by
+            \begin{equation*}
+                (\phi+\psi)(U):=\phi(U) + \psi(U) \colon \mathcal{F}(U)
+                \rightarrow \mathcal{G}(U).
+            \end{equation*}
+            for every $U \in \Ouv^{\text{op}}_X$. So its just a sum of
+            homomorphisms of abelian groups. It is clear that this still defines
+            a natural transformation (i.e. a morphism) in $\Sh_{\text{Ab}}(X)$.
 
-            Next, one checks that this is indeed a sheaf.
+            The zero object in this category is the sheaf that sends every open
+            set $U \in \Ouv^{\text{op}}_X$ to the trivial group $(0,+)$. It is
+            inital and terminal, because the trivial group is a zero object in
+            the category of abelian groups. For this reason the category of
+            sheaves is an additive category.
 
-            Let $\mathcal{F}, \mathcal{G}$ be presheaves on $X$ and $(\phi_U)_{U\in
-            Ouv(X)}, (\psi_U)_{U\in Ouv(X)}$ morphism of presheaves from
-            $\mathcal{F}$ to $\mathcal{G}$.\\ We define for $U\in Ouv(X)$
-            \begin{align*}
-                (\phi+\psi)(U):=\phi(U)\oplus \psi(U),
-            \end{align*}
-            where $\oplus$ is the usual direct sum of groups.
-            This is indeed a map of presheaves again, because we can
-            restrict $\phi$ and $\psi$ independently.\\
-            The zero object in this category is the presheaf that sends 
-            every open set $U\in Ouv(X)$ to the trivial group $(0,+)$. 
-            It is inital and terminal, because group maps send $0$ to $0$.
-            For this reason the category of presheaves is an additive category
-            and since morphism of sheaves are defined using their underlying
-            presheaves, also the category of sheaves form an additive category.\\
-            We still need to check that kernels and cokernels exist in the 
-            category of Sheaves, so from now on $\mathcal{F},\mathcal{G}$
-            and maps between them we be of sheaves.\\
-            Define 
-            \begin{align*}
-                (ker\phi)(U):=ker\phi(U).
-            \end{align*}
-            We check that this is indeed a presheaf. To do that one has 
-            to check that restrictions behave well.\\
-            Next, one checks that this is indeed a sheaf.\\
-            The construction of limits and colimits just works using
-            limits and colimits of the abused groups, but these are a
-            priori just presheaves. To see that the colimit 
-            of sheaves is indeed a sheaf, just
-            remember that by part 4 of proposition 5.7 sheaffification
-            commutes with all colimits, because it is left-ajoint functor.\\
-            Why are the limits already sheaves??
+            Instead of checking for kernels and cokernels, we simply check for
+            all limits and colimits, of which they are a special case.
+
+            Let us check that it has limits and colimits. Let $F_i$ be some
+            diagram in $\Sh_{\text{Ab}}(X)$. Define a limit of this diagram to
+            be a sheaf $F$ which maps $U \in \Ouv^{\text{op}}_X$ to $\lim_i
+            F_i(U)$. So for each $U$ we let $F(U)$ be the limit of a diagram
+            $F_i(U)$ (which we know exist because its in the category of abelian
+            groups).
+
+            Check that $F$ this is actually a limit in $\Sh_{\text{Ab}}(X)$. Let
+            $G$ be some other presheaf with maps $G \rightarrow F_i$. Then for
+            every $U \in \Ouv^{\text{op}}_X$ we have maps $G(U) \rightarrow
+            F_i(U)$, so this cone factors uniquely through $F(U)$. This gives
+            rise to a morphism $G \rightarrow F$. So $F$ is indeed a limit.
+
+            Now we check that $F$ is a presheaf. Let $U \rightarrow V$. Then we
+            have maps $F_i(U) \rightarrow F_i(V)$. Composing them with $F(U)
+            \rightarrow F_i(U)$ gives maps $F(U) \rightarrow F_i(V)$. By the
+            definition of a limit there exists a unique map $F(U) \rightarrow
+            F(V)$. This proves that $F$ is indeed a presheaf.
+
+            Now sheafify $F$ to get a sheaf $\overline{F} \in
+            \Sh_{\text{Ab}}(X)$. Since $F_i$ are sheaves, the maps $F
+            \rightarrow F_i$ uniquely factors through $\overline{F}$. For any
+            sheaf $G$ and a cone $G \rightarrow F_i$, we can look at this inside
+            the category of presheaves and find a unique map $F \rightarrow G$.
+            But since $G$ is a sheaf, it factors through $\overline{F}$ and we
+            get a unique map $\overline{F} \rightarrow G$. This proves that
+            $\overline{F}$ is a limit of $F_i \in \Sh_{\text{Ab}}(X)$.
+
+            For colimits everything works exactly the same, except all arrows
+            are reversed.
+
+            Maybe some parts of this proof follow from some more elegant
+            argument using adjoints and forgetful functors.
             }
 
         \item{Assume $f \colon \mathcal{F} \rightarrow \mathcal{G}$ is
@@ -203,19 +229,22 @@
             germ at $x$ as $s$. So $t_x \in \mathcal{F}(U)$ is mapped to a
             function that is locally at $x$ same as $s$. Denote $V_x$ the open
             subset with $x \in V_x$ for which $f(U)(t_x) \mid_{V_x} = s
-            \mid_{V_x}$.
+            \mid_{V_x}$. So we have a cover $X = \cup_x V_x$. Using that
+            $\mathcal{F}$ is a sheaf we can find an element $t$ such that
+            $f(U)(t) = s$. That proves one implication.
 
             We were inspired by
             \href{https://math.stackexchange.com/questions/205658/an-easy-way-to-prove-that-epimorphism-of-sheaves-implies-surjectivity-on-stalk?rq=1}{some
-            stack exchange site} and only worked out some of the details.
-            Let $\mathcal{F}, \mathcal{G}$ be sheaves on $X$ and $\phi:\mathcal{F}\to \mathcal{G}$ an 
-            epimorphism on sheaves. We want to show that $\phi_x$ is surjective on each stalk.\\
-            Let $\mathcal{F}$ be the skyscraper sheaf at $x$ with value $\mathcal{G}_x/Im(\phi)$, i.e. for 
-            $U\subset X$ open, we have
+            stack exchange site} and only worked out some of the details. Let
+            $\mathcal{F}, \mathcal{G}$ be sheaves on $X$ and
+            $\phi:\mathcal{F}\to \mathcal{G}$ an epimorphism on sheaves. We want
+            to show that $\phi$ is surjective on each stalk.\\ Let $\mathcal{F}$
+            be the skyscraper sheaf at $x$ with value $\mathcal{G}_x/\im(\phi_x)$,
+            i.e. for $U\subset X$ open, we have
             \begin{equation*}
-                \mathcal{H}(U)=
+                \mathcal{F}(U)=
                 \begin{cases*}
-                    \mathcal{G}_x/Im(\phi_x) & \text{if} $x\in U$\\
+                    \mathcal{G}_x/\im(\phi_x) & \text{if} $x\in U$\\
                     (0,+) & else.
                 \end{cases*}
             \end{equation*}
@@ -227,15 +256,16 @@
             if f is a section over a set containig x. \\
             Now assume, that $\phi_x$ is not surjective for all $x\in X$.
             Then there exists $x\in X$ such that $\phi_x$ is not surjective,
-            meaning $\mathcal{G}_x/Im(\phi_x)$ is not the trivial group. 
+            meaning $\mathcal{G}_x/\im(\phi_x)$ is not the trivial group. 
             In this case, the two maps 
             \begin{align*}
                 (\psi,0),(0,\psi):\mathcal{G}\to \mathcal{H} \oplus \mathcal{H}
             \end{align*}
-            are not the same since $\mathcal{H}$ is not trivial. However, by
+            are not the same. However, by
             construction they are the same if precomposed with $\phi$ showing that
             $\phi$ is not an epimorphism of sheaves.
             }\label{ex3.2}
+
         \item{First prove that $\mathcal{F}$ and $\mathcal{G}$ are sheaves.
 
             Define a morphism $f \colon \mathcal{F} \rightarrow \mathcal{G}$
@@ -274,7 +304,7 @@
 
             We have $\mathcal{F}(X) \cong \Z \oplus \Z$ and $\mathcal{G}(X)
             \cong \Z \oplus \Z$ and the map $f(X)$ as defined above. The image
-            $\im f(X)$ is the diagonal $\triangle \Z \oplus \Z$, so $f(X)$ is
+            $\im f(X)$ is the diagonal $\triangle (\Z \oplus \Z)$, so $f(X)$ is
             not surjective.
             }
     \end{enumerate}
@@ -305,8 +335,7 @@
     \end{equation*}
     being the unique natural transformation $F(U) \rightarrow \lim_{B \subseteq
     U} F(B)$ (which exists $F(U) \rightarrow F(B)$ exist for every $B \subseteq
-    U$)
-
+    U$).
 \end{exercise}
 
 \end{document}

@@ -40,8 +40,11 @@
         behaves well with restricting to $U_i.$\\
         For $U\subset X$ open, let 
         \begin{align*}
-            \mathcal{O}_X(U):=ker(\mathcal{O}_{U_1}(\pi^{-1}(U))\oplus \mathcal{O}_{U_2}(\pi^{-1}(U)) \to \mathcal{O}_{U_1}(\pi^{-1}(U) \cap U_1)\\
-            (x,y) \mapsto x_{\mid \pi^{-1}(U)\cap V_1}-\varphi^\sharp (\pi_2^{-1}(U)\cap V_2)(y_{\mid \pi_2^{-1}(U)\cap V_2})),
+            \mathcal{O}_X(U):= \ker (\mathcal{O}_{U_1}(\pi^{-1}(U))\oplus
+            \mathcal{O}_{U_2}(\pi^{-1}(U)) \to \mathcal{O}_{U_1}(\pi^{-1}(U)
+            \cap U_1)\\ (x,y) \mapsto x_{\mid \pi^{-1}(U)\cap
+            V_1}-\varphi^\sharp (\pi_2^{-1}(U)\cap V_2)(y_{\mid
+            \pi_2^{-1}(U)\cap V_2}) ),
         \end{align*}
             where the substraction in the above term comes from the group
             structure of $\mathcal{O}_{U_1}(\pi^{-1}(U)\cap V_1)$. This is of course
@@ -76,4 +79,92 @@
 
     \end{enumerate}
 \end{exercise}
+
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item{Take two isomorphic open immersions $(Z, \mathcal{O}_Z)$ and $(W,
+            \mathcal{O}_W)$ as schemes over $(Y, \mathcal{O}_Y)$. So we have a
+            commutative diagram
+
+            \begin{tikzcd}
+                & (Z, \mathcal{O}_Z) \arrow[hookrightarrow]{r} \arrow{d}{\cong}
+                & (Y, \mathcal{O}_Y) \\
+                & (W, \mathcal{O}_W) \arrow[hookrightarrow]{ur}
+            \end{tikzcd}
+
+            from which we get a diagram of topological spaces
+
+            \begin{tikzcd}
+                & Z \arrow[hookrightarrow]{r} \arrow{d}{\cong} & Y \\
+                & W \arrow[hookrightarrow]{ur}
+            \end{tikzcd}
+
+            from which it clearly follows that $Z$ and $W$ must be equal as
+            sets.
+
+            For the other way, we want to show that for every open $Z \subseteq
+            Y$ there is a unique sheaf $\mathcal{O}_Z$ for which $(\varphi,
+            \varphi^\#) \colon (Z, \mathcal{O}_Z) \hookrightarrow (Y,
+            \mathcal{O}_Y)$ is an open embedding. Take any two sheaves
+            $\mathcal{O}_Z$ and $\mathcal{O}'_Z$ on $Z$ for which $(\mu, \mu^\#)
+            \colon (Z, \mathcal{O}'_Z) \hookrightarrow (Y, \mathcal{O}_Y)$ is
+            also open embedding. Then by definition of an open embedding we have
+            isomorphisms $\mu^{-1}\mathcal{O}_Y \rightarrow \mathcal{O}_Z$ and
+            $\varphi^{-1}\mathcal{O}_Y \rightarrow \mathcal{O}'_Z$. But
+            $\varphi^{-1}\mathcal{O}_Y$ and $\mu^{-1}\mathcal{O}_Y$ are the
+            same, since $\varphi = \mu$, so $\mathcal{O}'_Z \cong
+            \mathcal{O}_Z$. As for the existence: there clearly exists such a
+            sheaf $\mathcal{O}_Z$ simply by taking a restriction
+            $\mathcal{O}_Y\mid_Z$. But (as it says in Davies/Scholze notes) it
+            is not obvious. We have to show that we can cover $Z$ with open
+            subsets, where each of them is isomorphic to an affine scheme. Let
+            $Y = \cup_i Y_i$, where $Y_i \cong \Spec B_i$. Then for every point
+            $x \in Z$ we choose $i$ such that $x \in Y_i \cap Z$. That means
+            there exists some $f \in B_i$ such that $x \in D_{Y_i}(f) \subseteq
+            V_i \cap U$. Since $D_{Y_i}(f) \cong B_[f^{-1}]$, we found a
+            neighborhood of $x \in Z$ that is isomorphic to an affince scheme.
+            We can do that for every $x \in Z$ and thus cover it. So $Z$ is
+            itself a scheme.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    \begin{enumerate}
+        \item{Let $F \colon C \rightarrow D$ be a functor with adjoints $G, G'
+            \colon D \rightarrow C$. By the definition of adjointness, for every
+            arrow $f \colon Fc \rightarrow d$ we have unique arrows $\phi f
+            \colon c \rightarrow Gd$ and $\mu f \colon c \rightarrow G'd$, such
+            that $\phi$ and $\mu$ are natural. In this case take some $d \in D$
+            and $c = Gd$. Then we have a unique arrow $Gd \rightarrow G'd$.
+
+            We just have to show this is natural in $d$, so pick some other $e
+            \in D$ and $FGe \rightarrow e$. Same as before we get an arrow $Gb
+            \rightarrow G'b$. Using adjointness we have a commutative diagram
+
+            \begin{tikzcd}
+                &FGa \arrow{r} \arrow{d} &a \arrow{d} \\
+                &FGb \arrow{r} &b
+            \end{tikzcd}
+
+            Then, using the naturality of $\mu$ gives that
+            \begin{equation*}
+                \mu(FGa \rightarrow a \rightarrow b) = Ga \rightarrow G'a
+                \rightarrow G'b
+            \end{equation*}
+            and
+            \begin{equation*}
+                \mu(FGa \rightarrow FGb \rightarrow b) = Ga \rightarrow Gb
+                \rightarrow G'b
+            \end{equation*}
+
+            Which proves that $a \mapsto (Ga \rightarrow G'a)$ is natural.
+            We could easily construct an inverse $a \mapsto (G'a \rightarrow
+            Ga)$ which would compose to identity.}
+    \item{
+        }
+    \end{enumerate}
+\end{exercise}
+
 \end{document}

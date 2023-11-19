@@ -20,10 +20,64 @@
     \begin{align*}
         (\phi \circ \pi_1)^{-1}(S_{i,j})=U_i \times_{S_{i,j}} V_j  =: Z_{i,j}
     \end{align*}
-    is open as the preimage of an open set under a continuous map. By the second 
-    part of exercise sheet 5, this induces a subset $(Z_{i,j},\mathcal{O}_Z_{i,j})$ of $X \times_S Y$ 
-    as locally ringed spaces.
+    is open as the preimage of an open set under a continuous map. By the second
+    part of exercise sheet 5, this induces a subset
+    $(Z_{i,j},\mathcal{O}_{Z_{i,j}})$ of $X \times_S Y$ as locally
+    ringed spaces.
     \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{3}
+    By definition we have to compute a fibred product of $\Spec(B) \to \Spec(A)$
+    and $\Spec(k(p)) \to \Spec(A)$ (where $k(p)$ is the residue field of $p \in
+    \Spec(A)$ and $\to$ is the canonical inclusion). Since we are dealing with
+    affine schemes, we can express it concretely as $\Spec(B \otimes_A k(p))$.
+    Note that $B$ has the structure of an $A$-algebra, which is induced
+    by the starting morphism of schemes $\Spec(B) \rightarrow \Spec(A)$.
+    So this exercise reduces to computing these tensor products.
+    
+    We also observe that $k[T]$ is a PID, which means every non-zero prime ideal
+    is a maximal ideal. This will be handy when computing residue fields,
+    because after quotienting with a non-zero ideal we already get a field (we do
+    not have to further take the quotient field).
+
+    \begin{enumerate}[a)]
+        \item{In the first example we do now even have to calculate the tensor
+            product, because we can rewrite $k[T, U]/(TU - 1) = k[T, T^{-1}]$,
+            so this is just a localization of $k[T]$. Morphism of spectrums,
+            induced by inclusion into localization, is an open immersion, so
+            fibers will be singletons if $x \in D(T)$ and empty sets otherwise.
+            And the structure sheaf is also clear, it is just the restriction of
+            structure sheaf $\mathcal{O}_\Spec(k[T])$.}
+        \item{}
+        \item{}
+        \item{}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    Take $U = D(f)$ for some $f \in A$ and let $U = \cup_i D(f_i)$ be some
+    cover. We have to check that 
+    \begin{equation*}
+        M[f^{-1}] \rightarrow \Eq\left[ \prod_i M[f^{-1}_i] \rightrightarrows
+        \prod_{i, j} M[(f_i f_j)^{-1}]  \right]
+    \end{equation*}
+    is isomorphism.
+
+    This proof is exactly the same as when we proved that
+    $\mathcal{O}_{\Spec(A)}$ is a sheaf, after we defined it the basis of
+    principal opens.
+
+    Then proved that $A = \Eq\left[ \prod_i A[f^{-1}_i] \rightrightarrows
+    \prod_{i, j} A[(f_i f_j)^{-1}]  \right]$ where $\Spec(A) = \cup_i
+    D(f_i)$ is a cover.
+
+    We can simply tensor the whole diagram and, since tensor product commute
+    with direct limits, we have that
+    \begin{equation*}
+        M = \Eq\left[ \prod_i M \otimes_A A[f^{-1}_i] \rightrightarrows \prod_{i, j}
+        M \otimes_A A[(f_i f_j)^{-1}]  \right].
+    \end{equation*}
 \end{exercise}
 
 \end{document}

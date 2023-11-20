@@ -27,6 +27,73 @@
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}{2}
+    %TODO add remark about previous exercise
+    \begin{enumerate}
+        \item{
+            First let $f \colon X \rightarrow S$ be open immersion. In this case
+            we can directly use previous exercise on the following fibred
+            product
+                      
+            \begin{center}
+            \begin{tikzcd}
+                &S \arrow{r}{\id} &S \\
+                &S \times_S S' \arrow{r}{q} \arrow{u}{p} &S' \arrow{u}{g}
+            \end{tikzcd}
+            \end{center}
+
+            by taking subset of $X \subseteq S$ and immediately getting open
+            immersion $X \times_S S' \rightarrow S \times_S S'$, which we
+            postcompose with canonical isomorphism $S \times_S S' \rightarrow
+            S'$ and get that $X \times_S S' \rightarrow S'$ is open immersion.
+
+            Now suppose $f \colon X \rightarrow S$ is a closed immersion. So we
+            have the following diagram
+
+            \begin{center}
+            \begin{tikzcd}
+                &X \arrow{r}{f} &S \\
+                &X \times_S S' \arrow{r}{q} \arrow{u}{p} &S' \arrow{u}{g}
+            \end{tikzcd}
+            \end{center}
+
+            We want to show $X \times_S S' \rightarrow S'$ is also a closed
+            immersion. For that it satisfies to find an open covering of $S'$
+            with affine subschemes such that preimages with be also affine schemes
+            and induced maps of rings surjective.
+
+            Take $s \in S'$ and a neighborhood $g(s) \in \Spec(R) = U \subseteq
+            S$. Preimage $f^{-1}(U) = \Spec(A)$ already is affine, since $f$ is
+            closed immersion, and for $g^{-1}(U)$ we have to take some smaller
+            affine neighborhood of $s$. So we get $s \in \Spec(B) \subseteq
+            g^{-1}(U)$. Then use previous exercise on these open sets and obtain
+            open immersion
+            \begin{equation*}
+                \Spec(A) \times_{\Spec(R)} \Spec(B) = \Spec(A \otimes_R B)
+                \rightarrow X \times_S S'.
+            \end{equation*}
+            By remark at the start we have
+            \begin{equation*}
+                \Spec(A \otimes_R B) = p^{-1}(\Spec(A)) \cap q^{-1}(\Spec(B)) =
+                q^{-1}(\Spec(B)).
+            \end{equation*}
+            Only thing to argue is why the map $B \rightarrow A \otimes_R B$ is
+            surjective. We have the following diagram
+
+            \begin{center}
+            \begin{tikzcd}
+                &R \arrow{d} \arrow[twoheadrightarrow]{r} &A \arrow{d} \\
+                &B \arrow{r} &A \otimes_R B
+            \end{tikzcd}
+            \end{center}
+
+            Clearly bottom arrow is also surjective, which we can check by
+            explicit computation.
+            }
+        \item{}
+    \end{enumerate}
+\end{exercise}
+
 \begin{exercise}{3}
     By definition we have to compute a fibred product of $\Spec(B) \to \Spec(A)$
     and $\Spec(k(p)) \to \Spec(A)$ (where $k(p)$ is the residue field of $p \in
@@ -48,7 +115,7 @@
             induced by inclusion into localization, is an open immersion, so
             fibers will be singletons if $x \in D(T)$ and empty sets otherwise.
             And the structure sheaf is also clear, it is just the restriction of
-            structure sheaf $\mathcal{O}_\Spec(k[T])$.}
+            structure sheaf $\mathcal{O}_{\Spec(k[T])}$.}
         \item{}
         \item{}
         \item{}
@@ -72,12 +139,6 @@
     \prod_{i, j} A[(f_i f_j)^{-1}]  \right]$ where $\Spec(A) = \cup_i
     D(f_i)$ is a cover.
 
-    We can simply tensor the whole diagram and, since tensor product commute
-    with direct limits, we have that
-    \begin{equation*}
-        M = \Eq\left[ \prod_i M \otimes_A A[f^{-1}_i] \rightrightarrows \prod_{i, j}
-        M \otimes_A A[(f_i f_j)^{-1}]  \right].
-    \end{equation*}
 \end{exercise}
 
 \end{document}

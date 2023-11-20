@@ -35,6 +35,21 @@
         \begin{align*}
            \bigcup_{i,j}\left(U_i\times_{S_{i,j}}V_j\right)\cong U_i\times_{S_{i,j}}V_j.
         \end{align*}
+
+        I guess this is a good step in the direction of understanding
+        why the pullback in the category of sheaves exists, right? If 
+        we assume $X, Y, S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be
+        affine schemes, then by the above argument we found a cover
+        of $X\times_S Y$ by affine schemes.
+        \item Surjectivity follows, because a pullback of schemes
+        in partiular makes
+        \begin{center}
+            \begin{tikzcd}
+                &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
+                &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
+            \end{tikzcd}
+        \end{center}
+        commute for all $\psi, \phi$ from maps of schemes.
     \end{enumerate}
 \end{exercise}
 

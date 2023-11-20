@@ -11,19 +11,45 @@
         we have the following commutative diagram
         \begin{center}
             \begin{tikzcd}
-                U_i \times_{S_{i,j}} V_j \arrow{r}{\pi_2}\arrow{d}{\pi_1} & V_j\arrow{d}{\psi}\\
-                U_i \arrow{r}{\phi} & S_{i,j}\subset X \times_S Y
+                U_i\times_{S_{i,j}}V_j\arrow[dotted]{dr}\arrow[bend right]{ddr}{p}\arrow[bend left]{rrd}{q}\\
+                &X \times_S Y \arrow{r}{\pi_2}\arrow{d}{\pi_1} & V_j\arrow{d}{\psi}\\
+                &U_i \arrow{r}{\phi} & S_{i,j}
             \end{tikzcd}
         \end{center}
+        Therefore, on the level of sets,
+        \begin{align*}
+            U_i\times_{S_{i,j}}V_j \subset X \times_S Y,
+        \end{align*}
+        but in exercise 5.2.1, we showed that this induces 
+        an open immersion as locally ringed spaces.
 
-    Now 
-    \begin{align*}
-        (\phi \circ \pi_1)^{-1}(S_{i,j})=U_i \times_{S_{i,j}} V_j  =: Z_{i,j}
-    \end{align*}
-    is open as the preimage of an open set under a continuous map. By the second
-    part of exercise sheet 5, this induces a subset
-    $(Z_{i,j},\mathcal{O}_{Z_{i,j}})$ of $X \times_S Y$ as locally
-    ringed spaces.
+        Now observe that 
+        \begin{center}
+            \begin{tikzcd}
+               &\bigcup_{i,j}\left(U_i\times_{S_{i,j}}V_j\right)\arrow{r}\arrow{d} & Y\arrow{d}\\
+                &X \arrow{r} & S
+            \end{tikzcd}
+        \end{center}
+        commutes, because $S=\bigcup_{i,j}S_{i,j}$.
+        Now by uniqueness of the pullback, 
+        \begin{align*}
+           \bigcup_{i,j}\left(U_i\times_{S_{i,j}}V_j\right)\cong U_i\times_{S_{i,j}}V_j.
+        \end{align*}
+
+        I guess this is a good step in the direction of understanding
+        why the pullback in the category of sheaves exists, right? If 
+        we assume $X, Y, S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be
+        affine schemes, then by the above argument we found a cover
+        of $X\times_S Y$ by affine schemes.
+        \item Surjectivity follows, because a pullback of schemes
+        in partiular makes
+        \begin{center}
+            \begin{tikzcd}
+                &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
+                &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
+            \end{tikzcd}
+        \end{center}
+        commute for all $\psi, \phi$ from maps of schemes.
     \end{enumerate}
 \end{exercise}
 
@@ -108,7 +134,7 @@
     because after quotienting with a non-zero ideal we already get a field (we do
     not have to further take the quotient field).
 
-    \begin{enumerate}[a)]
+    \begin{enumerate}
         \item{In the first example we do now even have to calculate the tensor
             product, because we can rewrite $k[T, U]/(TU - 1) = k[T, T^{-1}]$,
             so this is just a localization of $k[T]$. Morphism of spectrums,

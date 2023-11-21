@@ -45,9 +45,9 @@
         of $X\times_S Y$ by affine schemes.
 
     \item[1 (alternative)]{
-            Let $U \subseteq X$, $V \subseteq Y$ and $W \subseteq S$. By the
-            universal property of the fiber product of locally ringed spaces, we
-            have the following commutative diagram
+            Let $U \subseteq X$, $V \subseteq Y$ and $W \subseteq S$ open
+            subschemes. By the universal property of the fiber product of
+            locally ringed spaces, we have the following commutative diagram
             \begin{center}
                 \begin{tikzcd}
                     &U\times_W V \arrow[dotted]{dr} \arrow{d}{p} \arrow{r}{q} &V
@@ -109,15 +109,27 @@
             S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be affine schemes, then by
             the above argument we found a cover of $X\times_S Y$ by affine schemes.}
 
-        \item Surjectivity follows, because a pullback of schemes
-        in partiular makes
-        \begin{center}
-            \begin{tikzcd}
-                &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
-                &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
-            \end{tikzcd}
-        \end{center}
-        commute for all $\psi, \phi$ from maps of schemes.
+        \item{
+                If $X = \Spec(A), Y = \Spec(B), Z = \Spec(R)$ were affine
+                schemes, we would have homeomorphism, since $\Spec(A \otimes_R
+                B) = \Spec(A) \times_{\Spec(R)} \Spec(B)$.
+                But in schemes (using that the fiber product is also a scheme)
+                we locally have an isomorphism, which is means the map must be
+                surjective.
+
+                Concretely:
+                %TODO
+
+            % Surjectivity follows, because a pullback of schemes in partiular
+            % makes
+            % \begin{center}
+            %     \begin{tikzcd}
+            %         &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
+            %         &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
+            %     \end{tikzcd}
+            % \end{center}
+            % commute for all $\psi, \phi$ from maps of schemes.
+        }
     \end{enumerate}
 \end{exercise}
 

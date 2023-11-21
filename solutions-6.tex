@@ -10,6 +10,8 @@
         \item By the universal property of the fiber product of locally ringed spaces,
         we have the following commutative diagram
         \begin{center}
+            %TODO I think U_i should be X and V_j should be Y. Maps XxY -> U_i
+            %and XxY -> V_j dont necessarily exist.
             \begin{tikzcd}
                 U_i\times_{S_{i,j}}V_j\arrow[dotted]{dr}\arrow[bend right]{ddr}{p}\arrow[bend left]{rrd}{q}\\
                 &X \times_S Y \arrow{r}{\pi_2}\arrow{d}{\pi_1} & V_j\arrow{d}{\psi}\\
@@ -41,6 +43,72 @@
         we assume $X, Y, S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be
         affine schemes, then by the above argument we found a cover
         of $X\times_S Y$ by affine schemes.
+
+    \item[1 (alternative)]{
+            Let $U \subseteq X$, $V \subseteq Y$ and $W \subseteq S$. By the
+            universal property of the fiber product of locally ringed spaces, we
+            have the following commutative diagram
+            \begin{center}
+                \begin{tikzcd}
+                    &U\times_W V \arrow[dotted]{dr} \arrow{d}{p} \arrow{r}{q} &V
+                    \arrow[hook]{dr} \\
+                    &U \arrow[hook]{dr} &X \times_S Y
+                    \arrow{r}{\pi_2}\arrow{d}{\pi_1} &Y \arrow{d}{\psi}\\
+                    &&X \arrow{r}{\phi} &S
+                \end{tikzcd}
+            \end{center}
+            so we get a unique map
+            $U \times_W V \rightarrow X \times_S Y$.
+
+            Observe the concrete space $\pi^{-1}_1(U) \cap \pi^{-1}_2(V)$ with
+            inclusion
+            \begin{equation*}
+                \pi^{-1}_1(U) \cap \pi^{-1}_2(V) \hookrightarrow X \times_S Y
+            \end{equation*}
+            also satisfies the universal property of being a fibred product
+            $U \times_S V$. If $T \to U$ and $T \to V$ such that
+            $T \to U \to W = T \to V \to W$, then
+            we can create the following diagram
+            \begin{center}
+                \begin{tikzcd}
+                    &T \arrow[dotted]{dr} \arrow{d}{p} \arrow{r}{q} &V
+                    \arrow[hook]{dr} \\
+                    &U \arrow[hook]{dr} &X \times_S Y
+                    \arrow{r}{\pi_2}\arrow{d}{\pi_1} &Y \arrow{d}{\psi}\\
+                    &&X \arrow{r}{\phi} &S
+                \end{tikzcd}
+            \end{center}
+            from which we get a unique map $T \to X \times_S Y$. Since its image
+            is contained in $\pi^{-1}_1(U) \cap \pi^{-1}_2(V)$, it factors
+            uniquely through
+            \begin{equation*}
+                T \to \pi^{-1}_1(U) \cap \pi^{-1}_2(V) \hookrightarrow X
+                \times_S Y
+            \end{equation*}
+
+            % also $T \to U \to X \to S = T
+            % \to V \to Y \to S$. So by the universal property of fibred product
+            % $X \times_S Y$ we get a unique map $T \to X \times_S Y$. Since $T
+            % \to U \to X = T \to X \times_S \to X$ and same for $Y$, the image
+            % of $T \to X \times_S Y$ is contained in $\pi^{-1}_1(U) \cap
+            % \pi^{-1}_2(V)$.
+
+            Therefore, the fibre product $U \times_W V$ can be identified as an
+            open subspace $\pi^{-1}_1(U) \cap \pi^{-1}_2(V) \subseteq X \times_S
+            Y$.
+
+            Then clearly for coverings $X = \cup_i U_i$, $Y = \cup_i V_i$ and $S =
+            \cup_{i, j} S_{i, j}$, we have a covering
+            \begin{equation*}
+                \bigcup_{i, j} U_i \times_{S_{i, j}} V_j = \bigcup_{i, j}
+                (\pi^{-1}_1(U_i) \cap \pi^{-1}_2(V_j)) = X \times_S Y.
+            \end{equation*}
+
+            I guess this is a good step in the direction of understanding why the
+            pullback in the category of schemes exists, right? If we assume $X, Y,
+            S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be affine schemes, then by
+            the above argument we found a cover of $X\times_S Y$ by affine schemes.}
+
         \item Surjectivity follows, because a pullback of schemes
         in partiular makes
         \begin{center}
@@ -104,18 +172,9 @@
                 q^{-1}(\Spec(B)).
             \end{equation*}
             Only thing to argue is why the map $B \rightarrow A \otimes_R B$ is
-            surjective. We have the following diagram
-
-            \begin{center}
-            \begin{tikzcd}
-                &R \arrow{d} \arrow[twoheadrightarrow]{r} &A \arrow{d} \\
-                &B \arrow{r} &A \otimes_R B
-            \end{tikzcd}
-            \end{center}
-
-            Clearly bottom arrow is also surjective, which we can check by
-            explicit computation.
-            }
+            surjective. Since $R \twoheadrightarrow A$ surjective, $R/I \cong A$
+            and thus $A \otimes_R B = R/I \otimes_R B = B / IB$. Clearly $B
+            \rightarrow B/IB$ is then surjective.
         \item{}
     \end{enumerate}
 \end{exercise}

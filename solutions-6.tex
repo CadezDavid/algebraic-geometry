@@ -10,7 +10,7 @@
         \item By the universal property of the fiber product of locally ringed spaces,
         we have the following commutative diagram
         \begin{center}
-            %TODO I think U_i should be X and V_j should be Y. Maps XxY -> U_i
+%TODO I think U_i should be X and V_j should be Y. Maps XxY -> U_i
             %and XxY -> V_j dont necessarily exist.
             \begin{tikzcd}
                 U_i\times_{S_{i,j}}V_j\arrow[dotted]{dr}\arrow[bend right]{ddr}{p}\arrow[bend left]{rrd}{q}\\
@@ -144,13 +144,13 @@
             we can directly use previous exercise on the following fibred
             product
                       
-            \begin{center}
+        \begin{center}
             \begin{tikzcd}
                 &S \arrow{r}{\id} &S \\
                 &S \times_S S' \arrow{r}{q} \arrow{u}{p} &S' \arrow{u}{g}
             \end{tikzcd}
-            \end{center}
-
+        \end{center}
+        
             by taking subset of $X \subseteq S$ and immediately getting open
             immersion $X \times_S S' \rightarrow S \times_S S'$, which we
             postcompose with canonical isomorphism $S \times_S S' \rightarrow
@@ -190,6 +190,7 @@
             surjective. Since $R \twoheadrightarrow A$ surjective, $R/I \cong A$
             and thus $A \otimes_R B = R/I \otimes_R B = B / IB$. Clearly $B
             \rightarrow B/IB$ is then surjective.
+            }
         \item{}
     \end{enumerate}
 \end{exercise}
@@ -239,6 +240,6 @@
     \prod_{i, j} A[(f_i f_j)^{-1}]  \right]$ where $\Spec(A) = \cup_i
     D(f_i)$ is a cover.
 
-\end{exercise}
+    \end{exercise}
 
 \end{document}

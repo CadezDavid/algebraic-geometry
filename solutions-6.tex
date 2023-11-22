@@ -43,8 +43,8 @@
         we assume $X, Y, S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be
         affine schemes, then by the above argument we found a cover
         of $X\times_S Y$ by affine schemes.
-        
-    \item[1 (alternative)]{
+
+    \item[1.\ (alternative)]{
             Let $U \subseteq X$, $V \subseteq Y$ and $W \subseteq S$ open
             subschemes. By the universal property of the fiber product of
             locally ringed spaces, we have the following commutative diagram
@@ -110,26 +110,29 @@
             the above argument we found a cover of $X\times_S Y$ by affine schemes.}
 
         \item{
-                If $X = \Spec(A), Y = \Spec(B), Z = \Spec(R)$ were affine
-                schemes, we would have homeomorphism, since $\Spec(A \otimes_R
-                B) = \Spec(A) \times_{\Spec(R)} \Spec(B)$.
-                But in schemes (using that the fiber product is also a scheme)
-                we locally have an isomorphism, which is means the map must be
-                surjective.
-
-                Concretely:
-                %TODO
-
-            % Surjectivity follows, because a pullback of schemes in partiular
-            % makes
-            % \begin{center}
-            %     \begin{tikzcd}
-            %         &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
-            %         &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
-            %     \end{tikzcd}
-            % \end{center}
-            % commute for all $\psi, \phi$ from maps of schemes.
+            Surjectivity follows, because a pullback of schemes in partiular
+            makes
+            \begin{center}
+                \begin{tikzcd}
+                    &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
+                    &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
+                \end{tikzcd}
+            \end{center}
+            commute for all $\psi, \phi$ from maps of schemes.
         }
+        \item[2.\ (alternative)]{
+            If $X = \Spec(A), Y = \Spec(B), Z = \Spec(R)$ were affine schemes,
+            we would have homeomorphism, since $\Spec(A \otimes_R B) = \Spec(A)
+            \times_{\Spec(R)} \Spec(B)$. But in schemes (using that the fiber
+            product is also a scheme) we only locally have isomorphisms, which
+            is means the map must be surjective.
+
+            Concretely:
+            For every $(x, y) \in |X| \times_{|S|} |Y|$ we have $x \in \Spec(A)
+            \subseteq |X|$ and $y \in \Spec(B) \subseteq |Y|$ such that $|X
+            \times_S Y| \to |X| \times_{|S|} |Y|$ restricted to $\Spec(A
+            \otimes_R B)$ will be isomorphism (with $(x, y)$ in its image).
+            }
     \end{enumerate}
 \end{exercise}
 
@@ -187,10 +190,7 @@
             surjective. Since $R \twoheadrightarrow A$ surjective, $R/I \cong A$
             and thus $A \otimes_R B = R/I \otimes_R B = B / IB$. Clearly $B
             \rightarrow B/IB$ is then surjective.
-        }
-        \item{
-            2
-            }
+        \item{}
     \end{enumerate}
 \end{exercise}
 

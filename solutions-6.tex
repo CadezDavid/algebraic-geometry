@@ -224,6 +224,9 @@
 \end{exercise}
 
 \begin{exercise}{4}
+    This proof is the same as when we proved that $\mathcal{O}_{\Spec(A)}$ is a
+    sheaf, after we defined it on the basis of principal opens.
+
     Take $U = D(f)$ for some $f \in A$ and let $U = \cup_i D(f_i)$ be some
     cover. We have to check that 
     \begin{equation*}
@@ -232,14 +235,28 @@
     \end{equation*}
     is isomorphism.
 
-    This proof is exactly the same as when we proved that
-    $\mathcal{O}_{\Spec(A)}$ is a sheaf, after we defined it the basis of
-    principal opens.
+    We make following simplifications, namely we can set $M := M[f^{-1}]$ and
+    assume $I$ is finite, say $I = \{1, \dots, n\}$ (we can do that since
+    $\Spec(A)$ is quasi-compact).
 
-    Then proved that $A = \Eq\left[ \prod_i A[f^{-1}_i] \rightrightarrows
-    \prod_{i, j} A[(f_i f_j)^{-1}]  \right]$ where $\Spec(A) = \cup_i
-    D(f_i)$ is a cover.
+    So we are trying to show $M$ is isomorphic to a submodule of $\prod_i
+    M[f^{-1}_i]$ defined as $\{ (m_1, \dots, m_n) \in \prod_i
+    M[f^{-1}_i] \mid m_i = m_j \in M[(f_i f_j)^{-1}] \}$.
 
-    \end{exercise}
+    Injectivity:
+    Take $m \in M$. Since $m = 0 \in M[f^{-1}_i]$, we have $f^{k_i}_i m = 0$ for
+    every $i$ for some $k_i$. Since $I$ is finite, take $k = \max_i k_i$.
+    Since $D(f^k_i)$ is still a cover, we have $1 = \sum_i a_i f^k_i$ for some
+    $a_i \in A$. Then $1m = \sum_i a_i f^k_i m = 0$, so $m = 0$.
+
+    Surjectivity:
+    Let $(m_1, \dots, m_n) \in \prod_i M[f^{-1}_i]$ with $m_i = m_j \in M[(f_i
+    f_j)^{-1}]$ for all $i, j$. Write $m_i = \frac{a_i}{f^{k_i}_i}$. WLOG $k =
+    \max_i k_i$. For every pair there exists $l \in \N$ such that $(f_i f_j)^l
+    (m_i - m_j) = 0$. Take $l$ again to be maximum over all pairs. Because
+    $D(f^l_i)$ is still a cover, we have $1 = \sum_i b_i f^l_i$. Then define $s
+    = \sum_i b_i a_i$. Clearly $f^l_j s = \sum_i b_i f^l_j a_i =  \sum_i b_i
+    f^l_i a_j = a_j$. So $(m_1, \dots, m_n)$ is the image of $s$.
+\end{exercise}
 
 \end{document}

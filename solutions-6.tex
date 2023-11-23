@@ -110,34 +110,27 @@
             the above argument we found a cover of $X\times_S Y$ by affine schemes.}
 
         \item{
-            Surjectivity follows, because a pullback of schemes in partiular
-            makes
-            \begin{center}
-                \begin{tikzcd}
-                    &\mid X\times_S Y\mid \arrow{r}\arrow{d} & \mid X \mid\arrow{d}{\psi}\\
-                    &\mid Y\mid \arrow{r}{\phi} & \mid S \mid
-                \end{tikzcd}
-            \end{center}
-            commute for all $\psi, \phi$ from maps of schemes.
-        }
-        \item[2.\ (alternative)]{
-            If $X = \Spec(A), Y = \Spec(B), Z = \Spec(R)$ were affine schemes,
-            we would have homeomorphism, since $\Spec(A \otimes_R B) = \Spec(A)
-            \times_{\Spec(R)} \Spec(B)$. But in schemes (using that the fiber
-            product is also a scheme) we only locally have isomorphisms, which
-            is means the map must be surjective.
+                We use the previous exercise. Let $X = \bigcup_i U_i = \Spec(A_i)$, $Y =
+                \bigcup_i V_i = \Spec(B_i)$ and $S = \bigcup_{i, j} S_{i, j} =
+                \Spec(R_{i, j})$ be coverings
+                with affine schemes.
 
-            Concretely:
-            For every $(x, y) \in |X| \times_{|S|} |Y|$ we have $x \in \Spec(A)
-            \subseteq |X|$ and $y \in \Spec(B) \subseteq |Y|$ such that $|X
-            \times_S Y| \to |X| \times_{|S|} |Y|$ restricted to $\Spec(A
-            \otimes_R B)$ will be isomorphism (with $(x, y)$ in its image).
+                By the previous exercise we get a covering $\bigcup_{i, j}
+                \Spec(A_i \otimes_{R_{i, j}} B_j)$ with affine schemes.
+                
+                The maps $\Spec(A_i \otimes_{R_{i, j}} B_j) \to |\Spec(A_i)|
+                \times_{|\Spec(R_{i, j})|} |\Spec(B_j)|$ are surjective for
+                every $i, j$, and we have
+                \begin{equation*}
+                    |X| \times_{|S|} |Y| = \bigcup_{i, j} |\Spec(A_i)|
+                    \times_{|\Spec(R_{i, j})|} |\Spec(B_j)|
+                \end{equation*}
+                which proves surjectivity.
             }
     \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{2}
-    %TODO add remark about previous exercise
     \begin{enumerate}
         \item{
             First let $f \colon X \rightarrow S$ be open immersion. In this case
@@ -191,7 +184,8 @@
             and thus $A \otimes_R B = R/I \otimes_R B = B / IB$. Clearly $B
             \rightarrow B/IB$ is then surjective.
             }
-        \item{}
+        \item{
+            }
     \end{enumerate}
 \end{exercise}
 

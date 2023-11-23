@@ -7,44 +7,7 @@
 
 \begin{exercise}{1}
     \begin{enumerate}
-        \item By the universal property of the fiber product of locally ringed spaces,
-        we have the following commutative diagram
-        \begin{center}
-%TODO I think U_i should be X and V_j should be Y. Maps XxY -> U_i
-            %and XxY -> V_j dont necessarily exist.
-            \begin{tikzcd}
-                U_i\times_{S_{i,j}}V_j\arrow[dotted]{dr}\arrow[bend right]{ddr}{p}\arrow[bend left]{rrd}{q}\\
-                &X \times_S Y \arrow{r}{\pi_2}\arrow{d}{\pi_1} & V_j\arrow{d}{\psi}\\
-                &U_i \arrow{r}{\phi} & S_{i,j}
-            \end{tikzcd}
-        \end{center}
-        Therefore, on the level of sets,
-        \begin{align*}
-            U_i\times_{S_{i,j}}V_j \subset X \times_S Y,
-        \end{align*}
-        but in exercise 5.2.1, we showed that this induces 
-        an open immersion as locally ringed spaces.
-
-        Now observe that 
-        \begin{center}
-            \begin{tikzcd}
-               &\bigcup_{i,j}\left(U_i\times_{S_{i,j}}V_j\right)\arrow{r}\arrow{d} & Y\arrow{d}\\
-                &X \arrow{r} & S
-            \end{tikzcd}
-        \end{center}
-        commutes, because $S=\bigcup_{i,j}S_{i,j}$.
-        Now by uniqueness of the pullback, 
-        \begin{align*}
-           \bigcup_{i,j}\left(U_i\times_{S_{i,j}}V_j\right)\cong U_i\times_{S_{i,j}}V_j.
-        \end{align*}
-
-        I guess this is a good step in the direction of understanding
-        why the pullback in the category of sheaves exists, right? If 
-        we assume $X, Y, S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be
-        affine schemes, then by the above argument we found a cover
-        of $X\times_S Y$ by affine schemes.
-
-    \item[1.\ (alternative)]{
+    \item{
             Let $U \subseteq X$, $V \subseteq Y$ and $W \subseteq S$ open
             subschemes. By the universal property of the fiber product of
             locally ringed spaces, we have the following commutative diagram
@@ -104,28 +67,41 @@
                 (\pi^{-1}_1(U_i) \cap \pi^{-1}_2(V_j)) = X \times_S Y.
             \end{equation*}
 
-            I guess this is a good step in the direction of understanding why the
-            pullback in the category of schemes exists, right? If we assume $X, Y,
-            S$ to be sheaves and $U_i, V_j, S_{i,j}$ to be affine schemes, then by
-            the above argument we found a cover of $X\times_S Y$ by affine schemes.}
-
+            I guess this is a good step in the direction of understanding why
+            the pullback in the category of schemes exists, right? If we assume
+            $X, Y, S$ to be schemes and $U_i, V_j, S_{i,j}$ to be affine
+            schemes, then by the above argument we found a cover of $X\times_S
+            Y$ by affine schemes.
+            }
         \item{
-                We use the previous exercise. Let $X = \bigcup_i U_i = \Spec(A_i)$, $Y =
-                \bigcup_i V_i = \Spec(B_i)$ and $S = \bigcup_{i, j} S_{i, j} =
-                \Spec(R_{i, j})$ be coverings
-                with affine schemes.
+            We use the previous exercise. Let $X = \bigcup_i U_i = \Spec(A_i)$,
+            $Y = \bigcup_i V_i = \Spec(B_i)$ and $S = \bigcup_{i, j} S_{i, j} =
+            \Spec(R_{i, j})$ be coverings with affine schemes.
 
-                By the previous exercise we get a covering $\bigcup_{i, j}
-                \Spec(A_i \otimes_{R_{i, j}} B_j)$ with affine schemes.
-                
-                The maps $\Spec(A_i \otimes_{R_{i, j}} B_j) \to |\Spec(A_i)|
-                \times_{|\Spec(R_{i, j})|} |\Spec(B_j)|$ are surjective for
-                every $i, j$, and we have
-                \begin{equation*}
-                    |X| \times_{|S|} |Y| = \bigcup_{i, j} |\Spec(A_i)|
-                    \times_{|\Spec(R_{i, j})|} |\Spec(B_j)|
-                \end{equation*}
-                which proves surjectivity.
+            By the previous exercise we get a covering $\bigcup_{i, j} \Spec(A_i
+            \otimes_{R_{i, j}} B_j)$ with affine schemes.
+            
+            The maps $\Spec(A_i \otimes_{R_{i, j}} B_j) \to |\Spec(A_i)|
+            \times_{|\Spec(R_{i, j})|} |\Spec(B_j)|$ are surjective for every
+            $i, j$, and we have
+            \begin{equation*}
+                |X| \times_{|S|} |Y| = \bigcup_{i, j} |\Spec(A_i)|
+                \times_{|\Spec(R_{i, j})|} |\Spec(B_j)|
+            \end{equation*}
+            which proves surjectivity.
+
+            We now want to show that the given map is not injective in general,
+            not even for affine schemes. To see this, define the following
+            affine schemes
+            \begin{align*}
+                X=Y=\Spec(\mathbb{C}), S=\Spec(\mathbb{R}).
+            \end{align*}
+            Now $| \Spec(X\times_S Y)| \cong | \Spec(X\otimes_S Y)| \cong
+            |\Spec(\mathbb{C}\times \mathbb{C})|=\lbrace(0,1),(1,0)\rbrace.$
+
+            On the other hand, $| X | \times_{| S |} | Y |=\lbrace * \rbrace$
+            and clearly there is no injection from a set consisting of two
+            points, to a set consisting of one point.
             }
     \end{enumerate}
 \end{exercise}

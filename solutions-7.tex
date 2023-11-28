@@ -5,6 +5,45 @@
 
 \maketitle{}
 
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item We have the following bijection
+        \begin{align*}
+            \Hom_{\mathcal{O}_x}(\widetilde{\mathcal{N}_{|A}},f_*\widetilde{\mathcal{N}})\cong
+            \Hom_A
+            (\widetilde{\mathcal{N}_{|A}}(B),f_*\widetilde{\mathcal{N}}(B))\\
+            =\Hom_A(N_{|A},\widetilde{\mathcal{N}}(A))\cong
+            \Hom_{\mathcal{O}_x}(\widetilde{\mathcal{N}_{|A}},\widetilde{\mathcal{N}_{|A}}).
+        \end{align*}
+        By the Yoneda lemma, this implies that $f_*\widetilde{N}\cong
+    \tilde{N}_{|A}$. \item For the second part of this exercise, we extend the
+        first part as follows, using that $f_*$ is left-adjoint to $f^*$
+        \begin{align*}
+            \Hom_{\mathcal{O}_y}(f^*\tilde{\mathcal{M}},\tilde{N})
+            \cong \Hom_{\mathcal{O}_x}(\widetilde{\mathcal{M}},f_*\widetilde{\mathcal{N}})
+            \cong \Hom_A (\widetilde{\mathcal{M}}(B),f_*\widetilde{\mathcal{N}}(B))\\
+            = \Hom_A(M,\widetilde{\mathcal{N}}(A))
+            \cong \Hom_B(N_{|A}\otimes_A B, \tilde{N}(A))
+            \cong \Hom_{\mathcal{O}_y}(\widetilde{\mathcal{M}\otimes_A B}, \widetilde{\mathcal{N}}).
+        \end{align*} 
+        Now, by the Yoneda lemma we again obtain that 
+        \begin{align*}
+            \widetilde{\mathcal{M}\otimes_A B} 
+            \cong f^*\tilde{\mathcal{M}}.
+        \end{align*}
+        Next, we want to show that we can extend this exercise from affine schemes to schemes.
+        
+        Let $S_i$ with $i\in I$ be a cover of $S$ by open affines. Then for each $i\in I$ we get that
+        $g^{-1}(S_i)$ is a subscheme of $Z_i\subset Z$ (unfortunately not necessarilary affine). Now, we cover
+        each of these subschemes $Z_i$ by open affines $Z_{ij}$. By construction $g$ maps $Z_{ij}$ into $S_i$.
+        Hence, 
+        \begin{align*}
+            (g^*\mathcal{M})_{Z_{ij}}=f^*\mathcal{M}_{Z_{ij}}\cong \widetilde{M\otimes_A B},
+        \end{align*}
+        showing that $g^*$ preserves quasi-coherence.
+    \end{enumerate}
+\end{exercise}
+
 \begin{exercise}{2}
     For every homogenous polynomial $F(X_0, \dots, X_n)$ of degree $m$ we attach
     $\{f_i\}_{i=0,\dots,n}$, where $f_i(X_{0/i}, \dots, X_{n/i})$ is the unique
@@ -18,6 +57,60 @@
     
     Injectivity:
     If $f_i = 0$
+\end{exercise}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{
+            We have a cover $\Proj^n_\Z = \cup_i U_i$, where $U_i = \Spec(\Z[X_{j/i}, j
+            \not= i])$. We defined $\Proj^n_k$ to be simply the fibered product
+            $\Proj^n_\Z \times_{\Spec(\Z)} \Spec(k)$. We can use 1st exercise from sheet
+            6, to get a cover
+            \begin{align*}
+                \Proj^n_k &= \bigcup_i U_i \times_{\Spec(\Z)} \Spec(k) \\
+                &= \bigcup_i \Spec(\Z[X_{j/i}, j \not= i]) \times_{\Spec(\Z)} \Spec(k) \\
+                &= \bigcup_i \Spec(\Z[X_{j/i}, j \not= i] \otimes_{\Z} k) \\
+                &= \bigcup_i \Spec(k[X_{j/i}, j \not= i]).
+            \end{align*}
+
+            Define morphism $\Proj^n_k \to (\Proj^n_k(k))^{\text{sob}}$ on the cover.
+
+            We can show that soberification of $(\Proj^n_k(k))^{\text{sob}}$ is same as
+            soberification on each open set of the cover and then gluing.
+
+            \href{https://stacks.math.columbia.edu/tag/06N9}{Lemma 06N9}
+            We have that for a space $X$ and a covering $X = \bigcup_i X_i$, the space
+            $X$ is sober if and only if $X_i$ is sober for every $i$.
+
+            We showed on sheet 3 that soberification of an $\Aff^n_k(k)$ is
+            $\Spec(k[X_1, \dots, X_n])$.
+            
+            So we have $(\Proj^n_k(k))^{\text{sob}} = \bigcup_i (\Aff^n_k(k))^{\text{sob}}
+            = \bigcup_i \Spec(k[X_1, \dots, X_n])$.
+
+            Define morphism
+            \begin{equation*}
+                \Proj^n_k = \bigcup_i \Spec(k[X_{j/i}, j \not= i]) \to
+                (\Proj^n_k(k))^{\text{sob}} = \bigcup_i \Spec(k[X_1, \dots, X_n])
+            \end{equation*}
+            with the obvious isomorphism for every $i$.
+            }
+
+        \item{
+                We defined $V(s) \subseteq \Proj^n_k$ locally on affine
+                subschemes. Our definition assumed we have a line bundle
+                $\mathcal{L}$ on $(X, \mathcal{O}_X)$.
+
+                In our case $\mathcal{L} = \mathcal{O}_{\Proj^n_k}(d)$
+
+                Locally on $U_i = \Spec(k[X_{j/i}, j \not= i])$ we have
+                isomorphism $\mathcal{O}_{\Proj^n_k}(d)|_{U_i} \cong
+                \mathcal{O}_{U_i}$.
+                 
+                So we have $V(s)|_{U_i} = \Spec(k[X_{j/i},
+                j \not= i] / t())$.
+            }
+    \end{enumerate}
 \end{exercise}
 
 \end{document}

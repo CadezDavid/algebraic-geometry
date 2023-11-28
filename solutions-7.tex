@@ -113,4 +113,30 @@
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}{4}
+    We don't really want to do all the explicit calculations, so we only show what we think
+    is maybe the main takeaway of this exercise.
+
+    For some polynomial $f\in \mathbb{R}[x,y]$ we have that 
+    \begin{align*}
+        &V(f) \times_{\Spec(\mathbb{R})} \Spec(\mathbb{C})\\
+        &\cong \Spec(\mathbb{R}[x,y]/(f)) \otimes_{Spec(\mathbb{R})}\Spec(\mathbb{C})\\
+        &\cong \Spec(\mathbb{R}[x,y]/(f)\times_\mathbb{R} \mathbb{C})\\
+        &\cong \Spec(\mathbb{C}[x,y]/(f)).
+    \end{align*}
+    In the following, we take $f(x,y):=xy-1$ and $g(x,y):=x^2+y^2-1$. We know from 
+    the first sheet, that 
+    \begin{align*}
+        \mathbb{C}[x,y]/(f)\cong \mathbb{C}[x,y]/(g),
+    \end{align*}
+    but one can easily check that
+    \begin{align*}
+        \mathbb{R}[x,y]/(f) \not \cong \mathbb{R}[x,y]/(g),
+    \end{align*}
+    since the left side has strictly more units than the right side.
+
+    Therefore, this is an example showing that varieties, so in particular schemes being isomorphic 
+    is not stable under base change.
+\end{exercise}
+
 \end{document}

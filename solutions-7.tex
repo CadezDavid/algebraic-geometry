@@ -95,7 +95,6 @@
     $\alpha^m_{i, j} (f_i) = f_j$ holds for every $i, j$. Then simply choose
     some $i$ and let $F(X_0, \dots X_n) = X^m_i \beta_i(f_i)$. So we found $F$
     that maps to $\{f_i\}_{i = 0, \dots, n}$.
-
 \end{exercise}
 
 \begin{exercise}{3}
@@ -112,49 +111,62 @@
                 &= \bigcup_i \Spec(k[X_{j/i}, j \not= i]).
             \end{align*}
 
-            Define morphism $\Proj^n_k \to (\Proj^n_k(k))^{\text{sob}}$ on the cover.
+            Define morphism $\Proj^n_k \to (\Proj^n_k(k))^{\text{sob}}$ on the
+            cover.
 
-            %this is wrong, for sure
+            % this is wrong, for sure
             % We can show that soberification of $(\Proj^n_k(k))^{\text{sob}}$ is same as
             % soberification on each open set of the cover and then gluing.
 
             \href{https://stacks.math.columbia.edu/tag/06N9}{Lemma 06N9}
-            We have that for a space $X$ and a covering $X = \bigcup_i X_i$, the space
-            $X$ is sober if and only if $X_i$ is sober for every $i$.
+            We have that for a space $X$ and a covering $X = \bigcup_i X_i$, the
+            space $X$ is sober if and only if $X_i$ is sober for every $i$.
 
             We showed on sheet 3 that soberification of an $\Aff^n_k(k)$ is
             $\Spec(k[X_1, \dots, X_n])$.
             
-            So we have $(\Proj^n_k(k))^{\text{sob}} = \bigcup_i (\Aff^n_k(k))^{\text{sob}}
-            = \bigcup_i \Spec(k[X_1, \dots, X_n])$.
+            So we have $(\Proj^n_k(k))^{\text{sob}} = \bigcup_i
+            (\Aff^n_k(k))^{\text{sob}} = \bigcup_i \Spec(k[X_1, \dots, X_n])$.
 
             Define morphism
             \begin{equation*}
                 \Proj^n_k = \bigcup_i \Spec(k[X_{j/i}, j \not= i]) \to
                 (\Proj^n_k(k))^{\text{sob}} = \bigcup_i \Spec(k[X_1, \dots, X_n])
             \end{equation*}
-            with the obvious isomorphism for every $i$.
+            with isomorphism for every $i$.
             }
 
         \item{
                 We defined $V(s) \subseteq \Proj^n_k$ locally on affine
                 subschemes. Our definition assumed we have a line bundle
-                $\mathcal{L}$ on $(X, \mathcal{O}_X)$.
-
-                In our case $\mathcal{L} = \mathcal{O}_{\Proj^n_k}(d)$
+                $\mathcal{L}$ on $(X, \mathcal{O}_X)$. In our case $\mathcal{L}
+                = \mathcal{O}_{\Proj^n_k}(d)$
 
                 Locally on $U_i = \Spec(k[X_{j/i}, j \not= i])$ we have equality
                 $\mathcal{O}_{\Proj^n_k}(d)|_{U_i} = \mathcal{O}_{U_i}$ by
                 definition.
 
-                We show that restrictions 
-                 
-                So we have $V(s)|_{U_i} = \Spec(k[X_{j/i}, j \not= i] / (g))$,
-                where $g \in k[x_{0/i}, \dots, x_{n/i}]$ is the unique
-                polynomial with $\beta_i(g) = \frac{F(X_0, \dots, X_n)}{X^m_i}$
-                as in exercise $2$.
+                So we have
+                \begin{equation*}
+                    V(s) \cap U_i = \Spec(k[X_{j/i}, j \not= i] / (f_i)),
+                \end{equation*}
+                where $f_i \in k[x_{0/i}, \dots x_{i-1/i}, x_{i+1/i}, x_{n/i}]$
+                is the polynomial from exercise $2$ applied on $f$.
 
-                On the other hand we had $V^+(f) \cap U_i = V(f(X_{})$
+                On the other hand we had $V^+(f) \subseteq \Proj^n_k(k)$. We can
+                intersect it with $V_i \cong \Aff^n_k(k)$ and get $V(f_i) =
+                V^+(f) \cap V_i \cong \MaxSpec((k[x_1, \dots,
+                x_n]/(f))_{\text{red}})$, where $f_i$ as in exercise $2$ (rename
+                $x_1, \dots, x_n$ appropriately). Then we can do $^{\text{sch}}$
+                on this to get $(V(f_i))^{\text{sch}} \cong \Spec((k[x_1, \dots,
+                x_n]/(f_i))_{\text{red}})$.
+
+                So we have that $V(s)_{\text{red}} = V^+(f)^{\text{sch}}$ as
+                topological subsets of $\Proj^n_k \cong
+                (\Proj^n_k(k))^{\text{sch}}$ are the same. And clearly their
+                structure sheaves are defined as simply restrictions of
+                structure sheaves of $\Proj^n_k$ and
+                $(\Proj^n_k(k))^{\text{sch}}$ respectively.
             }
     \end{enumerate}
 \end{exercise}

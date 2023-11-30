@@ -7,16 +7,7 @@
 
 \begin{exercise}{1}
     \begin{enumerate}
-        \item We have the following bijection
-        \begin{align*}
-            \Hom_{\mathcal{O}_x}(\widetilde{\mathcal{N}_{|A}},f_*\widetilde{\mathcal{N}})\cong
-            \Hom_A
-            (\widetilde{\mathcal{N}_{|A}}(B),f_*\widetilde{\mathcal{N}}(B))\\
-            =\Hom_A(N_{|A},\widetilde{\mathcal{N}}(A))\cong
-            \Hom_{\mathcal{O}_x}(\widetilde{\mathcal{N}_{|A}},\widetilde{\mathcal{N}_{|A}}).
-        \end{align*}
-        I think it should've been like this:
-
+        \item
         Pick any $\mathcal{O}_X$-module $\mathcal{M}$. Then we have
         \begin{align*}
             \Hom_{\mathcal{O}_X} (f_* \widetilde{N}, \mathcal{M}) &\cong
@@ -25,15 +16,16 @@
             &\cong \Hom_{\mathcal{O}_X}(\widetilde{N|_A}, \mathcal{M}).
         \end{align*}
         By the Yoneda lemma, this implies that $f_*\widetilde{N}\cong
-    \tilde{N}_{|A}$. \item For the second part of this exercise, we extend the
-        first part as follows, using that $f_*$ is left-adjoint to $f^*$
+    \tilde{N}_{|A}$. 
+    \item For the second part of this exercise, we extend the
+        first part as follows, using that $f^*$ is left-adjoint to $f_*$
         \begin{align*}
-            \Hom_{\mathcal{O}_y}(f^*\tilde{\mathcal{M}},\tilde{N})
-            \cong \Hom_{\mathcal{O}_x}(\widetilde{\mathcal{M}},f_*\widetilde{\mathcal{N}})
+            \Hom_{\mathcal{O}_Y}(f^*\tilde{\mathcal{M}},\tilde{N})
+            \cong \Hom_{\mathcal{O}_X}(\widetilde{\mathcal{M}},f_*\widetilde{\mathcal{N}})
             \cong \Hom_A (\widetilde{\mathcal{M}}(B),f_*\widetilde{\mathcal{N}}(B))\\
             = \Hom_A(M,\widetilde{\mathcal{N}}(A))
             \cong \Hom_B(N_{|A}\otimes_A B, \tilde{N}(A))
-            \cong \Hom_{\mathcal{O}_y}(\widetilde{\mathcal{M}\otimes_A B}, \widetilde{\mathcal{N}}).
+            \cong \Hom_{\mathcal{O}_Y}(\widetilde{\mathcal{M}\otimes_A B}, \widetilde{\mathcal{N}}).
         \end{align*} 
         Now, by the Yoneda lemma we again obtain that 
         \begin{align*}
@@ -57,7 +49,7 @@
     For every homogenous polynomial $F(X_0, \dots, X_n)$ of degree $m$ we attach
     $\{f_i\}_{i=0,\dots,n}$, where $f_i(X_{0/i}, \dots, X_{i-1/i}, X_{i+1/i},
     X_{n/i})$ is the unique polynomial such that $\beta_i(f_i) = \frac{F(X_0,
-    \dots, n_n)}{X^m_i}$, where
+    \dots, X_n)}{X^m_i}$, where
     \begin{align*}
         \beta_i \colon \Z[X_{0/i}, \dots, X_{n/i}] &\to \Z[X_0, \dots, X_n,
         X^{-1}_i] \\
@@ -65,11 +57,11 @@
     \end{align*}
     
     First we check that $\alpha^m_{i, j} (f_i) = f_j$. Due to linearity, it is
-    enough to check the case whem $F$ is a monomial. Let $F = \prod^n_{i = 0}
+    enough to check the case when $F$ is a monomial. Let $F = \prod^n_{i = 0}
     X^{m_i}_i$. Then
     \begin{equation*}
-        f_i = \prod^n_{k = 0, k \not= i} X^{m_j}_{k/i} \quad\text{and}\quad f_j
-        = \prod^n_{k = 0, k \not= j} X^{m_j}_{j/k}.
+        f_i = \prod^n_{k = 0, k \not= i} X^{m_k}_{k/i} \quad\text{and}\quad f_j
+        = \prod^n_{k = 0, k \not= j} X^{m_k}_{j/k}.
     \end{equation*}
     Simply check
     \begin{equation*}
@@ -88,7 +80,7 @@
 
     From this we actually get that if global section $\{f_i\}_{i = 0, \dots, n}$
     vanishes on some $U_i$, then it is $0$, which aligns with intuition that a
-    homogenous polynomial will be defined uniquely if we set on variable to be
+    homogenous polynomial will be defined uniquely if we set one variable to be
     $1$ (and remember its degree).
 
     To show surjectivity, take $\{f_i\}_{i = 0, \dots, n}$ for which

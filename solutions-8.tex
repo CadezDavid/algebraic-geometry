@@ -1,0 +1,57 @@
+\newcommand{\sheet}{8}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+\end{exercise}
+
+\begin{exercise}{2}
+
+\end{exercise}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{In exercise $2$ we showed that all invertible quasicoherent
+            sheaves on $\Proj^n_k$ are isomorphic to
+            $\mathcal{O}_{\Proj^n_k}(d)$ for some $d \geq 0$. So we have to show
+            $f^* \mathcal{O}_{\Proj^m_k}(1)$ is an invertible sheaf.
+
+            Since invertible $\mathcal{O}_{\Proj^n_k}$-modules are same as line
+            bundles, we have to show that locally $f^*
+            \mathcal{O}_{\Proj^m_k}(1)$ is isomorphic to the structure sheaf
+            $\mathcal{O}_{\Proj^m_k}$.
+
+            By definition $f^* \mathcal{O}_{\Proj^m_k}(1) = f^{-1}
+            \mathcal{O}_{\Proj^m_k}(1) \otimes_{f^{-1} \mathcal{O}_{\Proj^m_k}}
+            \mathcal{O}_{\Proj^n_k}$. Pick some $x \in \Proj^n_k$. Pick small
+            enough affine neighborhood $f(x) \in U \subseteq \Proj^m_k$ such that
+            $\mathcal{O}_{\Proj^m_k} (1)$ is isomorphic to the structure sheaf
+            $\mathcal{O}_{\Proj^m_k}$ on $U$. Now pick neighborhood $x \in W \subseteq \Proj^m_k$
+            such that $f(W) \subseteq U$.
+
+            Then 
+            \begin{align*}
+                f^{-1} \mathcal{O}_{\Proj^m_k}(1) (W) &= \colim_{f(W) \subseteq
+                V} \mathcal{O}_{\Proj^m_k} (1) (V) \\
+                &= \colim_{f(W) \subseteq V \subseteq U} \mathcal{O}_{\Proj^m_k}
+                (1) (V) \\
+                &\cong \colim_{f(W) \subseteq V \subseteq U} \mathcal{O}_{\Proj^m_k}
+                (V) \\
+                &\cong f^{-1} \mathcal{O}_{\Proj^m_k} (W).
+            \end{align*}
+            So locally $f^{-1} \mathcal{O}_{\Proj^m_k}(1)$ is isomorphic to
+            $f^{-1} \mathcal{O}_{\Proj^m_k}$, so $f^{-1}
+            \mathcal{O}_{\Proj^m_k}(1) \otimes_{f^{-1} \mathcal{O}_{\Proj^m_k}}
+            \mathcal{O}_{\Proj^n_k}$ is locally isomorphic to
+            $\mathcal{O}_{\Proj^n_k}$, which proves that $f^*
+            \mathcal{O}_{\Proj^m_k}(1)$ is an invertible
+            $\mathcal{O}_{\Proj^n_k}$-module and thus isomorphic to
+            $\mathcal{O}_{\Proj^n_k}(d)$ for some $d \geq 0$.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

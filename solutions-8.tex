@@ -51,6 +51,64 @@
             $\mathcal{O}_{\Proj^n_k}$-module and thus isomorphic to
             $\mathcal{O}_{\Proj^n_k}(d)$ for some $d \geq 0$.
             }
+        \item{The polynomials $y_0, \dots, y_n$ generate the module of
+            homogenous polynomials of degree $1$.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    \begin{enumerate}
+        \item{}
+        \item{
+                We have to show that the property of being of finite
+                presentation is a local property and that $f$ as defined above
+                is locally of finite presentation.
+
+                Let $\Spec(B) \subseteq X$ and $\Spec(A) \subseteq S$ open
+                affines.
+                Pick a point $x \in \Spec(B)$. Then $x \in \Spec(B) \cap
+                \Spec(B_i)$ for some $i$. Pick some neighborhood $x \in U \subseteq \Spec(B) \cap
+                \Spec(B_i)$ such that $U$ is principal open in $\Spec(B)$
+                and in $\Spec(B_i)$.
+
+                Now take a neighborhood $f(x) \in V \subseteq f(U)$ so that $V$
+                is principal open in $\Spec(A)$ and in $\Spec(A_i)$.
+                % (Note that then $V \subseteq \Spec(A) \cap \Spec(A_i)$ follows).
+                Now take another smaller neighborhood $x \in U' \subseteq
+                f^{-1}(V)$ such that $U'$ is principal open in $\Spec(B)$ and in
+                $\Spec(B_i)$.
+
+                So we have $U' \to V$, where both $U'$ and $V$ are principal
+                opens of $\Spec(B_i)$ and $\Spec(A_i)$ respectively. Since $A_i
+                \to B_i$ is of finite presentation, then localizations $(A_i)_f
+                \to (B_i)_g$ (for some $f \in A_i$ and $g \in B_i$) are as well.
+                %TODO describe this more clearly
+
+                So for every point $x \in \Spec(B)$ we can find a principal open
+                neighborhood in $x \in D(f_x)$ and a principal open
+                neighborhood $f(x) \in D(g_x)$ such that $A_{g_x} \to B_{f_x}$.
+
+                Since $\Spec(B)$ is quasi-compact, we have $\Spec(B) = D(f_1)
+                \cup \dots \cup D(f_n)$. Denote $g_1, \dots, g_n \in A$ be the
+                respective elements in $A$.
+
+                We have composition $\Spec(B_{f_i}) \to \Spec(A_{g_i}) \hookrightarrow
+                \Spec(A)$, which induces a map of rings $A \to A_{g_i} \to B_{f_i}$.
+                Since $A_{g_i} \cong A[X]/(X g_i - 1)$ and $A_{g_i} \to B_{f_i}$
+                are of finite presentation by assumption, and being of
+                finite presentation is stable under compositions, we have that
+                $A \to B_{f_i}$ are of finite presentation for every $i$.
+
+                Now its just commutative algebra to show that $A \to B$ is of
+                finite presentation as well, so I hope its okay to assume this
+                part. Otherwise we could just rewrite something like
+                \href{https://stacks.math.columbia.edu/tag/00EP}{Lemma 00EP}.
+
+                % Since $\Spec(B) = D(f_1) \cup \dots \cup D(f_n)$, we have that
+                % $(f_1, \dots, f_n) = B$. Therefore there exist $\alpha_i$ such
+                % that $\sum_i \alpha_i f_i = 1$.
+            }
     \end{enumerate}
 \end{exercise}
 

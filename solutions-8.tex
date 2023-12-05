@@ -59,7 +59,25 @@
 
 \begin{exercise}{4}
     \begin{enumerate}
-        \item{}
+        \item{
+                Let $U_i = \Spec(A_i)$.
+
+                Take a point $x \in U_1 \cap U_2$.
+
+                Take a principal open $x \in D(f) \subseteq U_1$ ($f \in U_1$).
+                Then find a smaller principal open $x \in D(g) \subseteq U
+                \subseteq U_2$ ($g \in U_2$).
+
+                Now we show that $D(g)$ is also a principal open in $U_1$.
+
+                Since $D(f) \subseteq U_2$, we have a map $\mathcal{O}(U_2) \to
+                \mathcal{O}(D(f))$, which induces $A_2 \to (A_1)_f$. Denote by
+                $g' = g |_{\Spec((A_1)_f)}$ the image of $g$ under this map.
+                Since $g' \in (A_1)_f$, we can write it as $g' = \frac{h}{f^n}$.
+                Then $D(g) = D(g) \cap D(f) = D(g') \cap D(f) = D(h) \cap D(f) =
+                D(hf)$, where $h, f \in A_1$. This shows that $D(g)$ is also
+                principal open in $U_1$.
+            }
         \item{
                 We have to show that the property of being of finite
                 presentation is a local property and that $f$ as defined above

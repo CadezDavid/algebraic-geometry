@@ -30,6 +30,21 @@
     Note that for a unique factorization domain $A$ we get by Gauss that also $A[x_1,\dots, x_n]$ is a unique factorization domain.
     This means that by construction of $\mathbb{P}_A^n$ its local rings are UFD's. Using \href{https://stacks.math.columbia.edu/tag/0BE9}{stacks project},
     we infer that $\Pic(\mathbb{P}_A^n)\cong \CL(\mathbb{P}_A^n)=\mathbb{Z}$.
+
+    We now want to give a concrete argument using the given map.
+
+    Note that by definion $\mathcal{O}^n_A(0)$ is just the structure sheaf and since maps of groups send $1$ to $1$, we found
+    the neutral element of this group. One can also check locally that 
+    \begin{align*}
+       O_{\mathcal{P}^n_A}(m)\otimes_{O_{\mathcal{P}^n_A}} O_{\mathcal{P}^n_A}(n) = O_{\mathcal{P}^n_A}(m+n).
+    \end{align*}
+    This also proves that the given map maps to $\Pic(\mathcal{P}^n_A)$.
+
+    It is also quite clear by definition that for $m\not=n$ we have
+    \begin{align}
+        O_{\mathcal{P}^n_A}(m)\not \cong O_{\mathcal{P}^n_A}(n).
+    \end{align}
+    It remains to show surjectivity of this map.
 \end{exercise}
 
 \begin{exercise}{3}

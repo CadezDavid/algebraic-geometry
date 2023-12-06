@@ -6,10 +6,48 @@
 \maketitle{}
 
 \begin{exercise}{1}
+    \begin{enumerate}
+        \item  Let $0\not = f \in I$ be a non-zero element. Since $A$ is a
+            unique factorization domain, we can write 
+            \begin{align*}
+                f=u{p}_1^{a_1}\dots {p}_r^{a_r},
+            \end{align*}
+            where ${p}_i$ are pairwise nosn-associated primes. Now, 
+            \begin{align*}
+                I_({p}_i)=I[(I\backslash (p_i)^{-1})]=(p_i^{k_i})
+            \end{align*}
+            for some $k_i\leq a_i$.
+            Since $I$ is finite locally free, 
+            \begin{align*}
+                I=(\prod_i p_i^{k_i}).
+            \end{align*}
+        \item 
+    \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{2}
+    Note that for a unique factorization domain $A$ we get by Gauss that also
+    $A[x_1,\dots, x_n]$ is a unique factorization domain. This means that by
+    construction of $\mathbb{P}_A^n$ its local rings are UFD's. Using
+    \href{https://stacks.math.columbia.edu/tag/0BE9}{stacks project}, we infer
+    that $\Pic(\mathbb{P}_A^n)\cong \CL(\mathbb{P}_A^n)=\mathbb{Z}$.
 
+    We now want to give a concrete argument using the given map.
+
+    Note that by definion $\mathcal{O}^n_A(0)$ is just the structure sheaf and
+    since maps of groups send $1$ to $1$, we found the neutral element of this
+    group. One can also check locally that 
+    \begin{align*}
+       O_{\Proj^n_A}(m)\otimes_{O_{\mathcal{P}^n_A}} O_{\mathcal{P}^n_A}(n) =
+        O_{\mathcal{P}^n_A}(m+n).
+    \end{align*}
+    This also proves that the given map maps to $\Pic(\mathcal{P}^n_A)$.
+
+    It is also quite clear by definition that for $m\not=n$ we have
+    \begin{align}
+        O_{\mathcal{P}^n_A}(m)\not \cong O_{\mathcal{P}^n_A}(n).
+    \end{align}
+    It remains to show surjectivity of this map.
 \end{exercise}
 
 \begin{exercise}{3}
@@ -52,18 +90,19 @@
             $\mathcal{O}_{\Proj^n_k}(d)$ for some $d \geq 0$.
             }
         \item{
-                At first it was not completely clear to us what the map $f^* \colon \Gamma(\Proj^m_k,
-                \mathcal{O}_{\Proj^m_k}(1)) \to \Gamma(\Proj^n_k,
-                \mathcal{O}_{\Proj^n_k} (d))$ is. So we assumed it is the following:
-                For a global section $f \in \Gamma(\Proj^m_k,
+                At first it was not completely clear to us what the map $f^*
+                \colon \Gamma(\Proj^m_k, \mathcal{O}_{\Proj^m_k}(1)) \to
+                \Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k} (d))$ is.
+                So we assumed it is the following:
+
+                For a global section $s \in \Gamma(\Proj^m_k,
                 \mathcal{O}_{\Proj^m_k}(1))$ we first map it with the
                 restriction
                 \begin{equation*}
                     \Gamma(\Proj^m_k, \mathcal{O}_{\Proj^m_k}(1)) \to
                     \Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k}(1)).
                 \end{equation*}
-                Denote its image with $f'$.
-
+                Denote its image with $s'$.
                 By definition we have 
                 \begin{equation*}
                     \Gamma(\Proj^n_k, f^* \mathcal{O}_{\Proj^m_k}(1)) =
@@ -71,11 +110,61 @@
                     \otimes_{\Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k})}
                     \Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k})
                 \end{equation*}
-                So include $f'$ into $\Gamma(\Proj^n_k, f^*
-                \mathcal{O}_{\Proj^m_k}(1))$ as $f' \otimes 1$.
+                So include $s'$ into $\Gamma(\Proj^n_k, f^*
+                \mathcal{O}_{\Proj^m_k}(1))$ as $s' \otimes 1$.
+                By part $1$ we have an isomorphism $\Gamma(\Proj^n_k, f^*
+                \mathcal{O}_{\Proj^m_k}(1)) \cong \Gamma(\Proj^n_k,
+                \mathcal{O}_{\Proj^n_k}(d))$. We map $s' \otimes 1$ with this
+                isomorphism to obtain $f^*(s)$.
 
-                The polynomials $y_0, \dots, y_n$ generate the module of
-                homogenous polynomials of degree $1$.
+                The polynomials $y_0, \dots, y_n$ generate $\Gamma(\Proj^m_k,
+                \mathcal{O}_{\Proj^m_k}(1))$, which is isomorphic to the module
+                of homogenous polynomials of degree $1$. So their restrictions
+                generate $\Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k}(1))$.
+                Their images in the tensor product
+                \begin{equation*}
+                    \Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k}(1))
+                    \otimes_{\Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k})}
+                    \Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k})
+                \end{equation*}
+                then also stay generators. And finally
+                isomorphism $\Gamma(\Proj^n_k, f^* \mathcal{O}_{\Proj^m_k}(1))
+                \cong \Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d))$ also
+                preserves generating set.
+
+                So $g_i = f^*(y_i) \in \Gamma(\Proj^n_k,
+                \mathcal{O}_{\Proj^n_k}(d))$ are generators.
+
+                If $d \geq 1$, then $g_i$ always vanish at $0 \in \Aff^{n+1}_k$.
+
+                Take some $(a_0, \dots, a_n) \in V(g_0, \dots, g_m) \subseteq
+                \Aff^{n+1}_k$. If $a_i \not= 0$ for some $i$, then the line
+                going through $(a_0, \dots, a_n)$ and $0$ would lie in $V(g_0,
+                \dots, g_m)$. Then $(g_0, \dots, g_m)$ would be contained in the
+                set of equations parametrizing this line. Therefore it wouldn't
+                be generating the whole module.
+            }
+        \item{
+                If $m < n$, then $\Gamma(\Proj^n_k,
+                \mathcal{O}_{\Proj^n_k}(d))$, which can be identified as a
+                $k$-module of homogenous polynomials of degree $d$, cannot be
+                generated by $m$ elements. It is a vector space of dimension
+                $\binom{n + d}{n}$ and $\binom{n + d}{n} > m$ for $d > 0$.
+                Therefore $d = 0$.
+
+                Now we show that $f$ must be constant. Suppose $f(\Proj^n_k)$
+                has two points. Then we can separate these two point with two
+                independent polynomials $s, t \in k[y_0, \dots, y_m]_1$. Then $s
+                \otimes 1$ and $t \otimes 1$ are independent elements of
+                $\Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k})$-module
+                \begin{equation*}
+                    \Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k}(1))
+                    \otimes_{\Gamma(\Proj^n_k, f^{-1} \mathcal{O}_{\Proj^m_k})}
+                    \Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k}).
+                \end{equation*}
+                But $\Gamma(\Proj^n_k, \mathcal{O}_{\Proj^n_k} (0))$ is the
+                trivial line bundle, so it cannot contain two elements which are
+                independent over global sections of line bundle itself.
             }
     \end{enumerate}
 \end{exercise}

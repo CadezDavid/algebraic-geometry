@@ -6,10 +6,30 @@
 \maketitle{}
 
 \begin{exercise}{1}
+    \begin{enumerate}
+        \item  Let $0\not = f \in I$ be a non-zero element. Since $A$ is a unique factorization domain,
+        we can write 
+        \begin{align*}
+            f=u{p}_1^{a_1}\dots {p}_r^{a_r},
+        \end{align*}
+        where ${p}_i$ are pairwise nosn-associated primes.
+        Now, 
+        \begin{align*}
+            I_({p}_i)=I[(I\backslash (p_i)^{-1})]=(p_i^{k_i})
+        \end{align*}
+        for some $k_i\leq a_i.$
+        Since $I$ is finite locally free, 
+        \begin{align*}
+            I=(\prod_i p_i^{k_i}).
+        \end{align*}
+        \item 
+    \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{2}
-
+    Note that for a unique factorization domain $A$ we get by Gauss that also $A[x_1,\dots, x_n]$ is a unique factorization domain.
+    This means that by construction of $\mathbb{P}_A^n$ its local rings are UFD's. Using \href{https://stacks.math.columbia.edu/tag/0BE9}{stacks project},
+    we infer that $\Pic(\mathbb{P}_A^n)\cong \CL(\mathbb{P}_A^n)=\mathbb{Z}$.
 \end{exercise}
 
 \begin{exercise}{3}

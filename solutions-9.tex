@@ -1,0 +1,52 @@
+\newcommand{\sheet}{9}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item{
+            Suppose we have a vector bundle of rank $n$ on $\Proj^1_k$. How do
+            we construct a matrix $\in \GL_n(k[T^{\pm 1}])$?
+
+            Take a rank $n$ vector bundle $\mathcal{E}$. Since Picard group of
+            $U_0$ and $U_1$ are trivial, we have isomorphisms $\alpha, \beta$.
+            So on $\Spec(k[T^{\pm 1}]) \subseteq U_0$ we have an isomorphism
+            $\Gamma(U_0 \cap U_1, \mathcal{O}^n_{U_0}) = (k[T^{\pm 1}])^n \cong
+            \mathcal{E}(U_0 \cap U_1)$.
+
+            Combining this with an isomorphism $\mathcal{E}(U_0 \cap U_1) \cong
+            (k[T^{\pm 1}])^n = \Gamma(U_0 \cap U_1, \mathcal{O}^n_{U_1})$, we
+            get an isomorpism $(k[T^{\pm 1}])^n \cong (k[T^{\pm 1}])^n$.
+
+            Let $\mathcal{D}$ be another rank $n$ vector bundle on $\Proj^1_k$,
+            and let $\varphi \colon \mathcal{E} \to \mathcal{D}$ be an
+            isomorphism between them.
+            On $U_0$ and $U_1$ we get induced isomorphisms
+            \begin{equation*}
+                (k[T])^n = \mathcal{E}(U_0) \to \mathcal{D}(U_0) = (k[T])^n
+            \end{equation*}
+            and
+            \begin{equation*}
+                (k[T^{-1}])^n = \mathcal{E}(U_1) \to \mathcal{D}(U_1) = (k[T^{-1}])^n
+            \end{equation*}
+        }
+    \item{
+            Take $G = \begin{pmatrix} p_1 & p_2 \\ p_3 & p_4 \end{pmatrix} \in
+                \GL_n(k[T^{\pm 1}])$. We can writte each $p_i =
+                \frac{g_i}{T^{k_i}}$ for some $g_i \in k[T]$. We can take $k_i =
+                k$ to be all the same. Then
+                \begin{equation}
+                    \begin{pmatrix} p_1 & p_2 \\ p_3 & p_4 \end{pmatrix} =
+                        \begin{pmatrix} T^{-k} & 0 \\ 0 & T^{-k} \end{pmatrix} 
+                    \begin{pmatrix} g_1 & g_2 \\ g_3 & g_4 \end{pmatrix} = 
+                \end{equation}
+        }
+    \item{
+        }
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

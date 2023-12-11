@@ -6,8 +6,26 @@
 \maketitle{}
 
 \begin{exercise}{2}
+    \href{http://math.uchicago.edu/~may/REU2021/REUPapers/Davidovsky.pdf}{source}
     \begin{enumerate}
-        \item{
+        \item[1. (version 1)]{
+                On the right side, we are given transition maps. 
+        
+                We have that
+                \begin{align*}
+                    \alpha_{| U_0\cap U_1}^{-1} \circ \beta_{| U_0\cap U_1}
+                \end{align*}
+                is invertible, because by assumption $\alpha$ and $\beta$ are
+                isomorphisms. To see injectivity, remember that given sheaves on
+                a cover and transition maps, we can uniquely (up to isomorphism)
+                glue them to get a sheaf on the whole space.
+
+                Well definedness of this map comes from the fact that if two vector bundles 
+                $V_1\cong V_2$ are ismorphic, then the transition map is the same.
+
+                It remains to show surjectivity.
+            }
+        \item[2. (version 2)]{
             Suppose we have a vector bundle of rank $n$ on $\Proj^1_k$. How do
             we construct a matrix $\in \GL_n(k[T^{\pm 1}])$?
 
@@ -33,7 +51,8 @@
                 (k[T^{-1}])^n = \mathcal{E}(U_1) \to \mathcal{D}(U_1) = (k[T^{-1}])^n
             \end{equation*}
         }
-    \item{
+        
+    \item[2.]{
             Take $G = \begin{pmatrix} p_1 & p_2 \\ p_3 & p_4 \end{pmatrix} \in
                 \GL_n(k[T^{\pm 1}])$. We can writte each $p_i =
                 \frac{g_i}{T^{k_i}}$ for some $g_i \in k[T]$. We can take $k_i =
@@ -44,8 +63,26 @@
                     \begin{pmatrix} g_1 & g_2 \\ g_3 & g_4 \end{pmatrix} = 
                 \end{equation}
         }
-    \item{
-        }
+    \item[3.]{
+        Claim: Every line bundle on $\Proj^1$ can be written as 
+        \begin{align*}
+            \mathcal{O}_{\Proj^1}(d_n)\oplus \dots \oplus \mathcal{O}_{\Proj ^1}(d_n).
+        \end{align*}
+        
+        Proof of claim:
+
+        By part 1 of this exercise, we can characterize the isomorphism classes of rank n vector bundles by looking at the transition functions. 
+
+        In the second part of this exercise, we showed that (for $n=2$, but actually inductively for all $n$) these 
+        transition functions can be writte as $T^d$. The claim now follows from observing that the transition matrix of 
+        \begin{align*}
+            \mathcal{O}_{\Proj^1}(d_n)\oplus \dots \oplus \mathcal{O}_{\Proj ^1}(d_n)
+        \end{align*}
+        is given by
+        \begin{align*}
+            T^{(d_1,\dots, d_n)}.
+        \end{align*}
+    }
     \end{enumerate}
 \end{exercise}
 

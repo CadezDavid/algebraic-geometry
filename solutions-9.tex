@@ -63,6 +63,17 @@
                     \begin{pmatrix} g_1 & g_2 \\ g_3 & g_4 \end{pmatrix} = 
                 \end{equation}
         }
+    \item[2. second version]
+    By left multiplication we get a matrux $A\in \GL_2(k[x])$, so assume this without loss of generality.
+
+    Next, observe that the determinant of $A$ in this case is in $k[x,x^{-1}]\cup k[x]$, so we can write 
+    \begin{align*}
+        det(A)=cx^n.
+    \end{align*}
+    Since $k[x]$ is an euclidean domain, we can now assume that $a_{12}=0$. Using our observation regarding
+    the derterminant, we conclude that $a_{11}$ and $a_{22}$ are monomials (with non-negative degree).
+
+    How can we get rid of $a_{21}$?
     \item[3.]{
         Claim: Every line bundle on $\Proj^1$ can be written as 
         \begin{align*}

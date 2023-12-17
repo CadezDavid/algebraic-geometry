@@ -1,0 +1,80 @@
+\newcommand{\sheet}{10}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item{
+                Since $X$ is closed and irreducible, it is of the form $X =
+                \overline{\{p_0\}}$ for some $p_0 \in \Aff^n_k$.
+                That means $X \cong \Spec(k[x_1, \dots x_n] / p_0)$.
+                Denote $A = k[x_1, \dots x_n] / p_0$.
+
+                By assumption there is a chain of specializations $p_0 \subset
+                \dots \subset p_d$ inside $X$.
+
+                Let $Z \subseteq X \cap V(f_1, \dots, f_r)$ be a irreducible
+                component. Thus it is the closure of a minimal prime ideal in $A
+                / (f_1, \dots, f_r)$.
+
+                By Krull's principal ideal theorem we have $\dim(A / (f_1,
+                \dots, f_r)) \geq d - r$.
+
+                Denote minimal prime ideals in $A / (f_1, \dots, f_r)$ with
+                $q_1, \dots q_l$.
+                
+                We argue that
+                \begin{equation*}
+                    \dim(A / (f_1, \dots, f_r) / q_j) = \dim(A / (f_1, \dots, f_r)).
+                \end{equation*}
+                for any $j$.
+
+                That follows from $A$ being catenary.
+                If there existed a maximal chain in $A / (f_1, \dots, f_r)$ that
+                starts at $q_j$ we could simply extend it below to get a
+                maximal chain in $A$. Since all maximal chains in $A$ are of the
+                same length, we get that all maximal chains in $A / (f_1, \dots,
+                f_r)$ are also of the same length.
+
+                Since $Z$ is an irreducible component, we have $Z =
+                \overline{\{q_i\}} \subseteq \Spec(A / (f_1, \dots, f_r))$.
+
+                Therefore any maximal chain in $Z$ is exactly as long as the
+                longest chain in $A / (f_1, \dots, f_r)$. And the longest chain
+                in $A / (f_1, \dots, f_r)$ is at least of length $d - r$.
+            }
+        \item{
+                The diagonal $\triangle \subseteq \Aff^n_k \times \Aff^n_k$ can
+                be defined as $V(x_i \otimes x_i \mid i = 1, \dots n) \subseteq
+                \Spec(k[x_1, \dots, x_n] \otimes_\Z k[x_1, \dots, x_n])$.
+                Using exercise above we get that any irreducible component of
+                $X \cap Y \cong (X \times Y) \cap V(x_i \otimes x_i \mid i = 1,
+                \dots n)$ has dimension at least $d + e - n$.
+            }
+        \item{
+                Let $\tilde{X} = f^{-1}(X)$ and $\tilde{Y} = f^{-1}(Y)$ as in
+                the hint.
+
+                We have $\dim(\tilde{X}) = d + 1$ and $\dim(\tilde{Y}) = e + 1$.
+                By the previous exercise we have $\dim(\tilde{X} \cap \tilde{Y})
+                \geq d + 1 + e + 1 - (n + 1) = (d + e - n) + 1 \geq 1$.
+
+                Therefore there there exists $0 \not= x \in \tilde{X} \cap
+                \tilde{Y}$.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item{
+            }
+        \item{
+            }
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

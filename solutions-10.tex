@@ -9,7 +9,7 @@
     \begin{enumerate}
         \item{
                 Since $X$ is closed and irreducible, it is of the form $X =
-                \overline{\{p_0\}}$ for some $p_0 \in \Aff^n_k$.
+                \overline{\{p_0\}}$ for some (Eric thinks unique) $p_0 \in \Aff^n_k$.
                 That means $X \cong \Spec(k[x_1, \dots x_n] / p_0)$.
                 Denote $A = k[x_1, \dots x_n] / p_0$.
 
@@ -25,6 +25,9 @@
 
                 Denote minimal prime ideals in $A / (f_1, \dots, f_r)$ with
                 $q_1, \dots q_l$.
+
+                (Eric thinks that there is a unique generic point here again, since $X$ is sober, so 
+                there should only be one of these prime ideals, right?)
                 
                 We argue that
                 \begin{equation*}
@@ -50,12 +53,15 @@
                 The diagonal $\triangle \subseteq \Aff^n_k \times \Aff^n_k$ can
                 be defined as $V(x_i \otimes x_i \mid i = 1, \dots n) \subseteq
                 \Spec(k[x_1, \dots, x_n] \otimes_\Z k[x_1, \dots, x_n])$.
+
+                (Should there not be a minus instead of $\otimes$ in the above expression?)
+
                 Using exercise above we get that any irreducible component of
                 $X \cap Y \cong (X \times Y) \cap V(x_i \otimes x_i \mid i = 1,
                 \dots n)$ has dimension at least $d + e - n$.
             }
         \item{
-                Let $\tilde{X} = f^{-1}(X)$ and $\tilde{Y} = f^{-1}(Y)$ as in
+                Let $\tilde{X} = \overline{f^{-1}(X)}$ and $\tilde{Y} = \overline{f^{-1}(Y)}$ as in
                 the hint.
 
                 We have $\dim(\tilde{X}) = d + 1$ and $\dim(\tilde{Y}) = e + 1$.
@@ -64,6 +70,11 @@
 
                 Therefore there there exists $0 \not= x \in \tilde{X} \cap
                 \tilde{Y}$.
+
+                Questions from Eric:
+                
+                Why is $\tilde{X}$ irreducible (to be able to use part 2) and why does the dimension 
+                increase by 1 when we go to affine space?
             }
     \end{enumerate}
 \end{exercise}

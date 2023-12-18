@@ -71,8 +71,88 @@
 \begin{exercise}{2}
     \begin{enumerate}
         \item{
+                Take $x \in |X|$. If $x \notin f(|Y|)$, we can find an open
+                $U_x$ such that $f^{-1} (U_x) = \emptyset$. So assume $x \in
+                f(|Y|)$. Then look at $f^{-1}(x)$. Take an open affine $V_x
+                \subseteq |Y|$ with $f^{-1} (x) \in V_x$. Since $f$ is
+                homeomorphism on its image, we have can take $U_x = f(V_x)$ an
+                affine neighborhood of $x$ such that $f^{-1}(U_x) = V_x$ is
+                affine.
             }
         \item{
+            }
+    \end{enumerate}
+\end{exercise}
+
+
+    % https://math.stackexchange.com/questions/3774859/global-sections-of-a-proper-variety-over-an-arbitrary-field
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{
+                We have a map $k \rightarrow \Gamma(X, \mathcal{O}_X)$.
+                For any $f \in \Gamma(X, \mathcal{O}_X)$ we can define $k[x]
+                \rightarrow \Gamma(X, \mathcal{O}_X)$ by $x \mapsto f$.
+
+                Showing that $g(X)$ does not contain the generic point of
+                $\Aff^1_k$ is equivalent to showing that $k[x] \to
+                \Gamma(X, \mathcal{O}_X)$ is not injective.
+
+                We have a composition $k \to k[x] \to \Gamma(X, \mathcal{O}_X)$.
+                So also $X \to \Aff^1_k \to \Spec(k)$.
+
+                Map $X \to \Spec(k)$ is proper.
+
+                Map $\Aff^1_k \to \Spec(k)$ is separated, since it is a map of
+                affine schemes. (Follows from the fact that $k[x] \otimes_k k[x]
+                \to k[x]$ is surjective, and thus $\Aff^1_k \to \Aff^1_k
+                \times_k \Aff^1_k$ a closed immersion.)
+
+                Thus by the proposition from the lectures, the map $g \colon X \to
+                \Aff^1_k$ is proper. In particular it is closed. Since $X$ is
+                connected, the image $g(X)$ must be connected as well.
+
+                Using the hint, we can postcompose to obtain $X \to \Aff^1_k \to
+                \Proj^1_k$.
+                Now the conclusion should be that the image of $X$ in
+                $\Proj^1_k$ is also closed. Since $\Aff^1_k \subseteq \Proj^1_k$
+                is not closed, the image of $X$ in $\Aff^1_k$ can also not be
+                closed. Therefore it must be a single point.
+
+                Since we did not exactly understand why should $X \to \Proj^1_k$
+                be closed, we decided to rather show that $X \to \Aff^1_k$
+                cannot be surjective, as that would imply $\Aff^1_k$ being
+                universally closed over $\Spec(k)$ (which we've shown during the
+                lectures to be false). 
+
+                Instead of doing it abstractly, we can show that $X \to
+                \Aff^1_k$ being surjective would imply $\Aff^2_k \to \Aff^1_k$
+                being closed.
+
+                By the universal property of $\Aff^2_k$ we get a map $X \to
+                \Aff^2_k$, induced by $X \to \Aff^1_k$.
+                So we have a map $X \to \Aff^2_k \to \Aff^1_k$.
+                Denote $\alpha \colon X \to \Aff^2_k$ and $\beta \colon \Aff^2_k
+                \to \Aff^1_k$.
+                If $\alpha$ would be surjective, then for any $U \subseteq
+                \Aff^2_k$ we would have $(\beta \circ \alpha)(\alpha^{-1}(U)) =
+                \beta(U)$. Since $\beta \circ \alpha$ is closed by assumption,
+                this would prove that $\beta$ is closed. That is not true, so
+                $\beta \circ \alpha$ is not surjective.
+
+                We've shown that the image of $X \to \Aff^1_k$ is a single
+                point. Since this point is closed, it is not the generic point.
+                This shows that $k[x] \to \Gamma(X, \mathcal{O}_X)$ induced by
+                $f \in \Gamma(X, \mathcal{O}_X)$ is not injective.
+            }
+        \item{
+                We have a map $k \to \Gamma(X, \mathcal{O}_X)$. It cannot be
+                $0$, since $X$ is locally finite type over $\Spec(k)$. So it is
+                injective.
+
+                It is also surjective, since for any $f \in \Gamma(X,
+                \mathcal{O}_X)$ the map $k[x] \to \Gamma(X, \mathcal{O}_X)$
+                defined by $x \mapsto f$ is not injective. Therefore $k \cong
+                \Gamma(X, \mathcal{O}_X)$.
             }
     \end{enumerate}
 \end{exercise}

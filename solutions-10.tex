@@ -81,7 +81,19 @@
 
 \begin{exercise}{2}
     \begin{enumerate}
-        \item{
+        \item{It is enough to show that there exists a cover $X=\cup_i Spec(A_i)$ of $X$ by open affines 
+        such that $f^{-1}(Spec(A_i))$ is affine for all $i$. Therefore it is enough to show that the hint holds,
+        since $X=\cup_{x\in X} U_x$, where each $U_x$ is an open affine with $x\in U_x$.
+
+        Take some $x\in X$. Then $x\in Spec(A_k)$ for some $k$. 
+        Now choose some principal open $D(g)\subset Z$ with $f^{-1}(x)\in D(g)$. 
+
+        We can now take a principal open $D(g^\prime) \subset f(D(g))$ such that $D(g^\prime) \subset U_k$ and $x\in D(g^\prime)$.
+        Then we can show similarly to exercise 4.1 on sheet 8 that 
+        \begin{align*}
+            f^{-1}(D(g^\prime))
+        \end{align*}
+        is a principal open again, so in particular affine.
             }
         \item{
             }

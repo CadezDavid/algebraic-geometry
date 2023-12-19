@@ -85,7 +85,11 @@
         such that $f^{-1}(\Spec(A_i))$ is affine for all $i$. Therefore it is enough to show that the hint holds,
         since $X=\cup_{x\in X} U_x$, where each $U_x$ is an open affine with $x\in U_x$.
 
-        Take some $x\in X$. Then $x\in \Spec(A_k)$ for some $k$. 
+        Take some $x\in X$. If $x \not \in f(Y)$ then by continuity and since $f(X)$ is closed, 
+        there exists an affine $U_x$ that is disjoint from $f(Y)$. In this case $f^{-1}(U_x)=\emptyset=D(1)$ the preimage under 
+        $f$ is of affine.
+        
+        If $x\in f(Y)$, then $x\in \Spec(A_k)$ for some $k$. 
         Now choose some principal open $D(g)\subset Z$ with $f^{-1}(x)\in D(g)$. 
 
         We can now take a principal open $D(g^\prime) \subset f(D(g))$ such that $D(g^\prime) \subset U_k$ and $x\in D(g^\prime)$.

@@ -270,6 +270,31 @@
             would hold, since kernels of quasi-coherent sheaves are
             quasi-coherent.
 
+            However, let us assume now only that $f$ is quasi-compact.
+            Since quasi-coherentness is a local property, we can assume that $S$ is affine.
+            Using that $f$ is quasi-compact we have that
+            \begin{align*}
+                X=f^{-1}(Y)
+            \end{align*}
+            is compact, so we can write 
+            \begin{align*}
+                X=\bigcup_{i=1}^n U_i
+            \end{align*}
+            as a finite union of open affines.
+
+            This gives a map 
+            \begin{align*}
+                f^{\prime}:\bigsqcup U_i \to X \to S.
+            \end{align*}
+            Now $f_*\mathcal{O}_X$ is a subsheaf of $f^{\prime}_*\mathcal{O}_{X^\prime}$,
+            so 
+            \begin{align*}
+                \mathcal{I}=\ker(\mathcal{O}_S \to \mathcal{O}_{X^\prime}).
+            \end{align*}
+            Therefore, by \href{https://stacks.math.columbia.edu/tag/01LC}{stacks project}
+            the sheaf of ideals is quasi-coherent in this case.
+
+            Now the scheme-theoretic image is just the closed subscheme determined by $\mathcal{I}$.
             }
         \item{
             Denote $X = \bigsqcup_{n \geq 0} \Spec(\Z / p^n)$ and $f \colon X

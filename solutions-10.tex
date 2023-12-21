@@ -75,6 +75,7 @@
                 
                 Why is $\tilde{X}$ irreducible (to be able to use part 2) and why does the dimension 
                 increase by 1 when we go to affine space?
+
             }
     \end{enumerate}
 \end{exercise}
@@ -102,14 +103,13 @@
 
         v2
 
-        Take $x \in |X|$. If $x \notin f(|Y|)$, we can find an open
-                $U_x$ such that $f^{-1} (U_x) = \emptyset$. So assume $x \in
-                f(|Y|)$. Then look at $f^{-1}(x)$. Take an open affine $V_x
-                \subseteq |Y|$ with $f^{-1} (x) \in V_x$. Since $f$ is
-                homeomorphism on its image, we have can take $U_x = f(V_x)$ an
-                affine neighborhood of $x$ such that $f^{-1}(U_x) = V_x$ is
-                affine.
-            }
+        Take $x \in |X|$. If $x \notin f(|Y|)$, we can find an open $U_x$ such
+        that $f^{-1} (U_x) = \emptyset$. So assume $x \in f(|Y|)$. Then look
+        at $f^{-1}(x)$. Take an open affine $V_x \subseteq |Y|$ with $f^{-1}
+        (x) \in V_x$. Since $f$ is homeomorphism on its image, we have can
+        take $U_x = f(V_x)$ an affine neighborhood of $x$ such that
+        $f^{-1}(U_x) = V_x$ is affine.
+        }
         \item{Assume that $f$ is universally closed. We want to show that $f$ is
             integral, surjective and universally injective. By the first part of
             this exercise we get that $f$ is affine. It says on
@@ -141,9 +141,12 @@
                 For any $f \in \Gamma(X, \mathcal{O}_X)$ we can define $k[x]
                 \rightarrow \Gamma(X, \mathcal{O}_X)$ by $x \mapsto f$.
 
-                Showing that $g(X)$ does not contain the generic point of
-                $\Aff^1_k$ is equivalent to showing that $k[x] \to
-                \Gamma(X, \mathcal{O}_X)$ is not injective.
+                Pick some $f \in \Gamma(X, \mathcal{O}_X)$ and define the
+                induced $g \colon X \to \Aff^1_k$.
+
+                First observe that:
+                $g(X)$ does not contain the generic point of $\Aff^1_k$ if and
+                only if $k[x] \to \Gamma(X, \mathcal{O}_X)$ with $x \mapsto f$ is not injective.
 
                 We have a composition $k \to k[x] \to \Gamma(X, \mathcal{O}_X)$.
                 So also $X \to \Aff^1_k \to \Spec(k)$.
@@ -157,20 +160,20 @@
 
                 Thus by the proposition from the lectures, the map $g \colon X \to
                 \Aff^1_k$ is proper. In particular it is closed. Since $X$ is
-                connected, the image $g(X)$ must be connected as well.
+                connected, the image $g(X)$ is connected as well.
 
-                Using the hint, we can postcompose to obtain $X \to \Aff^1_k \to
-                \Proj^1_k$.
+                Using the hint, we can postcompose with open inclusion $\Aff^1_k
+                \subseteq \Proj^1_k$ to obtain $X \to \Aff^1_k \to \Proj^1_k$.
                 Now the conclusion should be that the image of $X$ in
                 $\Proj^1_k$ is also closed. Since $\Aff^1_k \subseteq \Proj^1_k$
-                is not closed, the image of $X$ in $\Aff^1_k$ can also not be
-                closed. Therefore it must be a single point.
+                is not closed, the image of $X$ cannot be whole $\Aff^1_k$.
+                Therefore it must be a single point.
 
-                Since we did not exactly understand why should $X \to \Proj^1_k$
-                be closed, we decided to rather show that $X \to \Aff^1_k$
-                cannot be surjective, as that would imply $\Aff^1_k$ being
-                universally closed over $\Spec(k)$ (which we've shown during the
-                lectures to be false). 
+                Since we did not exactly understand why should composition $X
+                \to \Proj^1_k$ be closed, we decided to rather show that $X \to
+                \Aff^1_k$ cannot be surjective, as that would imply $\Aff^1_k$
+                being universally closed over $\Spec(k)$ (which we've shown
+                during the lectures to be false). 
 
                 Instead of doing it abstractly, we can show that $X \to
                 \Aff^1_k$ being surjective would imply $\Aff^2_k \to \Aff^1_k$
@@ -185,7 +188,7 @@
                 \Aff^2_k$ we would have $(\beta \circ \alpha)(\alpha^{-1}(U)) =
                 \beta(U)$. Since $\beta \circ \alpha$ is closed by assumption,
                 this would prove that $\beta$ is closed. That is not true, so
-                $\beta \circ \alpha$ is not surjective.
+                $g = \beta \circ \alpha$ is not surjective.
 
                 We've shown that the image of $X \to \Aff^1_k$ is a single
                 point. Since this point is closed, it is not the generic point.
@@ -210,42 +213,95 @@
     % https://stacks.math.columbia.edu/tag/01QQ
     \begin{enumerate}
         \item{
-                Steps:
-                \begin{itemize}
-                    \item{We use equalizers to show that the scheme $\im(f)$
-                        exists.}
-                    \item{Using composition $X \to Z \to S$ we get that ideal
-                        sheaf of $\im(f)$ is indeed contained in the kernel of
-                        $f^\# \colon \mathcal{O}_S \to f_*(\mathcal{O}_X)$.}
-                    \item{Show that ideal sheaf of a closed immersion is
-                        indeed a quasi-coherent sheaf.}
-                    \item{Show that every quasi-coherent ideal sheaf $I
-                        \subseteq \ker(f^\#)$ induces a closed immersion $Z_I
-                        \hookrightarrow S$.}
-                    \item{Show that if $I \subseteq J \subseteq \ker(f^\#)$,
-                        then $Z_I \hookrightarrow Z_J \hookrightarrow S$, where
-                        $Z_I$ and $Z_J$ are closed immersion that they induce.}
-                \end{itemize}
+            Let $\{Z_i\}_{i \in I}$ be all closed subschemes $Z_i$ such that $f
+            \colon X \to S$ factors through $Z_i$. Since equalizers exist in
+            category of schemes, we take $\im(f)$ to be the equalizer $\eq(Z_i
+            \rightrightarrows S)$.
+
+            Let $\im(f)$ be the schematic image of $f \colon X \to S$. We have a
+            factorization $f = i \circ f'$, where $f' \colon X \to \im(f)$ and
+            $i \colon \im(f) \to S$ closed immersion.
+
+            Then $\mathcal{O}_S \to f_* (\mathcal{O}_X)$ factors as
+            $\mathcal{O}_S \to i_* \mathcal{O}_{\im(f)} \to f_*
+            (\mathcal{O}_X)$. This shows that ideal sheaf of the image is indeed
+            contained in the kernel of $f^\#$.
+
+            Show that ideal sheaf of a closed immersion is indeed a
+            quasi-coherent sheaf.
+
+            Let $i \colon \im(f) \to S$ be a closed immersion. We have a
+            surjection $\mathcal{O}_S \to i_* \mathcal{O}_Z$.
+
+            Pick a point $x \in S$ and an affine open neighborhood $x \in U =
+            \Spec(A) \subseteq S$. We obtain a map $A \to i_* \mathcal{O}_Z
+            (U)$.
+
+            Denote the kernel $I = \ker(A \to i_* \mathcal{O}_Z (U))$.
+
+            Since $\mathcal{O}_S \to i_* \mathcal{O}_Z$ surjective implies $A
+            \to i_* \mathcal{O}_Z (U)$ surjective, we have $i_* \mathcal{O}_Z
+            (U) \cong A / I$.
+
+            We want to show the ideal sheaf is equal to $\tilde{I}$. Pick any $f
+            \in A$.
+
+            Since $i_* \mathcal{O}_Z$ is a quasi-coherent
+            $\mathcal{O}_S$-module, we have $i_* \mathcal{O}_Z(D(f)) = i_*
+            \mathcal{O}_Z(U)[f^{-1}] = (A/I)[f^{-1}]$.
+
+            Kernel of $A[f^{-1}] \to (A/I)[f^{-1}]$ is then $I[f^{-1}]$. This
+            shows that ideal sheaf isomorphic to $\tilde{I}$ on $U$ and thus a
+            quasi-coherent sheaf.
+
+            Now we have to show it is in fact maximal such.
+
+            Take any quasi-coherent ideal $M$ that factors through $\ker(f^\#)$.
+            Sheaf $M$ induces a closed subscheme, locally on $\Spec(A) \subseteq
+            S$ defined as a closed subscheme $V(M(U)) \subseteq \Spec(A)$.
+
+            For any affine open $U = \Spec(A) \subseteq S$, the ideal $M(U)$
+            factors through kernel $I = \ker(f^\#)(U)$: $M(U) \to I \to A \to
+            A/I$. This implies $V(M(U)) \subseteq \im(f)$ locally on affine
+            opens, so $M$ defines a closed subscheme of $\im(f)$.
             }
         \item{
-                Steps:
-                \begin{itemize}
-                    \item{}
-                \end{itemize}
+            If $f_* \mathcal{O}_X$ would be quasi-coherent, then the statement
+            would hold, since kernels of quasi-coherent sheaves are
+            quasi-coherent.
+
             }
         \item{
+            Denote $X = \bigsqcup_{n \geq 0} \Spec(\Z / p^n)$ and $f \colon X
+            \to \Spec(Z)$.
+            For every $n \geq 0$ we have $\Z/p^n$ which has a unique prime
+            ideal, namely $(0)$ if $0 \leq n \leq 1$ and $(p)$ if $n \geq 2$.
+
+            Every $\Spec(\Z/p^n)$ thus has one point.
+            By looking at preimages of $\Z \to \Z / p^n$ we see that
+            all of them are mapped to $(p) \in \Spec(\Z)$.
+            So topologically the image should be $\{(p)\} \subseteq \Spec(\Z)$
+            (we thought naively at the start).
+
+            We use previous two parts to compute ideal sheaf, from which we can
+            infer closed subscheme $\im(f)$.
+            Ideal sheaf is quasi-coherent, so corresponds to some ideal $I
+            \subseteq Z$.
+            We also know ideal sheaf $\tilde{I}$ is contained in the kernel
+            $\ker(\mathcal{O}_{\Spec(\Z)} \to f_* \mathcal{O}_X)$
+            Applying this to global sections we get that $I$ must be
+            contained in the kernel of $\ker(\Z \to \prod_{n \geq 0} \Z / p^n)$.
+            But this map is injective, since every non-zero $a \in \Z$ will be non-zero
+            in some $\Z / p^n$ for big enough $n$. Therefore $I$ is zero.
+
+            Ideal $I$ vanishes everywhere, so $\im(f)$ is topologically
+            homeomorphism on $\Spec(\Z)$ and $\mathcal{O}_{\Spec(\Z)} \to
+            \mathcal{O}_{\im(f)}$ is surjective map with trivial kernel, so an
+            isomorphism. Therefore $\im(f) = \Spec(\Z)$ (which is very
+            surprising).
             }
     \end{enumerate}
 
-\end{exercise}
-
-\begin{exercise}{4}
-    part 1 and 2 can be found here 
-    https://stacks.math.columbia.edu/tag/01R5
-
-    \begin{enumerate}
-        \item 
-    \end{enumerate}
 \end{exercise}
 
 \end{document}

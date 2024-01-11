@@ -1,4 +1,4 @@
-\newcommand{\sheet}{10}
+\newcommand{\sheet}{11}
 \input{Header.tex}
 
 \begin{document}
@@ -11,15 +11,26 @@
         
         Hence, we can write 
         \begin{align*}
-            f_r=l_1 \odot \dots \odot l_r,
+            f_r=l_1  \dots  l_r,
         \end{align*}
         where $l_i\in k[x,y]$ is of degree $1$. From the assumption that $f_r$ is homogenous it follows that the $l_i$ are homogenous.
 
         Therefore, we can write
         \begin{align*}
-            Z=V(f_r)=V(l_1 \odot \dots \odot l_r)=\cup_i V(l_i)
+            Z=V(f_r)=V(l_1 \dots  l_r)=\cup_i V(l_i)
         \end{align*}
         and since $V(l_i)$ is a line through the origin, $Z$ can be written as the finite union of lines through the origin.
+
+        \item Assume that $r=1$, i.e. $X=V(f_1).$
+        We want to show that $\mathcal{O}_{X,0}$ is a field, which would imply that it is regular.
+
+        We calculate for $x$ the origin 
+        \begin{align*}
+            \mathcal{O}_{X,x}=\varinjlim_{x\in D(g)} k[x,y]/f_1 [g^{-1}]=\varinjlim_{x\in D(g)} k[u] [g^{-1}]=K(A),
+        \end{align*}
+        using that $f_1$ is homogenous of degree $1$ and where $K(A)$ is the field of fractions of $A$.
+
+        
     \end{enumerate}
 
 \end{exercise}

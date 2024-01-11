@@ -1,0 +1,27 @@
+\newcommand{\sheet}{10}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item Since $k$ is algebraically closed, the only irreducible polynomials $f\in k[x,y]$ are of degree $1$.
+        
+        Hence, we can write 
+        \begin{align*}
+            f_r=l_1 \odot \dots \odot l_r,
+        \end{align*}
+        where $l_i\in k[x,y]$ is of degree $1$. From the assumption that $f_r$ is homogenous it follows that the $l_i$ are homogenous.
+
+        Therefore, we can write
+        \begin{align*}
+            Z=V(f_r)=V(l_1 \odot \dots \odot l_r)=\cup_i V(l_i)
+        \end{align*}
+        and since $V(l_i)$ is a line through the origin, $Z$ can be written as the finite union of lines through the origin.
+    \end{enumerate}
+
+\end{exercise}
+
+\end{document}

@@ -21,14 +21,19 @@
         \end{align*}
         and since $V(l_i)$ is a line through the origin, $Z$ can be written as the finite union of lines through the origin.
 
-        \item Assume that $r=1$, i.e. $X=V(f_1).$
-        We want to show that for $x=\lbrace 0 \rbrace$ we have that$\mathcal{O}_{X,x}$ is a field, which would imply that it is regular.
+        \item 
+        We first want to prove that $\dim(\mathcal{O}_{X,(x,y)})=1$ for all $r$. The prime ideals $p$ in this ring 
+        fulfil $(f)\subset p \subset (x,y)$. Remember that we can write down these prime ideals explicitely as in 
+        \href{https://math.stackexchange.com/questions/56916/what-do-prime-ideals-in-kx-y-look-like}{"What do primes of k[x,y] look like"}.
+        From this the claim follows.
 
-        We calculate 
-        \begin{align*}
-            \mathcal{O}_{X,x}=\varinjlim_{x\in D(g)} k[x,y]/f_1 [g^{-1}]=\varinjlim_{x\in D(g)} k[u] [g^{-1}]=K(A),
-        \end{align*}
-        using that $f_1$ is homogenous of degree $1$ and where $K(A)$ is the field of fractions of $A$.
+        We know that $\dim_k(m_{\mathcal{O}_{X,(x,y)}}/m_{\mathcal{O}_{X,(x,y)}}^2)$ is the number of generators 
+        of $m_{\mathcal{O}_{X,(x,y)}}$.
+
+        Now if $r=1$, then we can write $f=g(x,y)x+h(x,y)y$ and w.l.o.g. we have $g(0,0)=1$, meaning that it is invertible (after localizing
+        ). Therefore $f=x+h(x,y)y$, so $y\mid x$ meaning $(x,y)=(y)$
+        On the other hand, if $r>1$, then $x\nmid y$ and $y\nmid x$ meaning that $m$ is no principal ideal showing that $X$ is 
+        singular at zero in this case. (This can be seen by writing $f$ as $f=x^2h_1(x,y)+xyh_2(x,y)+y^2h_3(x,y))$.
 
         \item By part two of this exercise, all the schemes have a singular point at the origin. I don't know why they do not have singular
         points anywhere else.

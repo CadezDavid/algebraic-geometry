@@ -5,6 +5,22 @@
 
 \maketitle{}
 
+\begin{exercise}{1}
+    We claim that $\mathcal{O_{X,x}}$ is a normal, local noetherian domain of dimension at most one. 
+    Normality is by definition of normality of $X$. Stalks are of course local rings by definition of locally ringed space.
+    Noetherian comes from the assumption that $X$ is of finite type over $k$. Also, 
+    \begin{align*}
+        \dim(X)=\sup_{x\in X}\dim(\mathcal{O}_{X,x}).
+    \end{align*}
+    Hence, $\dim(\mathcal{O}_{X,x})\le 1$.
+
+    If $\dim(\mathcal{O}_{X,x})= 0$, then $\mathcal{O}_{X,x}$ is of course regular as the only prime ideal is $(0)$.
+
+    If $\dim(\mathcal{O}_{X,x})= 1$, then we know from the lecture that the maximal ideal $\mathcal{m}\subset \mathcal{O}_{X,x}$
+    is principal (and not zero) and hence $\mathcal{O}_{X,x}$ is regular.
+\end{exercise}
+
+
 \begin{exercise}{3}
     \begin{enumerate}
         \item Since $k$ is algebraically closed, the only irreducible polynomials $f\in k[x,y]$ are of degree $1$.

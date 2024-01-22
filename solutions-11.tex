@@ -8,8 +8,7 @@
 \begin{exercise}{1}
     We claim that $\mathcal{O}_{X,x}$ is a normal, local noetherian domain of dimension at most one. 
     Normality is by definition of normality of $X$. Stalks are of course local rings by definition of locally ringed space.
-    Noetherian comes from the assumption that $X$ is of finite type over $k$. Also, by 
-    \href{https://stacks.math.columbia.edu/tag/04MS}{The Stacks Project} 
+    Noetherian comes from the assumption that $X$ is of finite type over $k$. Also, 
     \begin{align*}
         \dim(X)=\sup_{x\in X}\dim(\mathcal{O}_{X,x}).
     \end{align*}
@@ -59,21 +58,30 @@
 \end{exercise}
 
 \begin{exercise}{4}
+    Intuitively, since
+    \begin{align*}
+        \Gamma(X,\mathcal{O}_X)\subset \Gamma(U,\mathcal{O}_X)
+     \end{align*}
+     one can always restrict sections on $X$ to sections on $U$. In this exercise we basically show that under these
+     special conditions we can also uniquely extend a section on $U$ to one on the whole $X$.
+
+
     We will show that the restriction map on global sections is an isomorphism, i.e. that
     \begin{align*}
-        \Gamma(X,\mathcal{O}_X)\cong \Gamma(U,\mathcal{O}_X)
+        \Gamma(X,\mathcal{O}_X)\cong \Gamma(U,\mathcal{O}_X).
     \end{align*}
     This immediately implies the claim of the exercise by definition of vector bundle (if rings are isomorphic
     then so is their finite sum).
 
-    By definition, $\codim(Z)\geq 2.$
+    By definition, $\codim(Z)\geq 2.$ (where $\codim(Z)=\inf_{z\in Z}(\mathcal{O}_{X,z}))$ as defined in Görz Wedhorn.
+
     Take $Y\subset X$ an irreducible component of codimension $1$. By construction, $Y$ and $U$ intersect nontrivially
-     (either $Z\cap Y=\emptyset$ or $Z\subsetneq Y$). 
+     (either $Z\cap Y=\emptyset$ or $Y\subsetneq Z$). 
      In particular, $U$ contains the generic point $\mu$ of $Y$. 
      This means that $\Gamma(U,\mathcal{O}_X)\subset \mathcal{O}_{X,\mu}$.
 
      The hint tells us that $A$ is the intersection of all localizations of $A$ at prime ideals $p$ of height $1$.
-     Those prime ideals of height $1$ correspond to irreducible components of codimension $1$. Hence, we have just shown that
+     Those prime ideals of height $1$ correspond to irreducible closed subsets of codimension $1$. Hence, we have just shown that
      \begin{align*}
         \Gamma(U,\mathcal{O}_X)\subset A = \Gamma(X,\mathcal{O}_X).
      \end{align*}

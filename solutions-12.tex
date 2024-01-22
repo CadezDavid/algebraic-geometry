@@ -1,0 +1,51 @@
+\newcommand{\sheet}{12}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item Since $X$ is smooth, all local rings are UFD's. So in this exercise we will show that locally factorial is not affine-local
+        \item We can write every $a\in A$ as 
+        \begin{align*}
+            a=c_o+c_1a_1(x)+c_2ya_2(x),
+        \end{align*}
+        so as a polynomial of degree 1 over $R$. Since the sum of two integral elements is integral again (\href{https://stacks.math.columbia.edu/tag/00GO}{StacksProject})
+        it is enough to show that $c_2ya(x)$ is integral over $R$. This is clearly true since $(c_2ya(x))^2\in R$.
+        \item We need to check that zero gets mapped to zero. This follows from
+        \begin{align*}
+            (-y)^2-x^3+x=y^2-x^3+x
+        \end{align*}
+        \item Write an element $a(x,y)\in A$ as 
+        \begin{align*}
+            a(x,y)=c+a_1(x)+ya_2(x).
+        \end{align*}
+        We compute 
+        \begin{align*}
+            N(a)=a(x,y)a(x,-y)=(c+a_1(x))^2-(ya_2(x))^2=(c+a_1(x))^2-(x^3-x)a_2(x)^2\in R.
+        \end{align*}
+        Multiplicativity of $N$ follows from the properties of ring maps.
+        \item Take $a\in A^*$. Then $N(a)\in k[x]^*=k^*$ and since $\deg(a\sigma(a))\leq 1$ implies $deg(a)\leq 1$ this implies $a\in k^*$.
+
+        We can check irreducibility using the map $N.$
+
+        Assume that $x=fg$ for $f,g\in A$. Then
+        \begin{align*}
+            x^2=N(x)=N(fg).
+        \end{align*}
+        Write $fg=a_1(x)$. Then by the calculations from above,
+        \begin{align*}
+            a_1(x)^2=x^2 \in R.
+        \end{align*}
+        Therefore $a_1(x)=\pm x,$ but $x$ is irreducible in $R$, so w.l.o.g. $f\in A^*=k^*$. 
+
+        I guess a similar argument works to show that $y$ is irreducible.
+
+        This shows that $y^2=x(x^2-1)$ are two decompositions into irreducible elements, showing that $A$ is not 
+        factorial.
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

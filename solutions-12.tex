@@ -5,10 +5,43 @@
 
 \maketitle{}
 
+\begin{exercise}{2}
+    Let $p=(p_1;\dots,p_n)\in X$ and $a_p\subset k[x_1,\dots,x_n]=:A$ its corresponding maximal ideal. Define a linear map
+    \begin{align*}
+        \phi := A &\to k^n\\
+        f&\mapsto ({df}/{dx_1}(p),\dots, {df}/{dx_n}(p)).
+    \end{align*}
+    We observe that $\phi(x_i-a_i)$ is a basis of $k^n$ and $\phi(f)=0$ if and only if $f\in a_p^2$. Hence,
+    \begin{align*}
+        \phi^\prime:a_p/a_p^2 \to k^n
+    \end{align*}
+    is an isomorphism. Define $b=(f_1,\dots, f_n).$ Then the rank of the Jacoby matrix corresponding to $b$
+    is exactly the $\dim(\phi(b))$ as a subset of $k^n$. Using the above isomorphism, we see that this is the dimension
+    of the subspace $b+a_p^2$ of $a_p+a_p^2$.
+
+    On the other hand, we have 
+    \begin{align*}
+        m/m^2\cong a_p/(b+a_p^2),
+    \end{align*}
+    where $m\subset$ is the maximal ideal of $\mathcal{O}_{X,p}.$ 
+
+    Now we can just sum up the dimensions of the vector spaces to get
+    \begin{align*}
+        \dim(m/m^2)+\rank(J)=n.
+    \end{align*}
+
+    Now we can conclude, because $p$ is regular if and only if $\dim(X)=\dim(\mathcal{O}_{X,p})=\dim(m/m^2)$ (I think for the first 
+    equality we need that $X$ is irreducible, so that use for example Prop. 5.30 in Görz-Wedhorn),
+     or equivalently
+    \begin{align*}
+        \rank(J)=n-\dim(X).
+    \end{align*}
+\end{exercise}
+
 \begin{exercise}{3}
     \begin{enumerate}
-        \item We want to argue that all local rings $\mathcal{O}_{X,x}$ are regular by showing that their maximal is (non-zero)
-        and principal.
+        \item We want to argue that all local rings $\mathcal{O}_{X,x}$ are regular by showing that their maximal is (non-zero
+        and) principal.
 
         This basically follows immediately from writing down explicitely how the primes in the local rings look like and of course
         we use that their Krull dimension is one. This shows smoothness, because we have for all the local rings $A$ and their
@@ -16,6 +49,10 @@
         \begin{align*}
             \dim_k(m/m^2)=1=\dim(A)
         \end{align*}
+
+        Smoothness can also be seen using the second part of the previous exercise. The Jacobian is of course of rank one.
+
+
         Since $\dim(Y)=1$, a theorem from class implies that $Y=\Spec(A)$ is normal and hence $A$ is normal.
 
         Since $X$ is smooth, all local rings are UFDs. So in this exercise we will show that locally factorial is not affine-local, i.e.
@@ -66,7 +103,7 @@
         show that $A$ is not isomorphic to a principal open $D(f)\subset\Aff^1_k$. We do this by showing that
         their corresponding rings are not isomorphic. 
         
-        This can be seen by comparing units, namely by observing that $(k[x]_f)^*\subsetneq A^*=k^*$.
+        This can be seen by comparing units, namely by observing that $(k[x][f^{-1}])^*\supsetneq k^*=A^*$.
     \end{enumerate}
 \end{exercise}
 

@@ -6,6 +6,9 @@
 \maketitle{}
 
 \begin{exercise}{2}
+    We assume that $k$ is algebraically closed.
+
+    
     Let $p=(p_1;\dots,p_n)\in X$ and $a_p\subset k[x_1,\dots,x_n]=:A$ its corresponding maximal ideal. Define a linear map
     \begin{align*}
         \phi := A &\to k^n\\
@@ -30,8 +33,13 @@
         \dim(m/m^2)+\rank(J)=n.
     \end{align*}
 
-    Now we can conclude, because $p$ is regular if and only if $\dim(X)=\dim(\mathcal{O}_{X,p})=\dim(m/m^2)$ (I think for the first 
-    equality we need that $X$ is irreducible, so that use for example Prop. 5.30 in Görz-Wedhorn),
+    Now we can conclude, because $p$ is regular if and only if 
+    \begin{align*}
+        \dim(X)=\dim(\mathcal{O}_{X,p})=\dim(m/m^2)
+    \end{align*}
+     (I think for the first 
+    equality we need that $X$ is irreducible, so that use for example Prop. 5.30 in Görz-Wedhorn. In general
+    we would only have $\dim(X)\leq\dim(\mathcal{O}_{X,p})$),
      or equivalently
     \begin{align*}
         \rank(J)=n-\dim(X).

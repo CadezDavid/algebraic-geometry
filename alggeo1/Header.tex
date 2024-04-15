@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[english, german]{babel}
+\usepackage{amsthm,amssymb,amsmath,mathrsfs,mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+% \usepackage[tmargin=1.25in,bmargin=1.25in,lmargin=1.2in,rmargin=1.2in]{geometry}
+
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Proj}{\mathbb{P}}
+\newcommand{\Aff}{\mathbb{A}}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\MinSpec}{MinSpec}
+\DeclareMathOperator{\MaxSpec}{MaxSpec}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\BL}{BL}
+\DeclareMathOperator{\Ouv}{Ouv}
+\DeclareMathOperator{\Sh}{Sh}
+\DeclareMathOperator{\PSh}{PSh}
+\DeclareMathOperator{\Eq}{Eq}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\CL}{CL}
+\DeclareMathOperator{\eq}{eq}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\rank}{rank}
+
+\newenvironment{exercise}[1] {
+  \vspace{0.5cm}
+  \noindent \textbf{Exercise~{#1}.}
+} {
+  \vspace{0.5cm}
+}
+\newenvironment{claim} {
+  \par\noindent\textbf{Claim.}
+} { }
+
+\newenvironment{proof_claim} {
+  \par\noindent\textbf{Proof of claim.}
+} {
+    \qed (of claim)
+}
+
+\title{Algebraic geometry 1\\Exercise sheet \sheet}
+\author{Solutions by: Eric Rudolph and David Čadež}
+
+\date{\today}

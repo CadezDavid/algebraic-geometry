@@ -1,0 +1,80 @@
+\newcommand{\sheet}{1}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item{} Closed subsets of $\mathbb{A}^1(k)$ are $\emptyset$,
+            $\mathbb{A}^1(k)$ and all finite subsets.
+        \item{} That is true because there exists no product of two closed subsets
+            of $\mathbb{A}^1(k)$ that would cover closed subspace $V(x - y)
+            \subseteq \mathbb{A}^2(k)$ and not cover the point $(x - 1, y)$.
+            Basis for closed sets of the product topology are the whole space
+            and finite union of lines parallel to one of the coordinates.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item The polynomials from the definition exist.
+        \item Discriminant is a polynomial function on coefficients of a
+            polynomial.
+        \item A matrix has pairwise different eigenvalues if and only if its
+            characteristic polynomial has only simple roots. That is exactly when
+            discriminant of its characteristic polynomial is non-zero. We can
+            compose maps from $1)$ and $2)$ to get a map $h \colon V \rightarrow
+            \mathbb{A}^1(k)$ that vanishes on a matrix $M$ if and only if $M$ is
+            not diagonalizable with pairwise different eigenvalues. Since
+            $\{0\}$ is a closed set in $\mathbb{A}^1(k)$ and $h$ continuous, we
+            get that $\{ M \in V \mid h(M) \not= 0 \}$ is open in $V$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{3}
+    Using the hint we look at linear transormations that would simplify
+    polynomial. Write $x \mapsto ux + vy$ and $y \mapsto wx + zy$. We get that
+    if $a^2_2 - 4 a_1 a_3 = 0$, then we can pick $u = \sqrt{a_1}$ and $v =
+    \sqrt{a_3}$ and $x^2 \mapsto a_1 x^2 + a_2 xy + a_3 y^2$. Otherwise we can
+    define $u = 1$, $w = a_1$, $v$ is the solution to $v(a_2 - v a_1) = a_3$ and
+    $z = a_2 - v a_1$.
+
+    From now on $a_4$, $a_5$ and $a_6$ are not the same as in the original
+    polynomial.
+
+    So if $f(x, y) = x^2 + a_4 x + a_5 y + a_6$, then $V$ is either
+    \begin{itemize}
+        \item if $a_5 \not= 0$; $V$ is isomorphic to a parabola
+        \item if $a_5 = 0$ and $a^2_4 - 4 a_6 \not= 0$; $V$ is isomorphic to disjoint union of two lines
+        \item if $a_5 = 0$ and $a^2_4 - 4 a_6 = 0$; $V$ is isomorphic to a single line
+    \end{itemize}
+
+    If $f(x, y) = xy + a_4 x + a_5 y + a_6$, then $V$ is either isomorphic to a
+    hyperbola or a union of coordinate lines. We can write $f$ in the form $(x +
+    u) (y + v) - z$ for some suitable $u, v, z \in k$. Explicitly we get $u =
+    a_4$, $v = a_5$ and $z = uv - a_6$. So if $a_4 a_5 = a_6$, then $z = 0$ and
+    $V$ is isomorphic to the union of coordinate lines, otherwise $V$ is
+    isomorphic to a hyperbola. But again note that these $a_4, a_5, a_6$ are not
+    the ones in original polynomial, because we used a linear transormation
+    earlier.
+\end{exercise}
+
+\begin{exercise}{4}
+    Lets look at coordinate rings:
+    \begin{enumerate}
+        \item $\mathcal{O}_{\{y - x^2 = 0\}} = k[x, y] / (y - x^2) = k[x]$
+        \item $\mathcal{O}_{\{xy - 1 = 0\}} = k[x, y] / (xy - 1) = k[x, x^{-1}]$
+        \item $\mathcal{O}_{\{xy = 0\}} = k[x, y] / (xy)$
+        \item $\mathcal{O}_{\{x(x - 1) = 0\}} = k[x, y] / (x(x - 1))$
+        \item $\mathcal{O}_{\{x = 0\}} = k[x, y] / (x) = k[y]$
+    \end{enumerate}
+    The $1$st and $5$th are clearly isomorphic. Number $2$ is not isomorphic to
+    any else, because it has strictly more invertible elements than just the
+    field $k$. Number $3$ and $4$ are only ones with zero-divisors, so they
+    could only be isomorphic to each other. But they are not, because number $4$
+    has an idempotent element (other than $0$ and $1$) and $3$ doesn't.
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,341 @@
+\newcommand{\sheet}{4}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    % \begin{enumerate}
+    %     \item Let $X$ be a finite set that is irreducible with 
+    %     respect to some topology $\mathcal{F}$ on $X$. Then we get
+    %     $\mid \mathcal{F} \mid<\infty$ and since finite unions of
+    %     closed sets are closed again, we get that
+    %     \begin{align*}
+    %         X^{\prime}:=\bigcup_{U \subsetneq X \text{closed}}{U}
+    %     \end{align*}
+    %     is closed in X. Since $X$ is by assumption irreducible,
+    %     $X\neq X^{\prime}$, so we can pick $x_0\in X \backslash X^{\prime}$,
+    %     which is by construction generic. For the second part of the exercise we use 
+    %     part 2 of Hochster's Theorem. As a finite set, $X$ is 
+    %     quasicompact and as a basis $\mathcal{B}$ consisting of quasicompact 
+    %     open sets stable under finite intersections take all of the open sets. \\
+    %     It remains to show that $X$ is sober. We need to check that every irreducible
+    %     subset of $X$ has a unique generic point. The existence of a generic point comes
+    %     from part of of this exercise. \\
+    %     Uniqueness of this point is due to the fact
+    %     that generic points in $T_0$ spaces are unique if they exist, which follows directly
+    %     from the definition of $T_0$. 
+    % \end{enumerate}
+    
+    \begin{enumerate}
+        \item{Let $X$ be a finite irreducible topological space. Since
+            \begin{equation*}
+                X = \bigcup_{x \in X} \overline{\{x\}}
+            \end{equation*}
+            is a finite decomposition in closed sets, we must have
+            $\overline{\{x\}} = X$ for some $x \in X$. This $x$ is a generic
+            point of $X$.
+
+            If we additionally assumed $X$ is $T_0$, then this point $x$ would
+            be unique, since in a $T_0$ space we have $\overline{\{x\}} \not=
+            \overline{\{y\}}$ for $x \not= y$. Other conditions are also
+            fulfilled, namely a finite space is always quasicompact. For the
+            basis we can take $B$ to contain all open sets, it is clearly closed
+            under finite intersections and every element is quasicompact. So
+            finite $T_0$ spaces are spectral.
+            }
+        \item{
+                % Let us first describe what $\Spec(\Z)$ looks like. It is a PID
+                % with prime ideals being those $(a)$ for which $a \in \Z$ is a
+                % prime number or $a = 0$. So
+                % \begin{equation*}
+                %     \Spec(\Z) = \{ (p) \mid p\ \text{prime} \} \cup \{ (0) \}.
+                % \end{equation*}
+                % In this space $(0)$ is a unique generic point.
+
+                % Closed sets in $\Spec(\Z)$ are by definiton
+                % \begin{equation*}
+                %     V((a)) = \{ (p) \in \Spec(\Z) \mid (a) \subseteq (p) \} = 
+                %     \{ (p) \in \Spec(\Z) \mid p\ \text{divides}\ a \}.
+                % \end{equation*}
+                % So if $a = \Pi_{i} p^{k_i}_i$, then $V((a)) = {\{ (p_i) \}}_i
+                % \subseteq \Spec(\Z)$. Since any $a \in \Z$ is only divisible by
+                % finitely many prime numbers, we get the finite completement
+                % topology on $\Spec(\Z) \setminus \{(0)\}$.
+
+                % Adding generic point $(0)$ to $\Spec(\Z) \setminus \{(0)\}$ is
+                % actually the construction $X \rightarrow X^{\text{sob}}$ which
+                % we did last week.
+
+                % Let $\mathbb{P} = \{ p_1, p_2, \dots \} \subseteq \N$ be an
+                % ``ordered set'' of prime numbers.
+
+                % Construct an inverse limit
+                % \begin{equation*}
+                %     F_i := \{ (p_1), \dots, (p_i) \} \cup \{ (0) \}
+                % \end{equation*}
+                % for $i \in \N$ and
+                % \begin{equation*}
+                %     f_i \colon F_i \xhookrightarrow{} F_{i+1}
+                % \end{equation*}
+                % being subset inclusions. We still have to say what topologies
+                % $F_i$ have and then show that $f_i$ are continuous. Define
+                % closed sets on $F_i$ to be $A \subseteq F_i$ with $(0) \notin
+                % A$, and the whole $F_i$. This basis for closed sets is clearly
+                % stable under finite unions.
+
+                % Now show that $f_i$ are continuous. Take $A \subseteq F_{i+1}$
+                % closed. Then $f^{-1}_i(A) = A \cap F_i$. If $(0) \in A$, then
+                % $(0) \in A \cap F_i$ and therefore $A = F_{i+1}$. Thus
+                % $f^{-1}_i(A) = F_i$ is closed. If $(0) \notin A$, then $(0)
+                % \notin A \cap F_i$ and thus $f^{-1}_i((0)) = A \cap F_i
+                % \subseteq F_i$ also closed.
+
+                % \begin{tikzcd}
+                %     &F_1 \arrow{drr}{g_1} \arrow{r}{f_1} &F_2 \arrow{dr}{g_2}
+                %     \arrow{r}{f_2} &F_3 \arrow{d}{g_3} \arrow{r}{f_3} &F_4
+                %     \arrow{dl}{g_4} \arrow{r}{f_4} &\dots \arrow{dll}{g_i}\\
+                %     && &F
+                % \end{tikzcd}
+
+                % Now we claim that $\Spec(\Z)$ is the inverse limit of this
+                % diagram $(F_i, f_i)$.
+
+                % Define $g_i \colon F_i \rightarrow \Spec(\Z)$ to be the
+                % inclusions. Commutativity of the diagram ($g_i = g_{i+1} \circ
+                % f_i$) is clear, since all maps are inclusions.
+
+                % Take some other topological space $Y$ with $h_i \colon F_i
+                % \rightarrow Y$. Define the map $h \colon \Spec(\Z) \rightarrow
+                % Y$ by mapping $(p_i) \mapsto h_i((p_i))$, i.e. we identify
+                % $(p_i)$ with $(p_i) \in F_i \subseteq F_{i+1} \subseteq \dots$
+                % and then map it by $h_i \colon F_i \rightarrow Y$.
+
+                % To check continuity take a closed set $A \subseteq Y$. By
+                % definition $h^{-1}(A) = \cap $
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    Denote $A = \lim A_i$, $B = \lim B_i$ and $C = \lim C_i$. Also denote maps
+    $A_i \rightarrow A$ with $f_i$, $B_i \rightarrow B$ with $g_i$ and $C_i
+    \rightarrow C$ with $h_i$.
+
+    By composing $\alpha_i$ and $g_i$ we get $A_i \rightarrow B$ defined as $g_i
+    \circ \alpha_i$. Then by the definition of a colimit we have a unique map $\alpha:A
+    \rightarrow B$, such that $g_i \circ \alpha_i = \alpha
+    \circ f_i$. In the same way we obtain $\beta \colon B \rightarrow C$. With
+    these definitions the whole diagram commutes.
+
+    First look at maps $A_i \rightarrow B_i \rightarrow C_i \rightarrow C$.
+    Since bottom rows are all exact, they are $0$ for all $i$. Since $\beta
+    \circ \alpha$ makes this commute and $0$ does well, by uniqueness of the map
+    $A \rightarrow C$, we get $\beta \circ \alpha = 0$. In this argument we did
+    not use that the colimit is filtered in our case, because it is true in
+    general that colimits are right-exact.
+
+    For left exactness we need to use that we have a filtered colimit.
+    For this part we used Proposition 2 from page 212 of Mac Lane's ``Categories For
+    the Working Mathematician,'' stating ``The forgetful functor $Grp \rightarrow
+    Set$ creates filtered colimits.''
+    Now take $b \in B$ with $\beta(b) = 0$. Using the proposition we know there
+    exists an $i$ and $\overline{b} \in B_i$ for which $g_i(\overline{b}) = b$.
+    Since diagram commutes we have $(h_i \circ \beta_i)(b) = 0$. But since $h_i$
+    maps an element to $0$ if and only if there exists a $C_j$ and $C_i
+    \rightarrow C_j$ (in a diagram) that maps it to $0$, we must have $C_j$ and
+    $\gamma \colon C_i \rightarrow C_j$ (in a diagram) with $\gamma(\beta_i(b))
+    = 0$. Take $B_j$ and the map $\delta \colon B_i \rightarrow B_j$ with
+    $(\beta_j \circ \delta)(\overline{b}) = 0$. Since bottom rows are exact, we
+    have $\overline{a} \in A_j$ with $\alpha_j(\overline{a}) =
+    \delta(\overline{b})$. Then we have $(g_j \circ \alpha_j)(\overline{a}) =
+    b$ and using commutativity of the diagram we get $\alpha(f_j(\overline{a}))
+    = b$, so $b \in \im(\alpha)$.
+
+    This completes the proof of exactness. In it we a little implicitly used the
+    facts that follow from the construction of a colimit in abelian category by
+    first computing the colimit in sets and then defining a structure on that
+    set. But we could not find a way to do this more elegantly without chasing
+    an explicit element around the diagram.
+\end{exercise}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{Let $\mathcal{F}, \mathcal{G} \in \Sh_{\text{Ab}}(X)$ and $\phi,
+            \psi \colon \mathcal{F} \rightarrow \mathcal{G}$ morphisms of
+            sheaves.
+
+            We define $\phi + \psi$ to be a morphism of sheaves defined by
+            \begin{equation*}
+                (\phi+\psi)(U):=\phi(U) + \psi(U) \colon \mathcal{F}(U)
+                \rightarrow \mathcal{G}(U).
+            \end{equation*}
+            for every $U \in \Ouv^{\text{op}}_X$. So its just a sum of
+            homomorphisms of abelian groups. It is clear that this still defines
+            a natural transformation (i.e. a morphism) in $\Sh_{\text{Ab}}(X)$.
+
+            The zero object in this category is the sheaf that sends every open
+            set $U \in \Ouv^{\text{op}}_X$ to the trivial group $(0,+)$. It is
+            inital and terminal, because the trivial group is a zero object in
+            the category of abelian groups. For this reason the category of
+            sheaves is an additive category.
+
+            Instead of checking for kernels and cokernels, we simply check for
+            all limits and colimits, of which they are a special case.
+
+            Let us check that it has limits and colimits. Let $F_i$ be some
+            diagram in $\Sh_{\text{Ab}}(X)$. Define a limit of this diagram to
+            be a sheaf $F$ which maps $U \in \Ouv^{\text{op}}_X$ to $\lim_i
+            F_i(U)$. So for each $U$ we let $F(U)$ be the limit of a diagram
+            $F_i(U)$ (which we know exist because its in the category of abelian
+            groups).
+
+            Check that $F$ this is actually a limit in $\Sh_{\text{Ab}}(X)$. Let
+            $G$ be some other presheaf with maps $G \rightarrow F_i$. Then for
+            every $U \in \Ouv^{\text{op}}_X$ we have maps $G(U) \rightarrow
+            F_i(U)$, so this cone factors uniquely through $F(U)$. This gives
+            rise to a morphism $G \rightarrow F$. So $F$ is indeed a limit.
+
+            Now we check that $F$ is a presheaf. Let $U \rightarrow V$. Then we
+            have maps $F_i(U) \rightarrow F_i(V)$. Composing them with $F(U)
+            \rightarrow F_i(U)$ gives maps $F(U) \rightarrow F_i(V)$. By the
+            definition of a limit there exists a unique map $F(U) \rightarrow
+            F(V)$. This proves that $F$ is indeed a presheaf.
+
+            Now sheafify $F$ to get a sheaf $\overline{F} \in
+            \Sh_{\text{Ab}}(X)$. Since $F_i$ are sheaves, the maps $F
+            \rightarrow F_i$ uniquely factors through $\overline{F}$. For any
+            sheaf $G$ and a cone $G \rightarrow F_i$, we can look at this inside
+            the category of presheaves and find a unique map $F \rightarrow G$.
+            But since $G$ is a sheaf, it factors through $\overline{F}$ and we
+            get a unique map $\overline{F} \rightarrow G$. This proves that
+            $\overline{F}$ is a limit of $F_i \in \Sh_{\text{Ab}}(X)$.
+
+            For colimits everything works exactly the same, except all arrows
+            are reversed.
+
+            Maybe some parts of this proof follow from some more elegant
+            argument using adjoints and forgetful functors.
+            }
+
+        \item{Assume $f \colon \mathcal{F} \rightarrow \mathcal{G}$ is
+            surjective on each stalk. Then we can show that $f(U) \colon
+            \mathcal{F}(U) \rightarrow \mathcal{G}(U)$ is surjective for each $U
+            \in \Ouv^{\text{op}}_X$. Pick $s \in \mathcal{G}(U)$. Then $s_x \in
+            \mathcal{G}_x$ the germ of $s$ at $x$. Since $f_x \colon
+            \mathcal{F}_x \rightarrow \mathcal{G}_x$ is surjective we have a
+            function $t_x \in \mathcal{F}(U)$ such that $f(U)(t_x)$ has the same
+            germ at $x$ as $s$. So $t_x \in \mathcal{F}(U)$ is mapped to a
+            function that is locally at $x$ same as $s$. Denote $V_x$ the open
+            subset with $x \in V_x$ for which $f(U)(t_x) \mid_{V_x} = s
+            \mid_{V_x}$. So we have a cover $X = \cup_x V_x$. Using that
+            $\mathcal{F}$ is a sheaf we can find an element $t$ such that
+            $f(U)(t) = s$. That proves one implication.
+
+            We were inspired by
+            \href{https://math.stackexchange.com/questions/205658/an-easy-way-to-prove-that-epimorphism-of-sheaves-implies-surjectivity-on-stalk?rq=1}{some
+            stack exchange site} and only worked out some of the details. Let
+            $\mathcal{F}, \mathcal{G}$ be sheaves on $X$ and
+            $\phi:\mathcal{F}\to \mathcal{G}$ an epimorphism on sheaves. We want
+            to show that $\phi$ is surjective on each stalk.\\ Let $\mathcal{F}$
+            be the skyscraper sheaf at $x$ with value $\mathcal{G}_x/\im(\phi_x)$,
+            i.e. for $U\subset X$ open, we have
+            \begin{equation*}
+                \mathcal{F}(U)=
+                \begin{cases*}
+                    \mathcal{G}_x/\im(\phi_x) & \text{if} $x\in U$\\
+                    (0,+) & else.
+                \end{cases*}
+            \end{equation*}
+            Also, define
+            \begin{align*}
+                \psi&:\mathcal{G}\to \mathcal{H}\\
+                    &f\mapsto \bar{f}_x
+            \end{align*}
+            if f is a section over a set containig x. \\
+            Now assume, that $\phi_x$ is not surjective for all $x\in X$.
+            Then there exists $x\in X$ such that $\phi_x$ is not surjective,
+            meaning $\mathcal{G}_x/\im(\phi_x)$ is not the trivial group. 
+            In this case, the two maps 
+            \begin{align*}
+                (\psi,0),(0,\psi):\mathcal{G}\to \mathcal{H} \oplus \mathcal{H}
+            \end{align*}
+            are not the same. However, by
+            construction they are the same if precomposed with $\phi$ showing that
+            $\phi$ is not an epimorphism of sheaves.
+            }\label{ex3.2}
+
+        \item{First prove that $\mathcal{F}$ and $\mathcal{G}$ are sheaves.
+
+            Define a morphism $f \colon \mathcal{F} \rightarrow \mathcal{G}$
+            with $f(U) \colon \mathcal{F}(U) \rightarrow \mathcal{G}(U)$ being
+            the map $s \oplus t \mapsto s \mid_{D_- \cap D_+}$. Note that if $U
+            \cap D_-$ is connected, the map $s \mid_{D_- \cap D_+}$ must assume
+            same value on whole $U \cap D_- \cap D_+$.
+
+            Using part~\ref{ex3.2} it suffices to check that $f_x$ is surjective
+            at every $x \in X$. For $x \notin D_- \cap D_+$, then
+            $\mathcal{G}_x$ is a null group in $AbGrp$, so $f_x$ is surjective.
+            Let now $x = (-1, 0)$.
+
+            Define $U_\epsilon = B_\epsilon(-1, 0) \cap X$. Every neighborhood
+            contains some $U_\epsilon$ for small enough $\epsilon$. So every
+            $\mathcal{F}(U) \rightarrow F_x$ factors through
+            $\mathcal{F}(U_\epsilon)$ for small enough $\epsilon$. We have
+            $\mathcal{F}(U_\epsilon) = \Z \oplus \{0\}$ for small $\epsilon >
+            0$, so $\mathcal{F}_x = \Z$ with morphisms
+            \begin{equation*}
+                \mathcal{F}(U_\epsilon) \rightarrow \mathcal{F}_x
+            \end{equation*}
+            being $a \oplus 0 \mapsto a$. We do exactly the same for
+            $\mathcal{G}$ and we get $\mathcal{G}_x = \Z$. The identity $\id$ is
+            the unique map that makes
+
+            \begin{tikzcd}
+                & \mathcal{F}(U_\epsilon) \arrow{r}{f(U_\epsilon)} \arrow{d} &
+                \mathcal{G}(U_\epsilon) \arrow{d} \\
+                & \mathcal{F}_x \arrow{r}{\id} & \mathcal{G}_x
+            \end{tikzcd}
+
+            commute, so $f_x$ is surjective for $x = (-1, 0)$. We do exactly the
+            same for $x = (1, 0)$. So $f_x$ is surjective for every $x \in X$. By
+            part~\ref{ex3.2}, $\mathcal{F}$ is an epimorphism.
+
+            We have $\mathcal{F}(X) \cong \Z \oplus \Z$ and $\mathcal{G}(X)
+            \cong \Z \oplus \Z$ and the map $f(X)$ as defined above. The image
+            $\im f(X)$ is the diagonal $\triangle (\Z \oplus \Z)$, so $f(X)$ is
+            not surjective.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    Denote the maps
+    \begin{equation*}
+        \varphi \colon \Sh(X) \rightarrow \Sh_B(X)
+    \end{equation*}
+    and
+    \begin{equation*}
+        \mu \colon \Sh_B(X) \rightarrow \Sh(X).
+    \end{equation*}
+    The composite $\varphi \circ \mu$ is the identity on $\Sh_B(X)$.
+
+    We have to prove that $\mu \circ \varphi \colon \Sh(X) \rightarrow \Sh(X)$
+    mapping a functor $F$ to a functor $(U \mapsto \lim_{B \subseteq U} F(B))$
+    is equivalent to the identity.
+
+    Define a natural transformation
+    \begin{equation*}
+        \zeta \colon \id \rightarrow \mu \circ \varphi
+    \end{equation*}
+    which for every $F \in \Sh(X)$ defines a map
+    \begin{equation*}
+        \id(F) = F \longrightarrow (U \mapsto \lim_{B \subseteq U} F(B))
+    \end{equation*}
+    being the unique natural transformation $F(U) \rightarrow \lim_{B \subseteq
+    U} F(B)$ (which exists $F(U) \rightarrow F(B)$ exist for every $B \subseteq
+    U$).
+\end{exercise}
+
+\end{document}

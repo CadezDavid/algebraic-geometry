@@ -1,0 +1,163 @@
+\newcommand{\sheet}{1}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    Lets first prove that if $M$ is not torsion free it cant be flat. Take $r
+    \in R$ and $m \in M$ such that $r m = 0$ and $r \not= 0 \not= m$.
+    We have an exact sequence of $R$-modules
+    \begin{equation*}
+        0 \to (r) \to R \to R / (r) \to 0
+    \end{equation*}
+    but when tensoring with $M$ we get
+    \begin{equation*}
+        0 \to (r) \otimes_R M \to R \otimes_R M \to R / (r) \otimes_R M \to 0
+    \end{equation*}
+    which is not exact, because $(r) \otimes_R M \to R \otimes_R M \cong M$ is
+    not injective (it maps $r \otimes m \mapsto 0$).
+
+    For the other direction, take $m$ a maximal ideal of $R$. Since $R$ is a
+    Dedeking domain, $R_m$ is also normal and thus a PID (we proved that last
+    year during the lectures). We've shown a module over a PID is torsion-free
+    exactly when it is flat in Algebra 1.
+    We did it by showing that flatness can be checked on all finitely generated
+    submodules and that a finitely generated module over a PID is flat if and
+    only if it is free.
+\end{exercise}
+
+\begin{exercise}{2}
+    Map $\Spec(A) \to \Spec(R)$ sends generic point to
+    generic point if and only if $R \to A$ injective.
+    
+    And clearly $A$ is a torsion free $R$ module if and only if $R \to A$ is
+    injective.
+
+    Using first exercise we get that $R \to A$ is flat if and only if $\Spec(A)
+    \to \Spec(R)$ send generic point to generic point.
+\end{exercise}
+
+\begin{exercise}{3}
+    % For reference i used "V2B3: Einführung in die Komplexe Analysis" by Pavel
+    % Zorin-Kranich he had in sommersemester 2020
+    \begin{enumerate}[i)]
+        \item{
+                The derivative of $z \mapsto z g(z)$ at $z$ is $g(z) + z
+                \frac{dg}{dz}(z)$, which is $g(0)$ at $0$, therefore non-zero.
+                So by theorem from complex analysis there exists a holomorphic
+                inverse on some neighborhood of $0$.
+
+                Second part: from complex analysis we know that if $g$ is a
+                holomorphic function on a simply connected open $\Omega$ with $g \not= 0$
+                on $\Omega$, then there exists $\tilde{g}$ on $\Omega$ with
+                $e^{\tilde{g}} = g$.
+                So for $h$ we can take $e^{\frac{1}{n} \tilde{g}}$.
+            }
+        \item{
+                Pick $y \in Y$ and $V \subseteq X$ a neighborhood of $f(y) \in
+                X$ with $V \cong \D$ (WLOG with $f(y)$ corresponding to $0$).
+                Take $U \subseteq f^{-1}(V)$ with $y \in U \cong \D$ (WLOG with
+                $y$ corresponding to $0$).
+                Because zero set of a non-zero holomorphic map is discrete, we
+                can pick $U$ such that $y$ is the only zero of the function $U
+                \to V \to \D$.
+                So now we have holomorphic $h \colon \D \cong U \to V \cong \D$, for
+                which $0 \mapsto 0$. Let $n_y$ be the degree of this root. 
+                Therefore we can write $h(z) = z^{n_y} g(z)$ for some
+                holomorphic $g \colon \D \to \D$. Observe that since $0$ is the
+                only root, we have $g(z) \not= 0$ for all $z \in \D$.
+                By part i) we have that there exists $n$-th root of $g$, i.e. a
+                holomorphic function $p$ with $p^{n_y} = g$ on $\D$.
+                Note that since $g \not= 0$ on $\D$, same is true for $p$.
+                We can write $h(z) = z^{n_y} p^{n_y}(z)$.
+                By part i), the function $z \mapsto z p(z)$ is biholomorphic, so
+                it has a holomorphic inverse. Precomposing $h$ with this inverse
+                yields a function $\tilde{h} \colon \D \to \D$ with $z \mapsto z^{n_y}$.
+            }
+        \item{
+                Suppose we have two local descriptions with $U_1$ and $U_2$,
+                which have non-empty open intersecton in $Y$. We can assume both
+                map to same $V \cong \D$. We obtain a local neighborhood of $0$
+                in $U_1 \cap U_2$ that is biholomorphic to its image in $U_1
+                \cap U_2 \rightharpoonup U_2$. Since this change of coordinates
+                is biholomorphic, degree of the root has to be $1$, so $n_1$ and
+                $n_2$ corresponding with descriptions with $U_1$ and $U_2$ are
+                the same as well.
+
+                For every point $y \in Y$ we found a neighborhood $U$ on which
+                it identifies with $z \to z^{n_y}$.
+                From this local identification it follows that for every other
+                point $z \in U$ with $z \not= y$ there exists a neighborhood
+                $\tilde{U} \subseteq U$ for which $\tilde{U} \xrightarrow{\sim}
+                f(\tilde{U})$.
+                So for every point in $U \setminus \{y\}$ the map $f$ is locally
+                biholomorphic, which means $n_z = 1$.
+                Therefore the set of points $y$ with $n_y > 1$ is discrete.
+                Because manifold $Y$ is compact, that set must be finite.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    \begin{enumerate}[i)]
+        \item{
+                Functor $\Hom_A(-, I)$ is always left-exact, so we only have to
+                check right-exactness.
+
+                Let
+                \begin{equation*}
+                    0 \to M_1 \to M_2 \to M_3 \to 0
+                \end{equation*}
+                be exact.
+                We want to show
+                \begin{equation*}
+                    0 \to \Hom_A(M_3, I) \to \Hom_A(M_2, I) \to \Hom_A(M_1, I)
+                    \to 0
+                \end{equation*}
+                is exact.
+
+                There is a natural isomorphism of abelian groups
+                \begin{equation*}
+                    \Hom_A(M_i, I) \cong \Hom_\Z(M_i \otimes_A A, \Q / \Z) \cong
+                    \Hom_\Z(M_i, \Q / \Z).
+                \end{equation*}
+                (here by natural we mean functorial, i.e. that
+                \begin{equation*}
+                \begin{tikzcd}
+                    & 0 \arrow{r} & \Hom_A(M_3, I) \arrow{d} \arrow{r} &
+                    \Hom_A(M_2, I) \arrow{d} \arrow{r} & \Hom_A(M_1, I)
+                    \arrow{d} \arrow{r} & 0 \\
+                    & 0 \arrow{r} & \Hom_\Z(M_3, \Q / \Z) \arrow{r} &
+                    \Hom_\Z(M_2, \Q / \Z) \arrow{r} & \Hom_\Z(M_1, \Q / \Z)
+                    \arrow{r} & 0
+                \end{tikzcd}
+                \end{equation*}
+                commutes. We had some confusion around the meaning of
+                naturality, functoriality and something being canonical.)
+
+                In the hint it says that $\Q / \Z$ is injective $\Z$-module, so
+                we get that
+                \begin{equation*}
+                    0 \to \Hom_\Z(M_3, \Q / \Z) \to \Hom_\Z(M_2, \Q / \Z) \to
+                    \Hom_\Z(M_1, \Q / \Z) \to 0
+                \end{equation*}
+                is exact.
+                Therefore
+                \begin{equation*}
+                    0 \to \Hom_A(M_3, I) \to \Hom_A(M_2, I) \to \Hom_A(M_1, I)
+                    \to 0
+                \end{equation*}
+                is also exact.
+            }
+        \item{
+                There is a (forgetful) faithful functor from category of $A$-modules to
+                category of abelian groups, which preserves monomorphisms and
+                has a right adjoint. Then it is true that if the latter category
+                has enough injectives than also former has enough injectives.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

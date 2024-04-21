@@ -1,0 +1,34 @@
+\newcommand{\sheet}{2}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{4}
+    For $i \leq -1$ we define $h_i = 0$.
+
+    Since the chain is exact, the map $d_1$ must be surjective. Therefore we can
+    define $h_0$ as the lift of $\id \colon C_0 \to C_0$ along surjection $d_1
+    \colon C_1 \to C_0$. (Though there was no need to treat this case separately)
+
+    Let now $i \geq 1$ and suppose $h_j$ for $j < i$ exist with property as in the exercise.
+    Observe that $\id_{C_i} - h_{i-1} \circ d_i \colon C_i \to C_i$ factors
+    through $\ker(d_i)$, since
+    \begin{equation*}
+        \begin{split}
+            d_i \circ (\id_{C_i} - h_{i-1} \circ d_i) &= d_i - d_i \circ h_{i-1}
+            \circ d_i \\
+            &= d_i - (id_{C_{i-1}} - h_{i-2} \circ d_{i-1}) \circ d_i \\
+            &= d_i - d_i \\
+            &= 0.
+        \end{split}
+    \end{equation*}
+    Using exactness ($\im(d_{i+1}) = \ker(d_i)$), we can lift $C_i \to
+    \im(d_{i+1})$ along the surjection $C_{i+1} \to \im(d_{i+1})$ to obtain $h_i
+    \colon C_i \to C_{i+1}$ for which $d_{i+1} \circ h_i = \id_{C_i} - h_{i-1}
+    \circ d_i$.
+
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,69 @@
+\newcommand{\sheet}{4}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    First of all we can use that finite projective modules are locally finite
+    free. So since we are searching for an open neighbourhood of a point,
+    we can first localize to some neighbourhood where $N$ is finite free. (So
+    assume $N = A^n$ is finite free.)
+
+    Since $M \otimes_A k(x)$ is finite dimensional $k(x)$-vsp, we can pick a
+    basis $\{b_i \otimes 1\}_{i = 1, \dots, m}$. Let $g \colon F := A^n \to M$ be defined
+    by $e_i \mapsto b_i$. At $x$ we obtain an isomorphism $F \otimes_A k(x)
+    \xrightarrow{\sim} M \otimes_A k(x)$.
+
+    The composition $F \to M \to N$ is a map of free $A$-modules, so it can be
+    represented by a matrix $J \in M_{n \times m}(A)$.
+    At $x$ this matrix has rank $m = \dim_{k(x)} (M \otimes_A k(x))$. So there
+    is a neighbourhood $U$ on which it has rank at least $m$ (here we use
+    argument from the previous sheet: $U$ is taken to be the non-vanishing locus
+    of determinant of some appropriate minor). On $U$, the composition $F
+    \xrightarrow{J} N$ has left inverse $N \xrightarrow{I} F$ (i.e. it is
+    injective).
+    
+    On $U$, the section of the map $M \to N$ is given by composition $N
+    \xrightarrow{I} F \xrightarrow{g} M$, which is what we wanted to show.
+\end{exercise}
+
+\begin{exercise}{3}
+    By the definition of formally étale, the exercise reduces to show that in a
+    diagram
+    \begin{equation*}
+        \begin{tikzcd}
+            \F_p \arrow{d} \arrow{r} & R \arrow{d} \\
+            A \arrow{r}{g} & R / I,
+        \end{tikzcd}
+    \end{equation*}
+    where $I^2 = 0$, there exists a unique lift $A \to R$.
+
+    We can define a lift very explicitly:
+
+    Define $(-)^p \colon R \to R$ with $x \mapsto x^p$. Since $R$ has
+    characteristic $p$, this is a homomorphism. Ideal $I$ is clearly contained
+    in the kernel, so it factors through the quotient: $R \to R/I \to R$. Denote
+    $u \colon R/I \to R$.
+
+    By assumption $A$ is a perfect $\F_p$-algebra, so Frobenius endomorphism is
+    an automorphism.
+    We claim that a composition
+    \begin{equation*}
+        A \xrightarrow{\text{Fr}^{-1}_A} A \xrightarrow{g} R / I \xrightarrow{u} R
+    \end{equation*}
+    lifts $g$.
+    Indeed, for any $x = y^p \in A$, we have $(u \circ g \circ \text{Fr}_A^{-1})
+    (x) = g(y)^p = g(x)$.
+
+    Now we prove uniqueness:
+    Let $\varphi, \psi$ be two lifts. Take any $x = y^p \in A$.
+    Since they are lifts, we have $\varphi(y) - \psi(y) \in I$. But then
+    $(\varphi(y) - \psi(y))^p = 0$ and thus also
+    $\varphi(y^p) - \psi(y^p) = \varphi(x) - \psi(x) = 0$, so $\varphi = \psi$.
+\end{exercise}
+
+
+
+\end{document}

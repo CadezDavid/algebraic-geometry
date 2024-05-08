@@ -1,0 +1,33 @@
+\newcommand{\sheet}{4}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    As suggested in the hint, we know that $y$ and $3x^2 + a$ do not both vanish
+    at no point on the curve (they are coefficients of the Jacobi matrix, which
+    is invertible on $E$).
+
+    The differential form $\mathrm{d}x / 2y$ is defined on $D(y)$ and
+    $\mathrm{d}y / (3 x^2 + a)$ is defined on $D(3 x^2 + a)$.
+
+    We have to check they match on $D(y (3 x^2 + a))$. On $E \cap D_+(z)$ we
+    have $y^2 - x^3 - a x - b = 0$, so also $2 y\ \mathrm{d} y - (3 x^2 + a)\ \mathrm{d} x
+    = 0$ and therefore $\mathrm{d}x / 2y = \mathrm{d}y / (3 x^2 + a)$ whenever
+    both $y$ and $3x^2 + a$ are invertible.
+
+    Now we show that this form can be extended to a global section in
+    $\Omega^1_{E / k}(E)$.
+    Observe that only point $k$-rational point on the curve that is not
+    contained in $D(z)$ is $[0:1:0]$. That means we can cover the curve, as
+    usually, with $D(z) \cup D(y)$. But clearly the section $\mathrm{d}x / 2y$
+    can be extended (or, is defined) on the whole $D(y)$, so indeed on whole
+    $D(y) \cap E$.
+    % If we identify $D(y) = \Aff^2_k = \Spec(k[x, y, z] / (y - 1))$, the
+    % differential form $\mathrm{d}x / 2y$ is $\mathrm{d}x / 2$.
+\end{exercise}
+
+
+\end{document}

@@ -5,6 +5,22 @@
 
 \maketitle{}
 
+\begin{exercise}{2}
+    Let $f \colon \tilde{X} \to X$ be the normalization.
+    We have to show that if $\mathcal{O}_{\tilde{X}, x}$ is a flat
+    $\mathcal{O}_{X, f(x)}$-module, then it is an isomorphism.
+    By construction $\mathcal{O}_{\tilde{X}, x}$ is the normalization of the ring
+    $\mathcal{O}_{X, f(x)}$.
+    Since $X$ is integral scheme, $\mathcal{O}_{X, f(x)}$ is an integral domain.
+    
+    So it all boils down to showing:
+    If an integral closure $B$ of an integral domain $A$ inside fraction field
+    $\Quot(A)$ is a finitely generated and flat $A$-module, then $A = B$.
+
+    We actually don't even need $B$ to be finitely generated, since we know
+    flatness can be checked on all finitely generated submodules.
+\end{exercise}
+
 \begin{exercise}{4}
     For $i \leq -1$ we define $h_i = 0$.
 
@@ -28,7 +44,6 @@
     \im(d_{i+1})$ along the surjection $C_{i+1} \to \im(d_{i+1})$ to obtain $h_i
     \colon C_i \to C_{i+1}$ for which $d_{i+1} \circ h_i = \id_{C_i} - h_{i-1}
     \circ d_i$.
-
 \end{exercise}
 
 \end{document}

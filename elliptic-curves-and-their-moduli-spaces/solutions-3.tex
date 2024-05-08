@@ -1,0 +1,150 @@
+\newcommand{\sheet}{3}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    \begin{enumerate}[a)]
+        \item{
+                % Let us first create a map
+                % \begin{equation*}
+                %     \begin{split}
+                %         F \colon \Hom_{k-group}(A_1, A_2) &\to \Hom_{Y-group}(Y
+                %         \times_{\Spec k} A_1, Y \times_{\Spec k} A_2) \\ g
+                %         &\mapsto (\id, g)
+                %     \end{split}
+                % \end{equation*}
+                % First we check that restriction $(\id, g)\mid_{\{x\} \times
+                % A_1}$ recovers $g$. Since we are identifying $A_1 \cong \{x\}
+                % \times A_1$ and $A_2 \cong \{x\} \times A_2$, it is clear that
+                % we obtain a map $g \colon A_1 \to A_2$.
+
+                % What seems to be the harder part of the exercise is to show that
+                % $F$ is indeed surjective (or, equivalently, that the map given
+                % in the exercise sheet is injective).
+
+                % Our assumptions conveniently fit conditions of Rigidity theorem,
+                % so thats what we use.
+                
+                Let
+                \begin{equation*}
+                    \begin{split}
+                        F \colon  \Hom_{Y-group}(Y \times_{\Spec k} A_1, Y
+                        \times_{\Spec k} A_2) &\to \Hom_{k-group}(A_1, A_2) \\
+                        g &\mapsto g \mid_{\{x\} \times A_1} 
+                    \end{split}
+                \end{equation*}
+                be the map given in the exercise.
+
+                We can check injectivity and surjectivity of $F$ by hand.
+                Since both have hom sets have group structure, we can take $f$
+                that gets mapped to $0$ (i.e. $f \mid_{\{x\} \times A_1}$ is the
+                unique map $A_1 \to A_2$ that factors through $e \colon \Spec k
+                \to A_2$).
+                In particular that means that the composition $Y \times A_1 \to
+                Y \times A_2$ is constant when
+                restricted to $\{x\} \times A_1$. Since all our assumptions
+                conveniently fit Rigity theorem, we can use that to get that $f$ factors
+                through $Y \to Y \times A_2$, which shows that $Y \times A_1 \to
+                Y \times A_2$ is the identity element in
+                $\Hom_{Y-\text{group}}(Y \times A_1, Y \times A_2)$ (i.e. the
+                ``zero map'').
+                Therefore $F$ is injective.
+                It is clearly surjective; given a map $g \colon A_1 \to A_2$ we
+                can do base change to a map $(\id, g) \colon Y \times A_1 \to Y
+                \times A_2$, which restricts to $g$.
+            }
+        \item{
+
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    \begin{enumerate}[a)]
+        \item{
+                Lets use primitive element theorem and write $K = k(a)$ for some $a
+                \in K$.
+                Written differently we have $K = \Quot(k[x]/f(x))$ where $f$ is
+                the minimal polynomial of $a \in K$.
+                Denote $A = k[x]/f(x)$.
+                Note that minimal polynomial is irreducible and thus $A$ a domain.
+
+                From Kähler arithmetic we have that
+                \begin{equation*}
+                    \Omega^1_{K/k} = K \otimes_A \Omega^1_{A/k}
+                \end{equation*}
+                So it is enough to calculate $\Omega^1_{A/k}$.
+
+                Suppose $K/k$ is separable. That implies $x$ is separable and
+                $f(x)$ has no multiple roots. Therefore $f'(x)$ and $f(x)$ are
+                coprime and thus generate whole $k[x]$. That means $f'(x)$ is
+                invertible as element in $A$.
+
+                Let $M$ be any $A$-module and $\delta \in \Der_k(A, M)$.
+                Derivation $\delta$ has to be $k$-linear, so it is uniquely
+                defined by its value in $x$.
+                Since $f(x)$ is $0$ in $A$, we must have
+                \begin{equation*}
+                    \delta(f(x)) = f'(x) \delta(x) = 0
+                \end{equation*}
+                But $f'(x)$ is invertible, so we can simply multiple by its
+                inverse and obtain $\delta(x) = 0$.
+                We've shown that for every $A$-module $M$, there exist only
+                derivation constantly $0$. Therefore $\Omega^1_{A/k} = 0$ and
+                thus also $\Omega^1_{K/k} = 0$.
+
+            }
+        \item{
+                So $K = \Quot(k[x_1, \dots, x_n] / I)$.
+                Denote $B = k[x_1, \dots, x_n] / I$ and let $A = k[y_1, \dots,
+                y_d]$ be Noether normalization of $B$ (so $A \to B$ is finite).
+                By definition $d = \trdeg(K/k)$.
+
+                So we have maps $k \to A \to B$.
+                Using Kähler arithmetic we get exact sequence
+                \begin{equation*}
+                    B \otimes_A \Omega^1_{A/k} \to \Omega^1_{B/k} \to
+                    \Omega^1_{B/A} \to 0.
+                \end{equation*}
+                Because $\characteristic(k) = 0$ and $A \to B$ finite, we have
+                by previous part $\Omega^1_{B/A} = 0$. So we get a surjection $B
+                \otimes_A \Omega^1_{A/k} \to \Omega^1_{B/k}$.
+                Since $A \to B$ is injective, the map $B \otimes_A
+                \Omega^1_{A/k} \to \Omega^1_{B/k}$ is also injective.
+                So we have 
+                \begin{equation*}
+                    B \otimes_A \Omega^1_{A/k} \xrightarrow{\sim} \Omega^1_{B/k}
+                \end{equation*}
+
+                We've shown during lectures that $\Omega^1_{A/k} = A^d$.
+                So $B \otimes_A \Omega^1_{A/k} = B^d$.
+
+                Again using Kähler arithmetic for localization we have
+                \begin{equation*}
+                    K \otimes_B \Omega^1_{B/k} \cong \Omega^1_{K/k}
+                \end{equation*}
+                So $\Omega^1_{K/k} \cong K^d$.
+            }
+        \item{
+                It suffices to find any non-empty open subscheme, as $X$ is
+                integral.
+
+                Suppose $\Omega^1_{X/k}$ has rank $n$ at the generic point.
+                Since $\characteristic(k) = 0$, that is equal to the local
+                dimension.
+
+                It has rank at least $n$ everywhere else. And using upper
+                semicontinuity we get that it has rank exactly $n$ on an open
+                neighbourhood of the generic point. So $\Omega^1_{X/k}$ is
+                therefore locally free of rank $n$ on some non-empty
+                neighbourhood of the generic point, which is where $X$ is then
+                smooth.
+            }
+    \end{enumerate}
+\end{exercise}
+
+
+\end{document}

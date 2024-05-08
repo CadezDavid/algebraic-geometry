@@ -1,0 +1,162 @@
+\newcommand{\sheet}{2}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    \begin{enumerate}[a)]
+        \item{
+                % We first prove that $\underline{A}$ is a Zariski sheaf.
+
+                % So to prove it is representable, it is enough to check on affine
+                % schemes.
+
+                % We show that $\Hom_k(k[x_1, \dots, x_n], B)$ is naturally
+                % isomorphic to $B \otimes_k A$.
+
+                % We can embed $A$ into $k$-algebra of endomorphisms on $k^n$.
+                % Then we can 
+                From algebraic geometry 1 we know that for every scheme$/k$ $T$,
+                we have an isomorphism
+                \begin{equation*}
+                    \Hom_{Sch/k}(T, \Aff^n_k) \to \Hom_k(k[x_1, \dots, x_n],
+                    \mathcal{O}_T(T)).
+                \end{equation*}
+                which is natural in $T$.
+                After picking the basis for $A$, we have a simple identification
+                \begin{equation*}
+                    \begin{split}
+                        \Hom_k(k[x_1, \dots, x_n], \mathcal{O}_T(T)) &\to \mathcal{O}_T(T) \otimes_k A \\
+                        \varphi &\mapsto \sum_i \varphi(x_i) \otimes x_i,
+                    \end{split}
+                \end{equation*}
+                where we use $x_i$ to denote basis as well.
+                This identification is simply on the level of sets, because
+                although $\mathcal{O}_T(T) \otimes_k A$ has the structure of a
+                (maybe non-commutative) $k$-algebra, $\Hom_k(k[x_1, \dots, x_n], \mathcal{O}_T(T))$
+                doesn't seem to have any structure (is there any? Set of maps of
+                $k$-algebras is nothing more than a set, right? We're assuming it
+                has to map $1$ to $1$ and be $k$-linear).
+
+                For second part, we want some sort of criterion for when is
+                $\sum_i f_i \otimes x_i$ invertible. We can represent
+                $\mathcal{O}_T(T) \otimes_k A$ by embedding it into algebra of
+                endomorphisms $\End(\mathcal{O}_T(T)^n$ which is isomorphic to
+                matrix algebra $M_{n \times n}(\mathcal{O}_T(T))$. 
+                Then we can simply calculate if the element is invertible by
+                evaluating its determinant.
+                In our case determinant is a polynomial in $n = \dim A$
+                variables (matrix depends on $n$ coefficients, for example first
+                column, all others are implicitly given by that). 
+                So for the ring we take $k[x_1, \dots, x_n, \det(x_1, \dots,
+                x_n)^{-1}]$.
+
+
+                Maybe it would be easier to define ring from scratch and not
+                look at open subschemes of $\Aff^n_k$. In which case we take
+                $k[t_{i j}, i, j \in \{1, \dots, n\}]$, invert $\det(t_{ij})$
+                and then quotient by relations $t_{i j} = \sum_k a^k_{i j} t_{k
+                1}$ where $a^k_{i j}$ represents $k$-th coordinate in expansion
+                of the product $(t_{1 1} x_1 + \dots + t_{n 1} x_n) x_j$ as $i
+                \in \{1, \dots, n\}$ and $j \in \{2, \dots, n\}$.
+                In example of $\R$-algebra $\C$ that would mean
+                \begin{equation*}
+                    \R[x_{1 1}, x_{2 1}, x_{1 2}, x_{2 2}, (x_{1 1} x_{2 2} -
+                    x_{1 2} x_{2 1})^{-1}] / (x_{1 2} = - x_{2 1}, x_{2 2} =
+                    x_{1 1})
+                \end{equation*}
+                }
+        \item{
+                
+            }
+        \item{
+                Let $k = \R$, $A = \C$ and $G = \underline{A}^\times$.
+                In part a) of problem 1 we argued that $\underline{A}^\times$ is
+                the affine open subscheme of $\Aff^n_k$ we get by inverting the
+                determinant of embedding $A \hookrightarrow \End(k^n) \cong M_{n
+                \times n}(k)$. In this case (one possible) embedding is $a + b i \mapsto
+                \begin{bmatrix}
+                    a & -b \\
+                    b & a
+                \end{bmatrix}.
+                $
+                So we have to invert $a^2 + b^2$.
+                So now we need to define a scheme morphism. Since both $G$ and
+                $\mathbb{G}_{m, \R}$ are affine, we can give map of rings:
+                \begin{equation*}
+                    \begin{split}
+                        \R[t, t^{-1}] &\to \R[x, y, (x^2 + y^2)^{-1}] \\
+                        t &\mapsto x^2 + y^2
+                    \end{split}
+                \end{equation*}
+                So if we have a map $\Spec(\R) \to G$ (i.e. a $\R$-valued point
+                $z$) and postcompose it with $G \to \mathbb{G}_{m, \R}$, we get
+                $\Spec(\R) \to \mathbb{G}_{m, \R}$ corresponding to $\R$-valued
+                point $z \overline{z}$.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    Let $k$ be a field and $\G_{a, k} = \Spec(k[t])$ with $a^* \colon t
+    \mapsto t \otimes 1 + 1 \otimes t$.
+    \begin{enumerate}[a)]
+        \item{
+                We want to find maps $\G_{a, k} \to \G_{a, k}$ that will respect
+                operation $a$. Since $\G_{a, k}$ is affine, this is equivalent to
+                finding all maps $f^* \colon k[t] \to k[t]$ such that
+
+                \begin{tikzcd}
+                    & k[t] \otimes_k k[t] & k[t] \arrow{l}{a^*} \\
+                    & k[t] \otimes_k k[t] \arrow{u}{f^* \otimes f^*} & k[t]
+                    \arrow{l}{a*} \arrow{u}{f^*}
+                \end{tikzcd}
+
+                commutes.
+                Since we are working over schemes over $k$, these are maps of
+                $k$-algebras, which means that $f^*$ is uniquely defined by its
+                value at $t$.
+                From commutativity we get the condition
+                \begin{equation*}
+                    f^*(t) \otimes 1 + 1 \otimes f^*(t) = f^*(t \otimes 1 + 1
+                    \otimes t)
+                \end{equation*}
+                Writing $f^*(t) = \sum_i a_i t^i$ we get
+                \begin{equation*}
+                    \sum_i a_i t^i \otimes 1 + 1 \otimes \sum_i a_i t^i = \sum_i a_i \sum_j
+                    \binom{i}{j} (t^{i-j} \otimes t^j)
+                \end{equation*}
+                Since $\characteristic(k) = 0$, none of the elements on right
+                vanish. So by comparing terms we obtain $a_i = 0$ for $i > 1$. 
+                So $f^*(t) = a_0 + a_1 t$.
+                \begin{equation*}
+                    (a_0 + a_1 t) \otimes 1 + 1 \otimes (a_0 + a_1 t) = a_0 +
+                    a_1 (t \otimes 1 + 1 \otimes t)
+                \end{equation*}
+                Compare again and get that $2 a_0 = 0$, so $a_0 = 0$ and $a_1$
+                can be anything. Therefore endomorphisms $\End(\G_{a, k})$ are
+                parametrized by $a_1 \in k$.
+            }
+        \item{
+                Let now $\characteristic(k) = p$.
+                Same as before, but at the step when we have 
+                \begin{equation*}
+                    \sum_i a_i t^i \otimes 1 + 1 \otimes \sum_i a_i t^i = \sum_i a_i \sum_j
+                    \binom{i}{j} (t^{i-j} \otimes t^j)
+                \end{equation*}
+                when $i$ is a power of $p$, all terms $\binom{i}{j}$ vanish in
+                $k$, but if $i$ is not a power of $p$, then there exists $j$
+                such that $\binom{i}{j}$ does not vanish, meaning $a_i$ has to
+                be $0$ for $i$ not a power of $p$.
+                We also get $a_0 = 0$ by comparing terms.
+                So $f^*(t) = \sum_k a_{p^k} t^{p^k}$.
+                We see that all endomorphisms of $\G_{a, k}$ are of this form
+                and clearly all morphisms of above form in fact define
+                endomorphisms of $\G_{a, k}$
+            }
+    \end{enumerate}
+\end{exercise}
+
+\end{document}

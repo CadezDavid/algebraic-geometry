@@ -1,0 +1,69 @@
+\newcommand{\sheet}{5}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item{
+                Flatness is local on the target, so we can check it on affine
+                cover of $\Proj^1_A$.
+
+                Lets first look at $D(z) \to D(z)$.
+                We have a map of rings $A[y] \to A[x, y]/(y^2 - g(x))$ mapping
+                $y \mapsto y$. We have to check the target is a flat
+                $A[y]$-module. We can let $B := A[y]$, then $B \to B[x]/(b -
+                g(x))$ (where $b = y^2 \in B$). Writing it this way makes it
+                clear that the target is isomorphic to $B^d$ as a $B$-module.
+
+                And now observe $D(y) \to D(y)$.
+                We similarly get a ring map $A[z] \to A[x, z]/(z^{d-2} - z^d
+                g(x/z))$ with $z \mapsto z$. Again, setting $B := A[z]$ makes it
+                clear that $B \to B[x]/(f)$ ($f$ some polynomial in $B[x]$ of
+                degree $d$) makes the target a finite free $B$-module.
+
+                So $X \to \Proj^1_A$ is flat.
+
+                Morphism $\Proj^1_A \to \Spec(A)$ is flat, because maps $A \to
+                A[t]$ are flat.
+
+                Composition of flat morphisms is flat, so $X \to \Proj^1_A \to
+                S = \Spec(A)$ is flat.
+            }
+        \item{
+                On discord somebody wrote an example that they think is a
+                counterexample to this statement.
+                And to me it seems like its valid.
+            }
+        \item{
+                In the first case the discriminant is $a^2 - 4b$ and in the
+                second it is $-4a^3 - 27b^2$.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{3}
+    Because curves $X$ and $Y$ are smooth, local rings $\mathcal{O}_{X, x}$
+    and $\mathcal{O}_{Y, y}$ are geometrically regular. In our case $k$ is
+    algebraically closed, so they are already regular without any base
+    change necessary.
+    And regular $1$-dimensional local rings (and integral) are DVRs, so we can
+    pick $t_x$ and $t_y$ to be their respective uniformizers.
+
+    Then, using commutative algebra facts, we get that $\widehat{\mathcal{O}_{X,
+    x}} = k[[t_x]]$ and $\widehat{\mathcal{O}_{Y, y}} = k[[t_y]]$.
+
+    By our assumptions we have $f^*_y(t_x) = s t^e_y$ for some $s \in
+    \mathcal{O}^\times_{Y, y}$. By previous exercise we know $s$ admits an
+    $e$-th root. Then we can go back to the start and pick $t_y$ to be
+    $\sqrt{e}{y} t_y$, which is still a uniformizer as $\sqrt{e}{y} \in
+    \mathcal{O}^\times_{Y, y}$. So we can assume $f^*_y(t_x) = t^e_y$. Map
+    $f^*_y$ induces a map between diagrams $\{ \mathcal{O}_{X, x}/m^i_{X, x}
+    \}_i \to \{ \mathcal{O}_{Y, y}/m^i_{Y, y} \}_i$, which in turn gives a map
+    between limits of these diagrams, i.e. the completions. This induces map
+    between completions is clearly given by the same rule $t_x \mapsto t^e_y$.
+\end{exercise}
+
+\end{document}

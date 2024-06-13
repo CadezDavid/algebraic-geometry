@@ -1,0 +1,144 @@
+\newcommand{\sheet}{5}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    % https://stacks.math.columbia.edu/tag/0BX7
+    \begin{enumerate}[label=(\roman*)]
+        \item{
+                Pick $f \in k(\eta) \setminus k$ ($\eta$ is the generic point of
+                the curve $C$).
+                We will show that $f$ can be viewed as a non-constant function
+                $C \to \Proj^1_k$.
+
+                First we will define $U \to \Aff^1_k$ on some open cofinite
+                subscheme $U \in C$. Then we will postcompose this morphism with
+                $\Aff^1_k \to \Proj^1_k$. At we will extend map $U \to
+                \Proj^1_k$ to $\varphi \colon C \to \Proj^1_k$. By
+                construction it will clear that the pullback of $t$ is $f$.
+        
+                Take some open affine $\Spec(A) \subseteq C$.
+                % By definition $A$ is a $1$-dimensional domain.
+                By integrality of $C$, $\Spec(A)$ contains the generic point, so
+                we have $\Quot(A) = k(\eta)$.
+                Write $f = \frac{f_1}{f_2} \in \Quot(A)$.
+                Then $f$ is a section on $D(f_2)$.
+                Because $A$ is $1$-dimensional, the complement $V(f_2)$ is finite.
+                We use the bijection $\Gamma(\Spec(A), \mathcal{O}_X) \cong \Mor_k(\Spec(A),
+                \Aff^1_k)$ to realize $f$ as a morphism $D(f_2) \to \Aff^1_k$.
+                We do this on an finite open affine cover to obtain $f \colon U \to \Aff^1_k$, where $U
+                \subseteq C$ is open, cofinite and dense. We can pick finite
+                cover by quasicompactness and density of $U$ is by integrality.
+                Note here that this definition on affine cover clearly agrees on
+                intersections because we always had the same $f \in k(\eta)$.
+
+                Now note that local rings at closed points on the curves are
+                valuation rings. At this point we could recall a proposition
+                from alg geo 1 that said that every dominant rational map
+                between proper normal curves is represented by a morphism of
+                schemes. By our definition curves are proper and smooth, so that
+                would work. (And any morphism representing $U \to \Aff^1_k$
+                would pullback $t$ to $f$.)
+        
+                Postcompose with $\Aff^1_k \to \Proj^1_k$ to obtain $f \colon U \to
+                \Proj^1_k$.
+
+                Now all we need to do is extend this $f$ to the whole $C$.
+
+                We use valuative criteria to do it.
+                \begin{equation*}
+                    \begin{tikzcd}
+                        & \Spec(k(\eta)) \arrow{r} \arrow{d} &
+                        \Spec(\mathcal{O}_{C, x}) \arrow[d, dashrightarrow] \arrow{dr} \\
+                        & U \arrow{r} & \Proj^1_k \arrow{r} & \Spec(k) \\
+                    \end{tikzcd}
+                \end{equation*}
+                We obtain dashed arrow by valuative criteria for properness of
+                $\Proj^1_k$ over $k$.
+                Since $\Proj^1_k$ is of finite presentation over $k$, we can use
+                the spreading argument to obtain an open neighbourhood $x \in V \subset C$
+                and a morphism $V \to \Proj^1_k$ that extends
+                $\Spec(\mathcal{O}_{C, x}) \to \Proj^1_k$.
+                Morphisms $V \to \Proj^1_k$ and $U \to \Proj^1_k$ match on generic
+                point and, since $C$ is separated, the equalizer is closed
+                subscheme, so they must match on $U \cup V$ (here we use
+                integrality of $C$).
+
+                There are only finitely many points in $C \setminus U$, so we
+                can do this process finitely many times and obtain $C \to
+                \Proj^1_k$.
+
+                Let us now argue why the pullback of $t$ is $f$. When defining
+                $U \to \Aff^1_k$ we defined it using identification
+                \begin{equation*}
+                    \Hom_k(k[t], \Gamma(\Spec(A), \mathcal{O}_X)) \cong
+                    \Mor_k(\Spec(A), \Aff^1_k).
+                \end{equation*}
+                So we defined the morphism by saying that the pullback of $t$
+                should be $f$.
+                Also notice that if $f$ is not in $k$, then $k[t] \to
+                \Gamma(\Spec(A), \mathcal{O}_X))$ is injective, so the induced
+                morphism maps generic point to generic point and is thus
+                not constant.
+            }
+        \item{
+                We simply follow the definitions
+                \begin{equation*}
+                    \operatorname{div} (\varphi^*(f)) = \sum_{x \in C_1}
+                    \operatorname{ord}_x(\varphi^*(f)) [x]
+                \end{equation*}
+                and 
+                \begin{equation*}
+                    \begin{split}
+                    \varphi^* \operatorname{div} (f)
+                        &= \varphi^* \left( \sum_{y \in C_2}
+                        \operatorname{ord}_y(f) [y] \right) \\
+                        &= \sum_{y \in C_2} \operatorname{ord}_y(f) \left( \sum_{x \in
+                        \varphi^{-1}(y)} e_x [x] \right) \\
+                        &= \sum_{x \in C_1} \operatorname{ord}_{\varphi(x)}(f) 
+                        e_x [x].
+                    \end{split}
+                \end{equation*}
+                So we have to show that for any $x \in C_1$ we have
+                $\operatorname{ord}_x(\varphi^* f) =
+                \operatorname{ord}_{\varphi(x)}(f) e_x$.
+
+                Denote $n = \operatorname{ord}_{\varphi(x)}(f)$.
+
+                By normality we can pick a uniformizers
+                \begin{equation*}
+                        m_{C_2, \varphi(x)} = (t_{C_2, \varphi(x)})\quad
+                        \text{and}\quad m_{C_1, x} = (t_{C_1, x}).
+                \end{equation*}
+                % By definition $f \in \mathcal{O}_{C_2, \varphi(x)}^\times
+                % t^m_{C_2, \varphi(x)}$.
+
+                The map $\varphi^\#_x \colon \mathcal{O}_{C_2, \varphi(x)} \to
+                \mathcal{O}_{C_1, x}$ is a restriction of $\varphi^* \colon
+                k(\eta_2) \to k(\eta_1)$, so we can use $\varphi^*$ for both.
+
+                By the definition of ramification index $\varphi^*(m_{C_2,
+                \varphi(x)}) \mathcal{O}_{C_1, x} = m_{C_1, x}^{e_x}$.
+                So $\varphi^*(t_{C_2, \varphi(x)}) = \beta t_{C_1, x}^{e_x}$ for
+                some $\beta \in \mathcal{O}^\times_{C_1, x}$.
+
+                Write $f = \alpha t^n_{C_2, \varphi(x)}$ with $\alpha \in
+                \mathcal{O}_{C_2, \varphi(x)}^\times$.
+                Then
+                \begin{equation*}
+                    \varphi^*(f) = \varphi^*(\alpha) \varphi^*(t_{C_2,
+                    \varphi(x)})^n = \varphi^*(\alpha) \beta^n t^{n
+                    e_x}_{C_1, x} \in \mathcal{O}_{C_1, x}^\times t^{n
+                    e_x}_{C_1, x}.
+                \end{equation*}
+                So $\operatorname{ord}_x(\varphi^*(f)) = n e_x$ which is what
+                we needed to show.
+            }
+    \end{enumerate}
+\end{exercise}
+
+
+\end{document}

@@ -1,0 +1,54 @@
+\newcommand{\sheet}{10}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item{
+            }
+        \item{
+                If $\phi$ is divisible in $L$, then it is clearly divisible in
+                $\Hom(T_l(E_1), T_l(E_2))$.
+                Suppose $\phi$ is divisible by $l$ in $\Hom(T_l(E_1),
+                T_l(E_2))$. Then $\phi$ vanishes on $E_1[l]$, so by
+                proposition 10.1 from the lectures we have that $\phi$ is
+                already divisible by $l$.
+            }
+        \item{
+                If $\End^0(E)$ is a quaternion algebra, then $\End(E)$ is of
+                rank $4$ (its always free of rank $\leq 4$).
+                The map $\Z_l \otimes_\Z \End(E) \cong (\Z_l)^4 \to \End(T_l(E))
+                \cong M_2(\Z_l)$ (we used $T_l(E) \cong \Z_l$) is injective.
+                By previous part invertible elements in $\Z_l \otimes_\Z
+                \End(E)$ get mapped to invertible elements in $\End(T_l(E))$, so
+                the map is also surjective.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    By assumption both $E_1$ and $E_2$ have some nontrivial endomorphism, lets
+    denote them by $\tau_1$ and $\tau_2$. By assumption there is an isomorphism
+    $\phi \colon \Q(\tau_1) \to \Q(\tau_2)$. It follows that $\phi(\tau_1) = a
+    \tau_2 + b$. Since $K$ is an imaginary-quadratic field, $\tau_1$ and
+    $\tau_2$ satisfy equations $\tau^2_1 + d_1 = 0$ and $\tau^2_2 + d_2 = 0$ for
+    some integers $d_1, d_2 > 0$. 
+    \begin{equation*}
+    0 = \phi(\tau_1)^2 + d_1 = a^2 \tau^2_2 + 2 a b \tau_2 + b^2 + d_1 =
+    - a^2 d_2 + 2 a b \tau_2 + b^2 + d_1
+    \end{equation*}
+    Therefore $a b = 0$.
+
+    If $a = 0$, then $b^2 + d_1 = 0$ which doesn't have a solution for $b \in
+    \Q$. So $b = 0$.
+    Then $a^2 d_2 = d_1$. Write $a = \frac{a_1}{a_2} \in \Q$. Then
+    $a^2_1 d_2 = a^2_2 d_1$ and $a_2 \tau_1 = \pm a_1 \tau_2$. So there exists a
+    nonconstant morphism from $E_1$ to $E_2$, namely multiplication with $a_2
+    \in \Z$.
+
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,284 @@
+\newcommand{\sheet}{10}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{
+                Taking global sections we obtain a long exact sequence
+                \begin{equation*}
+                    0 \to F(X) \to F'(X) \to F''(X) \to H^1(X, F) \to H^1(X, F')
+                    \to \dots
+                \end{equation*}
+                We quickly see that dimensions satisfy
+                \begin{equation*}
+                    0 = \dim F(X) - \dim F'(X) + \dim F''(X) - \dim H^1(X, F) +
+                    \dim H^1(X, F') - \dots
+                \end{equation*}
+                which shows what we wanted to show.
+
+                We can prove this for example by induction. Clearly it holds for
+                base cases. And the induction step:
+                Suppose we have an exact sequence of $k$-vector spaces
+                \begin{equation*}
+                    0 \to C_0 \to \dots \to C_n \to 0
+                \end{equation*}
+                By induction hypothesis for
+                \begin{equation*}
+                    0 \to C_0 \to \dots \to C_{n-2} \to \im(d_{n-2}) \to 0
+                \end{equation*}
+                we get
+                \begin{equation*}
+                    0 = \dim C_0 - \dim C_1 + \dots \pm \dim C_{n-2} \mp \dim
+                    \im(d_{n-2})
+                \end{equation*}
+                Then just substitute
+                \begin{equation*}
+                    \dim C_{n-1} = \dim \im(d_{n-2}) + \dim \coker(d_{n-1})
+                    = \dim \im(d_{n-2}) + \dim C_n
+                \end{equation*}
+                and we get what we want.
+            }
+        \item{
+                We started solving the exercise with $d \in \N$ in mind, so
+                first solution is only valid for $d > 0$ (although we could
+                probably somehow extend it).
+
+                We do induction on the sum $n + d$.
+
+                \emph{The base cases:}
+                When $n = 0$, then $\Proj^n_k = \Spec(k)$, so $H^0(\Proj^n_k,
+                \mathcal{O}_{\Proj^n_k}(d)) = k$ and all higher cohomologies
+                vanish. Integer $d$ here doesn't make a difference because there
+                is no nontrivial line bundles on a point.
+                So $\chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}) = 1$.
+
+                When $d = 0$ and $n > 0$ we are working with structure
+                sheaf and in that case we know
+                \begin{equation*}
+                    H^q(\Proj^n_k, \mathcal{O}_{\Proj^n_k})
+                    = \begin{cases}
+                        k & q = 0\\
+                        0 & q > 0
+                    \end{cases}
+                \end{equation*}
+                So $\chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}) = 1$.
+
+                \emph{The induction step:}
+                Let $i \colon V(x_n) \cong \Proj^{n-1}_k \to \Proj^n_k$ be the closed
+                immersion.
+                Then we have an exact sequence of sheaves on $\Proj^n_k$
+                \begin{equation*}
+                    0 \to \mathcal{O}_{\Proj^n_k}(-1) \to
+                    \mathcal{O}_{\Proj^n_k} \to i_* \mathcal{O}_{\Proj^{n-1}_k}
+                    \to 0
+                \end{equation*}
+                Tensor this sequence with $\mathcal{O}_{\Proj^n_k}(d)$ to obtain
+                \begin{equation*}
+                    0 \to \mathcal{O}_{\Proj^n_k}(d-1) \to
+                    \mathcal{O}_{\Proj^n_k}(d) \to (i_*
+                    \mathcal{O}_{\Proj^{n-1}_k}) \otimes
+                    \mathcal{O}_{\Proj^n_k}(d) \to 0
+                \end{equation*}
+
+                The last term
+                \begin{equation*}
+                    (i_* \mathcal{O}_{\Proj^n_k}) \otimes \mathcal{O}_{\Proj^n_k}(d) = 
+                    i_* (\mathcal{O}_{\Proj^n_k} \otimes i^*
+                    \mathcal{O}_{\Proj^n_k}(d)) = 
+                    i_* (\mathcal{O}_{\Proj^n_k} \otimes \mathcal{O}_{\Proj^{n-1}_k}(d)) = 
+                    i_* \mathcal{O}_{\Proj^{n-1}_k}(d)
+                \end{equation*}
+
+                Now use the previous part of the exercise to obtain
+                \begin{equation*}
+                    \chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d)) = 
+                    \chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d-1)) +
+                    \chi(\Proj^n_k, i_* \mathcal{O}_{\Proj^{n-1}_k}(d))
+                \end{equation*}
+                The cohomology of the pushforward along a closed immersion is
+                the same as the cohomology of the original sheaf, so the last
+                term above is $\chi(\Proj^{n-1}_k,
+                \mathcal{O}_{\Proj^{n-1}_k}(d))$
+                By induction hypothesis we obtain
+                \begin{equation*}
+                    \chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d)) = 
+                    \binom{n + d - 1}{n} + \binom{n - 1 + d}{n - 1} = \binom{n +
+                    d}{n}
+                \end{equation*}
+                which is what we needed to show.
+
+                At the end let us treat the case when $d < 0$.
+                Recall the explicit cohomology groups that we
+                calculated in the lecture 17:
+                \begin{equation*}
+                    H^q(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d)) =
+                    \begin{cases}
+                        k[x_0, \dots, x_n]_d & q = 0 \\
+                        (\frac{1}{x_0 \dots x_n} k[\frac{1}{x_0}, \dots,
+                        \frac{1}{x_n}])_d & q = n \\
+                        0 & \text{else}
+                    \end{cases}
+                \end{equation*}
+                Immediately we see that for $d < 0$ we have
+                \begin{equation*}
+                    \chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d)) = (-1)^n
+                    H^n(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d))
+                \end{equation*}
+
+                Now we just have to count the size of basis (monomials) in
+                $(\frac{1}{x_0 \dots x_n} k[\frac{1}{x_0}, \dots,
+                \frac{1}{x_n}])_d$.
+
+                If $d \in \{-n, \dots, -1\}$, then there are no polynomials in
+                $(\frac{1}{x_0 \dots x_n} k[\frac{1}{x_0}, \dots,
+                \frac{1}{x_n}])_d$, so $\chi(\Proj^n_k,
+                \mathcal{O}_{\Proj^n_k}(d)) = 0$.
+
+                If $d < -n$, then there are $\binom{n + (-d -n -1)}{n}$
+                monomials in
+                $(\frac{1}{x_0 \dots x_n} k[\frac{1}{x_0}, \dots,
+                \frac{1}{x_n}])_d$.
+                We see that
+                \begin{equation*}
+                    \begin{split}
+                        \binom{n + (-d -n -1)}{n} &= \Pi^n_{i=1} \frac{-d -n -1 + i}{i} \\
+                        &= (-1)^n\ \Pi^n_{i=1} \frac{d + n + 1 - i}{i} \\
+                        &= (-1)^n\ \Pi^n_{i=1} \frac{d + i}{i} \\
+                        &= (-1)^n\ \binom{n + d}{n}
+                    \end{split}
+                \end{equation*}
+                So 
+                \begin{equation*}
+                    \chi(\Proj^n_k, \mathcal{O}_{\Proj^n_k}(d)) = (-1)^n (-1)^n\
+                    \binom{n + d}{n} = \binom{n + d}{n}
+                \end{equation*}
+                which is what we needed to show.
+            }
+        \item{
+                We have an exact sequence
+                \begin{equation*}
+                    0 \to \mathcal{O}_{\Proj^2_k}(-d) \to
+                    \mathcal{O}_{\Proj^2_k} \to i_* \mathcal{O}_X \to 0
+                \end{equation*}
+                where $i \colon X \to \Proj^2_k$ is a closed immersion.
+                Now taking cohomology we get
+                \begin{equation*}
+                \begin{tikzcd}
+                    &0 \arrow{r} &H^0(\Proj^2_k, \mathcal{O}_{\Proj^2_k}(-d))
+                    \arrow{r} &H^0(\Proj^2_k, \mathcal{O}_{\Proj^2_k}) \arrow{r}
+                    &H^0(\Proj^2_k, i_* \mathcal{O}_X) \arrow{dll} \\
+                    & &H^1(\Proj^2_k, \mathcal{O}_{\Proj^2_k}(-d))
+                    \arrow{r} &H^1(\Proj^2_k, \mathcal{O}_{\Proj^2_k}) \arrow{r}
+                    &H^1(\Proj^2_k, i_* \mathcal{O}_X) \arrow{dll} \\
+                    & &H^2(\Proj^2_k, \mathcal{O}_{\Proj^2_k}(-d))
+                    \arrow{r} &H^2(\Proj^2_k, \mathcal{O}_{\Proj^2_k}) \arrow{r}
+                    &H^2(\Proj^2_k, i_* \mathcal{O}_X) \arrow{r} & 0
+                \end{tikzcd}
+                \end{equation*}
+                We know that $H^1(\Proj^2_k, \mathcal{O}_{\Proj^2_k})$ and
+                $H^2(\Proj^2_k, \mathcal{O}_{\Proj^2_k})$ are both $0$.
+                So $H^1(\Proj^2_k, i_* \mathcal{O}_X) = H^1(X, \mathcal{O}_X)$
+                is isomorphic to $H^2(\Proj^2_k, \mathcal{O}_{\Proj^2_k}(-d))$.
+                And for the latter one we know $\dim_k H^2(\Proj^2_k,
+                \mathcal{O}_{\Proj^2_k}(-d)) = \binom{2 - d}{2} =
+                \frac{(d-1)(d-2)}{2}$.
+
+            }
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    \begin{enumerate}
+        \item{
+                First thing to note:
+                We know that colimits commute with stalks, so
+                $\colim F_{i, x} \to (\colim F_i)_x$ is an isomorphism.
+                
+                Pick now $s \in F_i(U)$ that is in the kernel of the map
+                $\Psi_U$. That means for every $x \in U$ the section $s$
+                vanishes in $\colim F_{i, x} = (\colim F_i)_x$.
+                So there exists $i_x$ such that $s$ vanishes in $F_{i_x, x}$.
+                And then there also exists a neighbourhood $x \in U_x$ such that
+                $s$ vanishes in $F_{i_x}(U_x)$.
+                By quasi-compactness we cover $U$ with finitely many such $U_x$.
+                Pick $j$ to be the maximal $i_x$ from the covering. Then $s$
+                gets mapped to $0$ by the transition map $F_i(U) \to F_j(U)$.
+                So $s$ is already equal to $0$ in $\colim_i F_i(U)$.
+                (I omitted transition maps, hopefully its clear what was meant.
+                Otherwise it becomes messy.)
+            }
+        \item{
+                We again start with the observation that 
+                $\colim F_{i, x} \to (\colim F_i)_x$ is an isomorphism.
+
+                Take $s \in (\colim F_i)(U)$. For every stalk we find $i_x$,
+                $U_x$ and $s_x \in F_{i_x}(U_x)$ such that the image of $s_x$ by
+                $\Psi_U$ is equal to restriction of $s$ to $U_x$. By
+                quasi-compactness there is finite subcover. Now we need to glue
+                these $s_x \in F_{i_x}(U_x)$. By our choice, the difference $s_x
+                |_{U_x \cap U_y} - s_y |_{U_x \cap U_y}$ (viewing both
+                inside $\colim F_i(U_x \cap U_y)$) is in the kernel of
+                $\Psi_{U_x \cap U_y}$. Because intersection $U_x \cap U_y$ is
+                quasi-compact, we have by previous part that $s_x |_{U_x \cap
+                U_y} = s_y |_{U_x \cap U_y}$ (as elements of $\colim F_i(U_x
+                \cap U_y)$). So there exists some $j_{x, y} \geq i_x, i_y$ such
+                that $s_x = s_y \in F_{j_{x, y}}(U_x \cap U_y)$. Now just take
+                the maximum $j = \max j_{x, y}$ over all pairs $x, y$ and we get
+                a section in $s' \in F_j(U)$ that gets mapped to $s$ by
+                ($\Psi_U$).
+                (Again, sorry for leaving out transition maps.)
+            }
+        \item{
+                So we assume that the category of abelian sheaves on $X$ has
+                enough injectives. Let $F_i \to G_i$ be an injective embedding
+                of directed systems and $G_i$ injective sheaves.
+
+                Let $H_i = \coker(F_i \to G_i)$ so we have an exact sequence
+                \begin{equation*}
+                    0 \to F_i \to G_i \to H_i \to 0
+                \end{equation*}
+                for every $i$.
+                Taking finite limits commutes with filtered colimits, so we have
+                an exact sequence
+                \begin{equation*}
+                    0 \to \colim F_i \to \colim G_i \to \colim H_i \to 0.
+                \end{equation*}
+
+                Lets now do induction. The base case was done in first two parts
+                (spectral space is qcqs).
+
+                So assume the statement holds for $n$.
+
+                By injectivity $H^n(X, G_i) = 0$ for every $n > 0$ and $i \in
+                I$. So $\colim H^n(X, G_i) = 0$ but only for $n > 0$.
+                We get a diagram
+                \begin{equation*}
+                    \begin{tikzcd}
+                        &H^n(X, \colim G_i) \arrow{r} \arrow{d} &H^n(X, \colim
+                        H_i) \arrow{r} \arrow{d} &H^{n+1}(X, \colim F_i)
+                        \arrow{d} \arrow{r} &H^{n+1}(X, \colim G_i) \arrow{d} \\
+                        &\colim H^n(X, G_i) \arrow{r} &\colim H^n(X, H_i)
+                        \arrow{r} &\colim H^{n+1}(X, F_i) \arrow{r} &\colim
+                        H^{n+1}(X, G_i)
+                    \end{tikzcd}
+                \end{equation*}
+
+                We have $\colim H^{n+1}(X, G_i) = 0$ by injectivness and because
+                $n + 1 > 0$.
+
+                Lets show that also $H^{n+1}(X, \colim G_i) = 0$.
+                I dont know how to show this.
+
+                Assuming we've shown $H^{n+1}(X, \colim G_i) = 0$, we conclude
+                by five lemma that $H^{n+1}(X, \colim F_i) \cong \colim H^{n+1}(X,
+                F_i)$.
+            }
+    \end{enumerate}
+\end{exercise}
+
+
+\end{document}

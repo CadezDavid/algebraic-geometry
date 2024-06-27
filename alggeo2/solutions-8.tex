@@ -1,0 +1,67 @@
+\newcommand{\sheet}{8}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle{}
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item{
+            }
+        \item{
+                We can show that $j_!$ is exact. We know it preserves
+                epimorphisms because it has a right adjoint. But monomorphisms
+                are preserved because they can be checked on stalks.
+
+                Let $0 \to A \to B \to C \to 0$ be exact. We want to show $0 \to
+                j_! A \to j_! B \to j_! C \to 0$ is exact. For $x \in V$ we
+                clearly have $(j_! A)_x = A_x$ and for $x \not V$ we have $(j_!
+                A)_x = 0$ (for this we use explicit definition of sheafification
+                from alggeo1). So $j_! A \to j_! B$ is a monomorphism.
+
+                Now we show that $j^*$ preserves injectives.
+
+                Let $F$ be injective $\mathcal{O}_X$-module.
+                Let $0 \to A \to B \to C \to 0$ be exact sequence of
+                $\mathcal{O}_V$-modules.
+                Then $0 \to j_! A \to j_! B \to j_! C \to 0$ is exact.
+                By injectiveness of $F$ we have exact sequence $0 \to \Hom(j_!
+                A, F) \to \Hom(j_! B, F) \to \Hom(j_! C, F) \to 0$ is exact.
+                Then we use that $j_!$ and $j^*$ are adjoint pair and we get
+                that $0 \to \Hom(A, j^* F) \to \Hom(B, j^* F) \to \Hom(C, j^* F)
+                \to 0$ is exact. So $\Hom(_, j^* F)$ preserves exact sequences,
+                which is what we wanted to show.
+            }
+        \item{
+                We can take $X = \Spec(\Z)$ and $V = X \setminus \{ p \}$ for
+                prime $p$. We will show that $j_! \mathcal{O}_V$ has no
+                global sections.
+
+                Denote the presheaf defined in the exercise by $F$.
+
+                At alggeo1 we constructed sheafification of a
+                presheaf $F$ explicitly as the sheaf
+                \begin{equation*}
+                        \tilde{F} \colon U \mapsto \{ (s_x)_{x \in U} \in \Pi_{x
+                        \in U} F_x \mid 
+                        (s_x)_{x \in U}\ \text{satisfies condition below} \} \\
+                \end{equation*}
+                for all $x \in U$ there exists a neighbourhood $V_x$ and $t \in
+                F(V_x)$ such that for all $y \in V_x$ we have $s_y = t_y$.
+
+                So global sections of $j_! \mathcal{O}_V$ are $(s_x)_{x \in X}$
+                (that satisfy the condition). But for any neighbourhood $V_p$ of
+                $p$ we have $F(V_p) = 0$, so there has to be an open set $V_p$
+                such that $s_y = 0$ for all $y \in V_p$. But then $s_y = 0$ for
+                all $y \in X$, since any non-zero section of $(j_!
+                \mathcal{O}_V) \mid_V$ is zero only on finitely many points.
+                
+                The map $0 = (j_! \mathcal{O}_V)(X)[p^{-1}] \to \Z[p^{-1}]$ is
+                is therefore not an isomorphism, and $j_! \mathcal{O}_V$ not a
+                quasi-coherent sheaf.
+            }
+    \end{enumerate}
+\end{exercise}
+
+\end{document}
